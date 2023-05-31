@@ -7,12 +7,12 @@ Sistema de recomendação de músicas, álbuns e artistas com gerenciamento de p
 
 1. 
     * **[Como]** usuário
-    * **[Quero]** Editar minha playlist
+    * **[Quero]** editar minha playlist
     * **[Para]** poder adicionar e ordenar minhas músicas
 
 2. 
     * **[Como]** usuário
-    * **[Quero]** Navegar em minha biblioteca
+    * **[Quero]** navegar em minha biblioteca
     * **[Para]** visualizar/criar minhas playlists
 
 3. 

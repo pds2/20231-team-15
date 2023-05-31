@@ -43,7 +43,6 @@ Sistema de recomendação de músicas, álbuns e artistas com gerenciamento de p
       * Playlist
       * Álbum
    * Música
-   * Álbum
    * Artista
    * Recomendação
    * Sistema

@@ -1,0 +1,111 @@
+Artista,Título,Álbum,Gênero,Dançabilidade,Sentimento,Barulho
+Queen,Bohemian Rhapsody,A Night at the Opera,Rock,3,7,5
+Queen,Don't Stop Me Now,Jazz,Rock,9,8,4
+Queen,Under Pressure,Hot Space,Rock,7,7,5
+The Beatles,Hey Jude,The Beatles (The White Album),Pop,7,6,3
+The Beatles,A Day in the Life,Sgt. Pepper's Lonely Hearts Club Band,Rock,3,7,4
+The Beatles,Blackbird,The Beatles (The White Album),Pop,2,5,1
+The Rolling Stones,(I Can't Get No) Satisfaction,Out of Our Heads,Rock,9,5,5
+The Rolling Stones,Angie,Goats Head Soup,Rock,4,6,2
+The Rolling Stones,Wild Horses,Sticky Fingers,Rock,5,5,2
+Led Zeppelin,Stairway to Heaven,Led Zeppelin IV,Rock,2,5,6
+Led Zeppelin,Whole Lotta Love,Led Zeppelin II,Rock,8,6,7
+Led Zeppelin,Immigrant Song,III,Rock,9,6,6
+Pink Floyd,Comfortably Numb,The Wall,Rock,4,6,2
+Pink Floyd,Wish You Were Here,Wish You Were Here,Rock,6,5,3
+Pink Floyd,Another Brick in the Wall Part 2,The Wall,Rock,9,7,5
+Bob Dylan,Like a Rolling Stone,Highway 61 Revisited,Rock,6,4,3
+Bob Dylan,Blowin' in the Wind,The Freewheelin' Bob Dylan,Folk,7,5,1
+Bob Dylan,Knockin' on Heaven's Door,Pat Garrett & Billy the Kid,Rock,4,6,2
+Nirvana,Smells Like Teen Spirit,Nevermind,Grunge,8,7,4
+Nirvana,Come as You Are,Nevermind,Grunge,8,6,4
+Nirvana,Heart-Shaped Box,In Utero,Grunge,7,6,3
+Bruce Springsteen,Born to Run,Born to Run,Rock,7,8,4
+Bruce Springsteen,Thunder Road,Born to Run,Rock,4,7,3
+Bruce Springsteen,Badlands,Darkness on the Edge of Town,Rock,7,7,4
+Fleetwood Mac,The Chain,Rumours,Rock,6,7,4
+Fleetwood Mac,Go Your Own Way,Rumours,Rock,7,6,4
+Fleetwood Mac,Rhiannon,Fleetwood Mac,Rock,7,6,3
+Elvis Presley,Heartbreak Hotel,Elvis Presley,Rock and Roll,5,6,3
+Elvis Presley,Can't Help Falling in Love,Blue Hawaii,Pop,6,7,2
+Elvis Presley,Suspicious Minds,From Elvis in Memphis,Rock and Roll,8,7,4
+The Kinks,You Really Got Me,Kinks,Rock,9,6,6
+The Kinks,Waterloo Sunset,Something Else by The Kinks,Pop,4,5,1
+The Kinks,Lola,Lola Versus Powerman and the Moneygoround, Part One,Rock,7,7,4
+Artista,Título,Álbum,Gênero,Dançabilidade,Sentimento,Barulho
+Michael Jackson,Beat It,Thriller,Pop,9,7,4
+Michael Jackson,Billie Jean,Thriller,Pop,10,8,5
+Michael Jackson,Smooth Criminal,Bad,Pop,9,7,5
+Bob Marley,No Woman, No Cry,Natty Dread,Reggae,9,7,3
+Bob Marley,Redemption Song,Uprising,Reggae,4,7,3
+Bob Marley,Three Little Birds,Exodus,Reggae,8,7,2
+Johnny Cash,Ring of Fire,Single,Country,6,8,4
+Johnny Cash,Hurt,American IV: The Man Comes Around,Country,3,9,3
+Johnny Cash,I Walk the Line,With His Hot and Blue Guitar,Country,6,6,3
+The Police,Every Breath You Take,Synchronicity,Pop,6,5,2
+The Police,Message in a Bottle,Reggatta de Blanc,Rock,8,7,5
+The Police,Roxanne,Outlandos d'Amour,Rock,7,6,4
+Prince,Purple Rain,Purple Rain,R&B,6,7,3
+Prince,When Doves Cry,Purple Rain,R&B,9,7,4
+Prince,1999,1999,R&B,9,8,6
+Artista,Título,Álbum,Gênero,Dançabilidade,Sentimento,Barulho
+Rihanna,Umbrella,Good Girl Gone Bad,Pop,7,6,4
+Rihanna,We Found Love,Talk That Talk,Pop,9,7,5
+Rihanna,Diamonds,Unapologetic,Pop,6,8,3
+Eminem,Lose Yourself,8 Mile (Soundtrack),Hip Hop,8,7,5
+Eminem,Stan,The Marshall Mathers LP,Hip Hop,5,8,4
+Eminem,Love the Way You Lie,Recovery,Hip Hop,7,6,4
+Beyoncé,Crazy in Love,Dangerously in Love,R&B,9,7,5
+Beyoncé,Single Ladies (Put a Ring on It),I Am... Sasha Fierce,R&B,9,6,5
+Beyoncé,Halo,I Am... Sasha Fierce,Pop,5,8,3
+Kanye West,Stronger,Graduation,Hip Hop,9,7,5
+Kanye West,Gold Digger,Late Registration,Hip Hop,8,7,5
+Kanye West,Heartless,808s & Heartbreak,Hip Hop,7,6,4
+Madonna,Like a Prayer,Like a Prayer,Pop,8,7,4
+Madonna,Vogue,I'm Breathless,Pop,9,7,5
+Madonna,Material Girl,Like a Virgin,Pop,7,6,4
+David Bowie,Space Oddity,David Bowie,Rock,6,7,4
+David Bowie,Heroes,"Heroes",Rock,5,8,4
+David Bowie,Let's Dance,Let's Dance,Rock,8,7,5
+Beyoncé,Formation,Lemonade,R&B,8,8,5
+Beyoncé,Run the World (Girls),4,R&B,9,7,5
+Beyoncé,Drunk in Love,Beyoncé,R&B,7,6,4
+Taylor Swift,Bad Blood,1989,Pop,8,6,5
+Taylor Swift,Love Story,Fearless,Pop,6,7,4
+Taylor Swift,Delicate,Reputation,Pop,7,7,3
+Michael Jackson,Beat It,Thriller,Pop,9,7,5
+Michael Jackson,Man in the Mirror,Bad,Pop,6,8,3
+Michael Jackson,The Way You Make Me Feel,Bad,Pop,8,7,4
+Lady Gaga,Bad Romance,The Fame Monster,Pop,9,7,5
+Lady Gaga,Poker Face,The Fame,Pop,8,7,4
+Lady Gaga,Shallow,A Star Is Born (Soundtrack),Pop,6,8,4
+Queen,We Will Rock You,News of the World,Rock,10,7,4
+Queen,Killer Queen,Sheer Heart Attack,Rock,7,8,4
+Queen,Radio Ga Ga,The Works,Rock,8,7,5
+The Beatles,Let It Be,Let It Be,Pop,4,8,3
+The Beatles,Eleanor Rigby,Revolver,Rock,5,7,2
+The Beatles,Yesterday,Help!,Pop,2,9,1
+The Rolling Stones,Paint It Black,Aftermath,Rock,8,6,5
+The Rolling Stones,Jumpin' Jack Flash,Single,Rock,9,7,5
+The Rolling Stones,Brown Sugar,Sticky Fingers,Rock,9,7,5
+Led Zeppelin,Black Dog,Untitled (Led Zeppelin IV),Rock,8,7,6
+Led Zeppelin,Rock and Roll,Untitled (Led Zeppelin IV),Rock,9,8,6
+Led Zeppelin,Whole Lotta Love,Led Zeppelin II,Rock,8,7,6
+Pink Floyd,Time,The Dark Side of the Moon,Rock,6,8,4
+Pink Floyd,Money,The Dark Side of the Moon,Rock,7,6,5
+Pink Floyd,Shine On You Crazy Diamond,Wish You Were Here,Rock,4,9,3
+Bob Marley & The Wailers,Is This Love,Kaya,Reggae,8,7,4
+Bob Marley & The Wailers,Get Up, Stand Up,Burnin',Reggae,7,6,4
+Bob Marley & The Wailers,One Love / People Get Ready,Exodus,Reggae,8,7,4
+Johnny Cash,Ring of Fire,Single,Country,6,8,4
+Johnny Cash,Folsom Prison Blues,With His Hot and Blue Guitar,Country,7,7,5
+Johnny Cash,Walk the Line,With His Hot and Blue Guitar,Country,7,6,4
+Elvis Presley,Hound Dog,Elvis Presley,Rock and Roll,8,6,5
+Elvis Presley,Blue Suede Shoes,Elvis Presley,Rock and Roll,9,7,5
+Elvis Presley,Love Me Tender,Elvis' Golden Records,Pop,4,8,3
+The Kinks,You Really Got Me,Kinks,Rock,9,6,6
+The Kinks,Sunny Afternoon,Something Else by The Kinks,Rock,5,7,3
+The Kinks,Ape Man,Lola Versus Powerman and the Moneygoround, Part One,Rock,7,6,4
+AC/DC,Back in Black,Back in Black,Hard Rock,8,7,5
+AC/DC,Highway to Hell,Highway to Hell,Hard Rock,8,7,5
+AC/DC,Thunderstruck,The Razors Edge,Hard Rock,9,7,5

@@ -3,7 +3,7 @@
 
 Sistema de recomendação de músicas, álbuns e artistas com gerenciamento de playlists.
 
-### User Storiesss
+### User Storie
 
 1. 
     * **[Como]** usuário

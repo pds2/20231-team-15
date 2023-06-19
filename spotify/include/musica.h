@@ -22,7 +22,8 @@ public:
     Musica();
 
     // Construtor
-    Musica(const std::string& titulo, const std::string& artista, const std::string& album, const std::string& genero, int ano);
+    Musica(const std::string& titulo, const std::string& artista, const std::string& album,
+           const std::string& genero, int ano);
 
     std::string getTitulo() const;
 

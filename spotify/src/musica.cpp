@@ -1,7 +1,8 @@
 #include "../include/musica.h"
 
 // Construtor
-Musica::Musica(const std::string& titulo, const std::string& artista, const std::string& album, const std::string& genero, int ano) {
+Musica::Musica(const std::string& titulo, const std::string& artista, const std::string& album, 
+               const std::string& genero, int ano) {
     _titulo = titulo;
     _artista = artista;
     _album = album;

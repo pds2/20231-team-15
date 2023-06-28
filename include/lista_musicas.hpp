@@ -6,10 +6,13 @@
 class ListaMusicas {
     public:
         ListaMusicas();
-        
-
+        ListaMusicas(const std::vector <int> & lista_musicas);
+        // void set_v(std::vector <int> v_lista_musicas);
+    
     private:
-    std::vector <int> v_lista_musicas;
+        static int contador_id_lista_musicas;
+        int _id_lista_musicas;
+        std::vector <int> v_lista_musicas;
 };
 
 #endif

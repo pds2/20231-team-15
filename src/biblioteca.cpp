@@ -19,12 +19,12 @@ void Biblioteca::inserir_item(std::unique_ptr<ListaMusicas> item) {
 };
 
 void Biblioteca::excluir_item(std::unique_ptr<ListaMusicas> item) {
-    for (auto it = 0; it != _v_biblioteca.end(); ++it) {
+    for (int it = 0; it < _v_biblioteca.size(); ++it) {
         if (_v_biblioteca[it] == item) {
-            _v_biblioteca.erase(it); 
+            _v_biblioteca.erase(_v_biblioteca.begin()+it);
+            break;
         }
     }
-    
 };
 
 void editar_item(std::unique_ptr<ListaMusicas> item) {

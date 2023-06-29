@@ -48,4 +48,11 @@ Sistema de recomendação de músicas, álbuns e artistas com gerenciamento de p
    * Sistema
 
 ### Interface
-   * Será feita por meio da biblioteca Nuklear
+   * Será feita por meio da biblioteca GTK
+#### Telas
+   * Home (Sistema): tela central cujo usuário poderá visualizar as músicas disponíveis no sistema e receber algumas recomendações
+   * Álbum (Album): tela que exibirá as musicas do album de um artista
+   * Playlist (Playlist): tela que exebirá as musicas da playlist de um usuário
+   * Biblioteca / Discografia (Biblioteca / Usuario / Artista): tela que listará as playlists/albuns de usuários/artistas.
+   * Login / Cadastro (Sistema/Usuario/BancoUsuarios)
+   * 'Telinha' de informações da Música (Musica)

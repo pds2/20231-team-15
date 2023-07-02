@@ -43,7 +43,7 @@ Id,Artista,Título,Álbum,Gênero,Ano,Dançabilidade,Sentimento,Barulho,Média
 42,Eminem,Love the Way You Lie,Recovery,Hip Hop,2010.0,7.0,6.0,4.0,5.666666666666667
 43,Beyoncé,Crazy in Love,Dangerously in Love,R&B,2003.0,9.0,7.0,5.0,7.0
 44,Beyoncé,Single Ladies (Put a Ring on It),I Am... Sasha Fierce,R&B,2008.0,9.0,6.0,5.0,6.666666666666667
-45,Beyoncé,Halo,I Am... Sasha Fierce,,,,,,
+45,Beyoncé,Halo,I Am... Sasha Fierce,R&B/Pop,2008.0,6.0,8.0,3.0,5.6666666666666666666666666666667
 46,Nirvana,Smells Like Teen Spirit,Nevermind,Grunge,1991.0,8.0,7.0,4.0,6.333333333333333
 47,Nirvana,Come as You Are,Nevermind,Grunge,1992.0,8.0,6.0,4.0,6.0
 48,Nirvana,Heart-Shaped Box,In Utero,Grunge,1993.0,7.0,6.0,3.0,5.333333333333333

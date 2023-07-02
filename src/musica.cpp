@@ -1,99 +1,179 @@
-#include <fstream>
-#include <sstream>
-#include <vector>
 #include "../include/musica.h"
-
-// Construtor da classe Musica
-Musica::Musica(const std::string& artista, const std::string& titulo, const std::string& album, const std::string& genero,
-               int dancabilidade, int sentimento, int barulho, int ano) {
-    this->artista = artista;
-    this->titulo = titulo;
-    this->album = album;
-    this->genero = genero;
-    this->dancabilidade = dancabilidade;
-    this->sentimento = sentimento;
-    this->barulho = barulho;
-    this->ano = ano;
+ 
+// Construtor
+Musica::Musica(int id, const std::string& artista, const std::string& titulo, const std::string& album, 
+               const std::string& genero, int ano, int dancabilidade, int sentimento, int 
+               barulho, double media) {
+    _id = id;
+    _artista = artista;
+    _titulo = titulo;
+    _album = album;
+    _genero = genero;
+    _ano = ano;
+    _dancabilidade = dancabilidade;
+    _sentimento = sentimento;
+    _barulho = barulho;
+    _media = media;
 }
-
+ 
+//Construtor padrão
 Musica::Musica() {
 }
 
-std::string Musica::getArtista() const { return artista; }
-std::string Musica::getTitulo() const { return titulo; }
-std::string Musica::getAlbum() const { return album; }
-std::string Musica::getGenero() const { return genero; }
-int Musica::getDancabilidade() const { return dancabilidade; }
-int Musica::getSentimento() const { return sentimento; }
-int Musica::getBarulho() const { return barulho; }
-int Musica::getAno() const { return ano; }
-
-// Função para imprimir as informações de uma música
-void Musica::imprimirMusica() const {
-    std::cout << "Artista: " << this->artista << std::endl;
-    std::cout << "Título: " << this->titulo << std::endl;
-    std::cout << "Álbum: " << this->album << std::endl;
-    std::cout << "Gênero: " << this->genero << std::endl;
-    std::cout << "Dancabilidade: " << this->dancabilidade << std::endl;
-    std::cout << "Sentimento: " << this->sentimento << std::endl;
-    std::cout << "Barulho: " << this->barulho << std::endl;
-    std::cout << "Ano: " << this->ano << std::endl;
+// Função para retornar o id da música
+int Musica::getId() const {
+    return _id;
 }
 
-// Função para carregar as músicas de um arquivo CSV e armazená-las em um vetor
-std::vector<Musica> Musica::carregarMusicas(const std::string& nomeArquivo) {
-    std::vector<Musica> musicas;
+std::string Musica::getTitulo() const {
+    return _titulo;
+}
+
+// Função para retornar o artista da música
+std::string Musica::getArtista() const{
+    return _artista;
+}
+
+// Função para retornar o álbum da música
+std::string Musica::getAlbum() const {
+    return _album;
+}
+
+// Função para retornar o gênero da música
+std::string Musica::getGenero() const {
+    return _genero;
+}
+
+// Função para retornar o ano da música
+int Musica::getAno() const {
+    return _ano;
+}
+
+// Função para retornar a dancabilidade da música   
+int Musica::getDancabilidade() const {
+    return _dancabilidade;
+}
+
+// Função para retornar o sentimento da música
+int Musica::getSentimento() const {
+    return _sentimento;
+}
+
+// Função para retornar o barulho da música
+int Musica::getBarulho() const {
+    return _barulho;
+}
+
+// Função para retornar a média da música
+double Musica::getMedia() const {
+    return _media;
+}
+
+// Função para imprimir os detalhes da música
+void Musica::imprimirDetalhes() const{
+    std::cout << "Id: " << _id << std::endl;
+    std::cout << "Artista: " << _artista << std::endl;
+    std::cout << "Título: " << _titulo << std::endl;
+    std::cout << "Álbum: " << _album << std::endl;
+    std::cout << "Gênero: " << _genero << std::endl;
+    std::cout << "Ano: " << _ano << std::endl;
+    std::cout << "Dancabilidade: " << _dancabilidade << std::endl;
+    std::cout << "Sentimento: " << _sentimento << std::endl;
+    std::cout << "Barulho: " << _barulho << std::endl;
+    std::cout << "Média: " << _media << std::endl;
+
+}
+
+// Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
+std::vector<Musica> Musica::lerMusicasDoCSV(const std::string& nomeArquivo) {
     std::ifstream arquivo(nomeArquivo);
+    std::string linha;
+    std::vector<Musica> musicas;
 
-    if (arquivo) {
-        std::string linha;
+    if (!arquivo.is_open()) {
+        std::cout << "Erro ao abrir o arquivo." << std::endl;
+        return musicas;
+    }
 
-        // Ignorar a primeira linha (cabeçalho)
-        std::getline(arquivo, linha);
+    // Ignora a primeira linha do arquivo
+    std::getline(arquivo, linha);
 
-        while (std::getline(arquivo, linha)) {
-            std::istringstream iss(linha);
-            std::string artista, titulo, album, genero;
-            int dancabilidade, sentimento, barulho, ano;
+    // Lê cada linha do arquivo
+    while (std::getline(arquivo, linha)) {
+        std::stringstream linhaStream(linha);
+        std::string dado;
+        std::vector<std::string> valores;
 
-            if (std::getline(iss, artista, ',') &&
-                std::getline(iss, titulo, ',') &&
-                std::getline(iss, album, ',') &&
-                std::getline(iss, genero, ',') &&
-                iss >> dancabilidade &&
-                iss.ignore() >> sentimento &&
-                iss.ignore() >> barulho &&
-                iss.ignore() >> ano) {
-                musicas.push_back({artista, titulo, album, genero, dancabilidade, sentimento, barulho, ano});
-            }
+        // Divide a linha em valores separados por vírgula
+        while (std::getline(linhaStream, dado, ',')) {
+            valores.push_back(dado);
         }
+
+        // Verifica se a linha contém a quantidade esperada de valores
+        const int NUM_VALORES_ESPERADOS = 10;
+        if (valores.size() != NUM_VALORES_ESPERADOS) {
+            std::cout << "Erro: linha inválida: " << linha << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        // Extrai os valores da linha
+        int id;
+        try {
+            id = std::stoi(valores[0]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter id: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        std::string artista = valores[1];
+        std::string titulo = valores[2];
+        std::string album = valores[3];
+        std::string genero = valores[4];
+
+        int ano;
+        try {
+            ano = std::stoi(valores[5]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter ano: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        int dancabilidade;
+        try {
+            dancabilidade = std::stoi(valores[6]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter dancabilidade: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        int sentimento;
+        try {
+            sentimento = std::stoi(valores[7]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter sentimento: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        int barulho;
+        try {
+            barulho = std::stoi(valores[8]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter barulho: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        double media;
+        try {
+            media = std::stod(valores[9]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter media: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        // Cria um objeto Musica e o adiciona ao vetor
+        Musica musica(id, artista, titulo, album, genero, ano, dancabilidade, sentimento, barulho, media);
+        musicas.push_back(musica);
     }
 
     return musicas;
 }
-
-
-void Musica::imprimirDetalhesPorTitulo(const std::vector<Musica>& musicas, const std::string& tituloBuscado) {
-    bool encontrada = false;
-    for (const Musica& musica : musicas) {
-        if (musica.titulo == tituloBuscado) {
-            encontrada = true;
-            std::cout << "Artista: " << musica.artista << std::endl;
-            std::cout << "Título: " << musica.titulo << std::endl;
-            std::cout << "Álbum: " << musica.album << std::endl;
-            std::cout << "Gênero: " << musica.genero << std::endl;
-            std::cout << "Dancabilidade: " << musica.dancabilidade << std::endl;
-            std::cout << "Sentimento: " << musica.sentimento << std::endl;
-            std::cout << "Barulho: " << musica.barulho << std::endl;
-            std::cout << "Ano: " << musica.ano << std::endl;
-            std::cout << std::endl;
-            break;
-        }
-    }
-
-    if (!encontrada) {
-        std::cout << "Música não encontrada." << std::endl;
-    }
-}
-
-// Path: spotify/src/artista.cpp

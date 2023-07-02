@@ -9,19 +9,19 @@
 
 class Biblioteca {
     public: 
-        Biblioteca(std::vector<ListaMusicas> v_biblioteca);
+        Biblioteca();
 
         int get_id() const;
 
         void listar_itens();
-        void inserir_item(std::unique_ptr<ListaMusicas> item);
-        void excluir_item(std::unique_ptr<ListaMusicas> item);
-        void editar_item(std::unique_ptr<ListaMusicas> item);
+        void inserir_item(const ListaMusicas &item);
+        void excluir_item(const ListaMusicas &item);
+        void editar_item(const ListaMusicas &item);
 
     private:
         static int contador_id_biblioteca;
         int _id_biblioteca;
-        std::vector<std::unique_ptr<ListaMusicas>> _v_biblioteca;
+        std::vector<ListaMusicas> m_biblioteca;
 };
 
 #endif

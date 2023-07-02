@@ -2,7 +2,7 @@
 
 int Biblioteca::contador_id_biblioteca = 0;
 
-Biblioteca::Biblioteca(std::vector<ListaMusicas> v_biblioteca) {
+Biblioteca::Biblioteca() {
     _id_biblioteca = ++contador_id_biblioteca;
 };
 
@@ -10,23 +10,25 @@ int Biblioteca::get_id() const {
     return _id_biblioteca;
 };
 
-void listar_itens() {
-
+void Biblioteca::listar_itens() {
+    for (int it = 0; it < m_biblioteca.size(); ++it) {
+        m_biblioteca[it].printar();
+    }
 };
 
-void Biblioteca::inserir_item(std::unique_ptr<ListaMusicas> item) {
-    _v_biblioteca.push_back(std::move(item));
+void Biblioteca::inserir_item(const ListaMusicas &item) {
+    m_biblioteca.push_back(std::move(item));
 };
 
-void Biblioteca::excluir_item(std::unique_ptr<ListaMusicas> item) {
-    for (int it = 0; it < _v_biblioteca.size(); ++it) {
-        if (_v_biblioteca[it] == item) {
-            _v_biblioteca.erase(_v_biblioteca.begin()+it);
+void Biblioteca::excluir_item(const ListaMusicas &item) {
+    for (int it = 0; it < m_biblioteca.size(); ++it) {
+        if (m_biblioteca[it].get_id_lista_musicas() == item.get_id_lista_musicas()) {
+            m_biblioteca.erase(m_biblioteca.begin()+it);
             break;
         }
     }
 };
 
-void editar_item(std::unique_ptr<ListaMusicas> item) {
+void Biblioteca::editar_item(const ListaMusicas &item) {
 
 };

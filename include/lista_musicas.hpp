@@ -5,14 +5,14 @@
 
 class ListaMusicas {
     public:
-        ListaMusicas();
         ListaMusicas(const std::vector <int> & lista_musicas);
-        // void set_v(std::vector <int> v_lista_musicas);
+        int get_id_lista_musicas() const;
+        void printar();
     
     private:
         static int contador_id_lista_musicas;
         int _id_lista_musicas;
-        std::vector <int> v_lista_musicas;
+        std::vector <int> m_lista_musicas;
 };
 
 #endif

@@ -5,8 +5,10 @@
 
 class ListaMusica{
     private:
-        std::vector<Musica> listamusica_
+        std::vector<Musica> _listamusica;
     public:
+        int get_tamanho();
+        void exibe_musicas;
         virtual void adicionar_musica(Musica musica) = 0;
 
 };

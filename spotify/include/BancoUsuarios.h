@@ -9,7 +9,7 @@ class usuario_nao_existe_e{};
 
 class BancoUsuarios{
     private:
-        std::map<std::string, Usuario> usuarios_;
+        std::map<std::string, Usuario> _usuarios;
     public:
         void adicionar_usuario(std::string& nome, std::string& senha);
         bool verificar_usuario(std::string& nome);

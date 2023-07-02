@@ -3,9 +3,13 @@
 
 class Album : public ListaMusica {
     private:
-        Artista artista_;
+        std::string _nome;
+        Artista _artista;
     public:
-        Album(Artista artista); 
+        std::string get_autor()
+        Album(Artista artista);
+        void adicionar_musica(Musica m) override;
+
 };
 
 

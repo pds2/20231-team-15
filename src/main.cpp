@@ -3,26 +3,15 @@
 #include "artista.cpp"
 
 int main() {
+
+    Musica musicas;
     
-    std::vector<Musica> musicas = Musica::carregarMusicas("/home/pedroaugtb/codes/vscode/spotify/musicas.csv");
+    std::vector<Musica> listaMusicas = musicas.lerMusicasDoCSV("/home/pedroaugtb/codes/vscode/20231-team-15-1/musicas.csv");
 
-    std::string artistaBuscado = "Queen";
-
-    Musica::imprimirDetalhesPorTitulo(musicas, "Bohemian Rhapsody");
-
-    
-    // Criando um objeto Artista para o artista específico
-    Artista artista(artistaBuscado);
-
-    // Adicionando as músicas relacionadas ao artista
-    for (const Musica& musica : musicas) {
-        if (musica.getArtista() == artista.getNome()) {
-            artista.adicionarMusica(musica);
-        }
+    // Função para imprimir os detalhes de todas as músicas
+    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+        i->imprimirDetalhes();
     }
-
-    // Imprimindo as músicas e álbuns do artista
-    artista.imprimirMusicasEAlbuns();
-
+    
     return 0;
 }

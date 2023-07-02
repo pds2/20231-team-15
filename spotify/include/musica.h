@@ -18,9 +18,9 @@ private:
     std::string _album;
     std::string _genero;
     int _ano;
-    double _dancabilidade;
-    double _sentimento;
-    double _barulho;
+    int _dancabilidade;
+    int _sentimento;
+    int _barulho;
     double _media;
 
 
@@ -29,7 +29,7 @@ public:
 
     // Construtor
     Musica(int id, const std::string& artista, const std::string& titulo, const std::string& album,
-           const std::string& genero, int ano, double dancabilidade, double sentimento, double barulho, double media);
+           const std::string& genero, int ano, int dancabilidade, int sentimento, int barulho, double media);
 
     std::string getTitulo() const;
 
@@ -43,11 +43,11 @@ public:
 
     int getId() const;
 
-    double getDancabilidade() const;
+    int getDancabilidade() const;
 
-    double getSentimento() const;
+    int getSentimento() const;
 
-    double getBarulho() const;
+    int getBarulho() const;
 
     double getMedia() const;
 
@@ -55,7 +55,7 @@ public:
     void imprimirDetalhes() const;
 
     // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
-    std::vector<Musica> lerMusicasDoCSV(const std::string& nomeArquivo) const;
+    std::vector<Musica> lerMusicasDoCSV(const std::string& nomeArquivo);
 
 };
 

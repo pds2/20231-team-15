@@ -2,7 +2,7 @@
 
 // Construtor
 Musica::Musica(int id, const std::string& artista, const std::string& titulo, const std::string& album, 
-               const std::string& genero, int ano, double dancabilidade, double sentimento, double 
+               const std::string& genero, int ano, int dancabilidade, int sentimento, int 
                barulho, double media) {
     _id = id;
     _artista = artista;
@@ -50,17 +50,17 @@ int Musica::getAno() const {
 }
 
 // Função para retornar a dancabilidade da música   
-double Musica::getDancabilidade() const {
+int Musica::getDancabilidade() const {
     return _dancabilidade;
 }
 
 // Função para retornar o sentimento da música
-double Musica::getSentimento() const {
+int Musica::getSentimento() const {
     return _sentimento;
 }
 
 // Função para retornar o barulho da música
-double Musica::getBarulho() const {
+int Musica::getBarulho() const {
     return _barulho;
 }
 
@@ -85,7 +85,7 @@ void Musica::imprimirDetalhes() const{
 }
 
 // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
-std::vector<Musica> Musica::lerMusicasDoCSV(const std::string& nomeArquivo) const {
+std::vector<Musica> Musica::lerMusicasDoCSV(const std::string& nomeArquivo) {
     std::ifstream arquivo(nomeArquivo);
     std::string linha;
     std::vector<Musica> musicas;
@@ -102,81 +102,72 @@ std::vector<Musica> Musica::lerMusicasDoCSV(const std::string& nomeArquivo) cons
     while (std::getline(arquivo, linha)) {
         std::stringstream linhaStream(linha);
         std::string dado;
+        std::vector<std::string> valores;
 
-        std::getline(linhaStream, dado, ',');
-        int id = 0;
+        // Divide a linha em valores separados por vírgula
+        while (std::getline(linhaStream, dado, ',')) {
+            valores.push_back(dado);
+        }
+
+        // Verifica se a linha contém a quantidade esperada de valores
+        const int NUM_VALORES_ESPERADOS = 10;
+        if (valores.size() != NUM_VALORES_ESPERADOS) {
+            std::cout << "Erro: linha inválida: " << linha << std::endl;
+            continue;  // Pula para a próxima linha
+        }
+
+        // Extrai os valores da linha
+        int id;
         try {
-            id = std::stoi(dado);
-        } catch (const std::exception& e) {
+            id = std::stoi(valores[0]);
+        } catch (const std::invalid_argument& e) {
             std::cout << "Erro ao converter id: " << e.what() << std::endl;
             continue;  // Pula para a próxima linha
         }
 
-        std::getline(linhaStream, dado, ',');
-        std::string artista = dado;
+        std::string artista = valores[1];
+        std::string titulo = valores[2];
+        std::string album = valores[3];
+        std::string genero = valores[4];
 
-        std::getline(linhaStream, dado, ',');
-        std::string titulo = dado;
-
-        std::getline(linhaStream, dado, ',');
-        std::string album = dado;
-
-        std::getline(linhaStream, dado, ',');
-        std::string genero = dado;
-
-        std::getline(linhaStream, dado, ',');
-        int ano = 0;
-        if (!dado.empty()) {
-            try {
-                ano = std::stoi(dado);
-            } catch (const std::exception& e) {
-                std::cout << "Erro ao converter ano: " << e.what() << std::endl;
-                continue;  // Pula para a próxima linha
-            }
+        int ano;
+        try {
+            ano = std::stoi(valores[5]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter ano: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
         }
 
-        std::getline(linhaStream, dado, ',');
-        double dancabilidade = 0.0;
-        if (!dado.empty()) {
-            try {
-                dancabilidade = std::stod(dado);
-            } catch (const std::exception& e) {
-                std::cout << "Erro ao converter dancabilidade: " << e.what() << std::endl;
-                continue;  // Pula para a próxima linha
-            }
+        int dancabilidade;
+        try {
+            dancabilidade = std::stoi(valores[6]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter dancabilidade: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
         }
 
-        std::getline(linhaStream, dado, ',');
-        double sentimento = 0.0;
-        if (!dado.empty()) {
-            try {
-                sentimento = std::stod(dado);
-            } catch (const std::exception& e) {
-                std::cout << "Erro ao converter sentimento: " << e.what() << std::endl;
-                continue;  // Pula para a próxima linha
-            }
+        int sentimento;
+        try {
+            sentimento = std::stoi(valores[7]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter sentimento: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
         }
 
-        std::getline(linhaStream, dado, ',');
-        double barulho = 0.0;
-        if (!dado.empty()) {
-            try {
-                barulho = std::stod(dado);
-            } catch (const std::exception& e) {
-                std::cout << "Erro ao converter barulho: " << e.what() << std::endl;
-                continue;  // Pula para a próxima linha
-            }
+        int barulho;
+        try {
+            barulho = std::stoi(valores[8]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter barulho: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
         }
 
-        std::getline(linhaStream, dado, ',');
-        double media = 0.0;
-        if (!dado.empty()) {
-            try {
-                media = std::stod(dado);
-            } catch (const std::exception& e) {
-                std::cout << "Erro ao converter media: " << e.what() << std::endl;
-                continue;  // Pula para a próxima linha
-            }
+        double media;
+        try {
+            media = std::stod(valores[9]);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Erro ao converter media: " << e.what() << std::endl;
+            continue;  // Pula para a próxima linha
         }
 
         // Cria um objeto Musica e o adiciona ao vetor

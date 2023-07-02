@@ -18,7 +18,7 @@ void Artista::armazenarMusicas(const std::vector<Musica>& musicas) const{
 
 void Artista::imprimirDiscografia() const {
     std::cout << "Discografia de " << _nome << ":" << std::endl;
-    for (const auto& musica : Musica().lerMusicasDoCSV("musicas.csv")) {
+    for (const auto& musica : Musica().lerMusicasDoCSV("/home/pedroaugtb/codes/vscode/20231-team-15/spotify/musicas.csv")) {
         if (musica.getArtista() == _nome) {
             std::cout << musica.getTitulo() << " - " << musica.getAlbum() << " (" << musica.getAno() << ")" << std::endl;
         }

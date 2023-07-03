@@ -1,5 +1,5 @@
 #include "../include/musica.h"
- 
+
 // Construtor
 Musica::Musica(int id, const std::string& artista, const std::string& titulo, const std::string& album, 
                const std::string& genero, int ano, int dancabilidade, int sentimento, int 
@@ -7,7 +7,7 @@ Musica::Musica(int id, const std::string& artista, const std::string& titulo, co
     _id = id;
     _artista = artista;
     _titulo = titulo;
-    _album = album;
+    _album = album; 
     _genero = genero;
     _ano = ano;
     _dancabilidade = dancabilidade;

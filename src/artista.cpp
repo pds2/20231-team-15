@@ -5,6 +5,11 @@
 Artista::Artista(const std::string& nome) {
     _nome = nome;
 }
+
+// Retorna nome do artista
+std::string Artista::get_nome() const {
+    return _nome;
+}
  
 // Função para armazenar as músicas do artista
 void Artista::armazenarMusicas(const std::vector<Musica>& musicas) const{

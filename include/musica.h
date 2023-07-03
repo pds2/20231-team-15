@@ -50,7 +50,7 @@ public:
     double getMedia() const;
 
     // Função para imprimir os detalhes da música
-    void imprimirDetalhes() const;
+    void imprimir_detalhes() const;
 
     // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
     std::vector<Musica> lerMusicasDoCSV(const std::string& nomeArquivo);

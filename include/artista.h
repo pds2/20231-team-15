@@ -1,21 +1,25 @@
 #ifndef ARTISTA_H
 #define ARTISTA_H
 
-#include <string>
-#include <vector>
 #include "musica.h"
 
+#include <iostream>
+#include <vector>
+#include <string>
+ 
 class Artista {
+private:
+    std::string _nome;
+
 public:
+    // Construtor
     Artista(const std::string& nome);
 
-    void adicionarMusica(const Musica& musica);
-    void imprimirMusicasEAlbuns() const;
-    std::string getNome() const; // Método para obter o nome do artista
+    // Função para listar as músicas do artista
+    void armazenarMusicas(const std::vector<Musica>& musicas) const;
 
-private:
-    std::string nome;
-    std::vector<Musica> musicas;
+    void imprimirDiscografia() const;
 };
 
-#endif  // ARTISTA_H
+
+#endif

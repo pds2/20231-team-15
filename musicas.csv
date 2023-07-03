@@ -1,125 +1,117 @@
-Artista,Título,Álbum,Gênero,Dançabilidade,Sentimento,Barulho,Ano
-Queen,Bohemian Rhapsody,A Night at the Opera,Rock,3,7,5,1975
-Queen,Don't Stop Me Now,Jazz,Rock,9,8,4,1978
-Queen,Under Pressure,Hot Space,Rock,7,7,5,1981
-The Beatles,Hey Jude,The Beatles (The White Album),Pop,7,6,3,1968
-The Beatles,A Day in the Life,Sgt. Pepper's Lonely Hearts Club Band,Rock,3,7,4,1967
-The Beatles,Blackbird,The Beatles (The White Album),Pop,2,5,1,1968
-The Rolling Stones,(I Can't Get No) Satisfaction,Out of Our Heads,Rock,9,5,5,1965
-The Rolling Stones,Angie,Goats Head Soup,Rock,4,6,2,1973
-The Rolling Stones,Wild Horses,Sticky Fingers,Rock,5,5,2,1971
-Led Zeppelin,Stairway to Heaven,Led Zeppelin IV,Rock,2,5,6,1971
-Led Zeppelin,Whole Lotta Love,Led Zeppelin II,Rock,8,6,7,1969
-Led Zeppelin,Immigrant Song,III,Rock,9,6,6,1970
-Pink Floyd,Comfortably Numb,The Wall,Rock,4,6,2,1979
-Pink Floyd,Wish You Were Here,Wish You Were Here,Rock,6,5,3,1975
-Pink Floyd,Another Brick in the Wall Part 2,The Wall,Rock,9,7,5,1979
-Bob Dylan,Like a Rolling Stone,Highway 61 Revisited,Rock,6,4,3,1965
-Bob Dylan,Blowin' in the Wind,The Freewheelin' Bob Dylan,Folk,7,5,1,1962
-Bob Dylan,Knockin' on Heaven's Door,Pat Garrett & Billy the Kid,Rock,4,6,2,1973
-Elvis Presley,Can't Help Falling in Love,Blue Hawaii,Pop,6,7,2,1961
-Elvis Presley,Suspicious Minds,From Elvis in Memphis,Rock and Roll,8,7,4,1969
-The Kinks,You Really Got Me,Kinks,Rock,9,6,6,1964
-The Kinks,Waterloo Sunset,Something Else by The Kinks,Pop,4,5,1,1967
-The Kinks,Lola,Lola Versus Powerman and the Moneygoround, Part One,Rock,7,7,4,1970
-Michael Jackson,Beat It,Thriller,Pop,9,7,4,1982
-Michael Jackson,Billie Jean,Thriller,Pop,10,8,5,1982
-Michael Jackson,Smooth Criminal,Bad,Pop,9,7,5,1987
-Bob Marley,No Woman, No Cry,Natty Dread,Reggae,9,7,3,1974
-Bob Marley,Redemption Song,Uprising,Reggae,4,7,3,1980
-Bob Marley,Three Little Birds,Exodus,Reggae,8,7,2,1977
-Johnny Cash,Ring of Fire,Single,Country,6,8,4,1963
-Johnny Cash,Hurt,American IV: The Man Comes Around,Country,3,9,3,2002
-Johnny Cash,I Walk the Line,With His Hot and Blue Guitar,Country,6,6,3,1956
-The Police,Every Breath You Take,Synchronicity,Pop,6,5,2,1983
-The Police,Message in a Bottle,Reggatta de Blanc,Rock,8,7,5,1979
-The Police,Roxanne,Outlandos d'Amour,Rock,7,6,4,1978
-Prince,Purple Rain,Purple Rain,R&B,6,7,3,1984
-Prince,When Doves Cry,Purple Rain,R&B,9,7,4,1984
-Prince,1999,1999,R&B,9,8,6,1982
-Rihanna,Umbrella,Good Girl Gone Bad,Pop,7,6,4,2007
-Rihanna,We Found Love,Talk That Talk,Pop,9,7,5,2011
-Rihanna,Diamonds,Unapologetic,Pop,6,8,3,2012
-Eminem,Lose Yourself,8 Mile (Soundtrack),Hip Hop,8,7,5,2002
-Eminem,Stan,The Marshall Mathers LP,Hip Hop,5,8,4,2000
-Eminem,Love the Way You Lie,Recovery,Hip Hop,7,6,4,2010
-Beyoncé,Crazy in Love,Dangerously in Love,R&B,9,7,5,2003
-Beyoncé,Single Ladies (Put a Ring on It),I Am... Sasha Fierce,R&B,9,6,5,2008
-Beyoncé,Halo,I Am... Sasha Fierce
-Nirvana,Smells Like Teen Spirit,Nevermind,Grunge,8,7,4,1991
-Nirvana,Come as You Are,Nevermind,Grunge,8,6,4,1992
-Nirvana,Heart-Shaped Box,In Utero,Grunge,7,6,3,1993
-Bruce Springsteen,Born to Run,Born to Run,Rock,7,8,4,1975
-Bruce Springsteen,Thunder Road,Born to Run,Rock,4,7,3,1975
-Bruce Springsteen,Badlands,Darkness on the Edge of Town,Rock,7,7,4,1978
-Fleetwood Mac,The Chain,Rumours,Rock,6,7,4,1977
-Fleetwood Mac,Go Your Own Way,Rumours,Rock,7,6,4,1977
-Fleetwood Mac,Rhiannon,Fleetwood Mac,Rock,7,6,3,1975
-Elvis Presley,Heartbreak Hotel,Elvis Presley,Rock and Roll,5,6,3,1956
-Elvis Presley,Hound Dog,Elvis Presley,Rock and Roll,9,5,4,1956
-Elvis Presley,Love Me Tender,Elvis,Rock and Roll,3,5,2,1956
-Elvis Presley,Can't Help Falling in Love,Blue Hawaii,Pop,6,7,2,1961
-Elvis Presley,Suspicious Minds,From Elvis in Memphis,Rock and Roll,8,7,4,1969
-The Kinks,You Really Got Me,Kinks,Rock,9,6,6,1964
-The Kinks,Waterloo Sunset,Something Else by The Kinks,Pop,4,5,1,1967
-The Kinks,Lola,Lola Versus Powerman and the Moneygoround, Part One,Rock,7,7,4,1970
-Michael Jackson,Beat It,Thriller,Pop,9,7,4,1982
-Michael Jackson,Billie Jean,Thriller,Pop,10,8,5,1982
-Michael Jackson,Smooth Criminal,Bad,Pop,9,7,5,1987
-Bob Marley,No Woman, No Cry,Natty Dread,Reggae,9,7,3,1974
-Bob Marley,Redemption Song,Uprising,Reggae,4,7,3,1980
-Bob Marley,Three Little Birds,Exodus,Reggae,8,7,2,1977
-Johnny Cash,Ring of Fire,Single,Country,6,8,4,1963
-Johnny Cash,Hurt,American IV: The Man Comes Around,Country,3,9,3,2002
-Johnny Cash,I Walk the Line,With His Hot and Blue Guitar,Country,6,6,3,1956
-The Police,Every Breath You Take,Synchronicity,Pop,6,5,2,1983
-The Police,Message in a Bottle,Reggatta de Blanc,Rock,8,7,5,1979
-The Police,Roxanne,Outlandos d'Amour,Rock,7,6,4,1978
-Prince,Purple Rain,Purple Rain,R&B,6,7,3,1984
-Prince,When Doves Cry,Purple Rain,R&B,9,7,4,1984
-Prince,1999,1999,R&B,9,8,6,1982
-Rihanna,Umbrella,Good Girl Gone Bad,Pop,7,6,4,2007
-Rihanna,We Found Love,Talk That Talk,Pop,9,7,5,2011
-Rihanna,Diamonds,Unapologetic,Pop,6,8,3,2012
-Eminem,Lose Yourself,8 Mile (Soundtrack),Hip Hop,8,7,5,2002
-Eminem,Stan,The Marshall Mathers LP,Hip Hop,5,8,4,2000
-Eminem,Love the Way You Lie,Recovery,Hip Hop,7,6,4,2010
-Beyoncé,Crazy in Love,Dangerously in Love,R&B,9,7,5,2003
-Beyoncé,Single Ladies (Put a Ring on It),I Am... Sasha Fierce,R&B,9,6,5,2008
-Beyoncé,Halo,I Am... Sasha Fierce,Pop,5,8,3,2008
-Kanye West,Stronger,Graduation,Hip Hop,9,7,5,2007
-Kanye West,Gold Digger,Late Registration,Hip Hop,8,7,5,2005
-Kanye West,Heartless,808s & Heartbreak,Hip Hop,7,6,4,2008
-Madonna,Like a Prayer,Like a Prayer,Pop,8,7,4,1989
-Madonna,Vogue,I'm Breathless,Pop,9,7,5,1990
-Madonna,Material Girl,Like a Virgin,Pop,7,6,4,1984
-David Bowie,Space Oddity,David Bowie,Rock,6,7,4,1969
-David Bowie,Heroes,"Heroes",Rock,5,8,4,1977
-David Bowie,Let's Dance,Let's Dance,Rock,8,7,5,1983
-Beyoncé,Formation,Lemonade,R&B,8,8,5,2016
-Beyoncé,Run the World (Girls),4,R&B,9,7,5,2011
-Beyoncé,Drunk in Love,Beyoncé,R&B,7,6,4,2013
-Taylor Swift,Bad Blood,1989,Pop,8,6,5,2014
-Taylor Swift,Love Story,Fearless,Pop,6,7,4,2008
-Taylor Swift,Delicate,Reputation,Pop,7,7,3,2017
-Michael Jackson,Beat It,Thriller,Pop,9,7,5,1982
-Michael Jackson,Man in the Mirror,Bad,Pop,6,8,3,1987
-Michael Jackson,The Way You Make Me Feel,Bad,Pop,8,7,4,1987
-Lady Gaga,Bad Romance,The Fame Monster,Pop,9,7,5,2009
-Lady Gaga,Poker Face,The Fame,Pop,8,7,4,2008
-Lady Gaga,Shallow,A Star Is Born (Soundtrack),Pop,6,8,4,2018
-Queen,We Will Rock You,News of the World,Rock,10,7,4,1977
-Queen,Killer Queen,Sheer Heart Attack,Rock,7,8,4,1974
-Queen,Radio Ga Ga,The Works,Rock,8,7,5,1984
-The Beatles,Let It Be,Let It Be,Pop,4,8,3,1970
-The Beatles,Eleanor Rigby,Revolver,Rock,5,7,2,1966
-The Beatles,Yesterday,Help!,Pop,2,9,1,1965
-The Rolling Stones,Paint It Black,Aftermath,Rock,8,6,5,1966
-The Rolling Stones,Jumpin' Jack Flash,Single,Rock,9,7,5,1968
-The Rolling Stones,Brown Sugar,Sticky Fingers,Rock,9,7,5,1971
-Led Zeppelin,Black Dog,Untitled (Led Zeppelin IV),Rock,8,7,6,1971
-Led Zeppelin,Rock and Roll,Untitled (Led Zeppelin IV),Rock,9,8,6,1971
-Led Zeppelin,Whole Lotta Love,Led Zeppelin II,Rock,8,7,6,1969
-Pink Floyd,Time,The Dark Side of the Moon,Rock,6,8,4,1973
-Pink Floyd,Money,The Dark Side of the Moon,Rock,7,6,5,1973
-Pink Floyd,Wish You Were Here,Wish You Were Here,Rock,4,7,3,1975
+Id,Artista,Título,Álbum,Gênero,Ano,Dançabilidade,Sentimento,Barulho,Média
+1,Queen,Bohemian Rhapsody,A Night at the Opera,Rock,1975.0,3.0,7.0,5.0,5.0
+2,Queen,Don't Stop Me Now,Jazz,Rock,1978.0,9.0,8.0,4.0,7.0
+3,Queen,Under Pressure,Hot Space,Rock,1981.0,7.0,7.0,5.0,6.333333333333333
+4,The Beatles,Hey Jude,The Beatles (The White Album),Pop,1968.0,7.0,6.0,3.0,5.333333333333333
+5,The Beatles,A Day in the Life,Sgt. Pepper's Lonely Hearts Club Band,Rock,1967.0,3.0,7.0,4.0,4.666666666666667
+6,The Beatles,Blackbird,The Beatles (The White Album),Pop,1968.0,2.0,5.0,1.0,2.6666666666666665
+7,The Rolling Stones,(I Can't Get No) Satisfaction,Out of Our Heads,Rock,1965.0,9.0,5.0,5.0,6.333333333333333
+8,The Rolling Stones,Angie,Goats Head Soup,Rock,1973.0,4.0,6.0,2.0,4.0
+9,The Rolling Stones,Wild Horses,Sticky Fingers,Rock,1971.0,5.0,5.0,2.0,4.0
+10,Led Zeppelin,Stairway to Heaven,Led Zeppelin IV,Rock,1971.0,2.0,5.0,6.0,4.333333333333333
+11,Led Zeppelin,Whole Lotta Love,Led Zeppelin II,Rock,1969.0,8.0,6.0,7.0,7.0
+12,Led Zeppelin,Immigrant Song,III,Rock,1970.0,9.0,6.0,6.0,7.0
+13,Pink Floyd,Comfortably Numb,The Wall,Rock,1979.0,4.0,6.0,2.0,4.0
+14,Pink Floyd,Wish You Were Here,Wish You Were Here,Rock,1975.0,6.0,5.0,3.0,4.666666666666667
+15,Pink Floyd,Another Brick in the Wall Part 2,The Wall,Rock,1979.0,9.0,7.0,5.0,7.0
+16,Bob Dylan,Like a Rolling Stone,Highway 61 Revisited,Rock,1965.0,6.0,4.0,3.0,4.333333333333333
+17,Bob Dylan,Blowin' in the Wind,The Freewheelin' Bob Dylan,Folk,1962.0,7.0,5.0,1.0,4.333333333333333
+18,Bob Dylan,Knockin' on Heaven's Door,Pat Garrett & Billy the Kid,Rock,1973.0,4.0,6.0,2.0,4.0
+19,The Kinks,You Really Got Me,Kinks,Rock,1964.0,9.0,6.0,6.0,7.0
+20,The Kinks,Waterloo Sunset,Something Else by The Kinks,Pop,1967.0,4.0,5.0,1.0,3.3333333333333335
+21,The Kinks,Lola,Lola Versus Powerman and the Moneygoround - Part One,Rock,1970.0,7.0,7.0,4.0,6.0
+22,Michael Jackson,Beat It,Thriller,Pop,1982.0,9.0,7.0,4.0,6.666666666666667
+23,Michael Jackson,Billie Jean,Thriller,Pop,1982.0,10.0,8.0,5.0,7.666666666666667
+24,Michael Jackson,Smooth Criminal,Bad,Pop,1987.0,9.0,7.0,5.0,7.0
+25,Bob Marley,No Woman No Cry,Natty Dread,Reggae,1974.0,9.0,7.0,3.0,6.333333333333333
+26,Bob Marley,Redemption Song,Uprising,Reggae,1980.0,4.0,7.0,3.0,4.666666666666667
+27,Bob Marley,Three Little Birds,Exodus,Reggae,1977.0,8.0,7.0,2.0,5.666666666666667
+28,Johnny Cash,Ring of Fire,Single,Country,1963.0,6.0,8.0,4.0,6.0
+29,Johnny Cash,Hurt,American IV: The Man Comes Around,Country,2002.0,3.0,9.0,3.0,5.0
+30,Johnny Cash,I Walk the Line,With His Hot and Blue Guitar,Country,1956.0,6.0,6.0,3.0,5.0
+31,The Police,Every Breath You Take,Synchronicity,Pop,1983.0,6.0,5.0,2.0,4.333333333333333
+32,The Police,Message in a Bottle,Reggatta de Blanc,Rock,1979.0,8.0,7.0,5.0,6.666666666666667
+33,The Police,Roxanne,Outlandos d'Amour,Rock,1978.0,7.0,6.0,4.0,5.666666666666667
+34,Prince,Purple Rain,Purple Rain,R&B,1984.0,6.0,7.0,3.0,5.333333333333333
+35,Prince,When Doves Cry,Purple Rain,R&B,1984.0,9.0,7.0,4.0,6.666666666666667
+36,Prince,1999,1999,R&B,1982.0,9.0,8.0,6.0,7.666666666666667
+37,Rihanna,Umbrella,Good Girl Gone Bad,Pop,2007.0,7.0,6.0,4.0,5.666666666666667
+38,Rihanna,We Found Love,Talk That Talk,Pop,2011.0,9.0,7.0,5.0,7.0
+39,Rihanna,Diamonds,Unapologetic,Pop,2012.0,6.0,8.0,3.0,5.666666666666667
+40,Eminem,Lose Yourself,8 Mile (Soundtrack),Hip Hop,2002.0,8.0,7.0,5.0,6.666666666666667
+41,Eminem,Stan,The Marshall Mathers LP,Hip Hop,2000.0,5.0,8.0,4.0,5.666666666666667
+42,Eminem,Love the Way You Lie,Recovery,Hip Hop,2010.0,7.0,6.0,4.0,5.666666666666667
+43,Beyoncé,Crazy in Love,Dangerously in Love,R&B,2003.0,9.0,7.0,5.0,7.0
+44,Beyoncé,Single Ladies (Put a Ring on It),I Am... Sasha Fierce,R&B,2008.0,9.0,6.0,5.0,6.666666666666667
+45,Beyoncé,Halo,I Am... Sasha Fierce,R&B/Pop,2008.0,6.0,8.0,3.0,5.6666666666666666666666666666667
+46,Nirvana,Smells Like Teen Spirit,Nevermind,Grunge,1991.0,8.0,7.0,4.0,6.333333333333333
+47,Nirvana,Come as You Are,Nevermind,Grunge,1992.0,8.0,6.0,4.0,6.0
+48,Nirvana,Heart-Shaped Box,In Utero,Grunge,1993.0,7.0,6.0,3.0,5.333333333333333
+49,Bruce Springsteen,Born to Run,Born to Run,Rock,1975.0,7.0,8.0,4.0,6.333333333333333
+50,Bruce Springsteen,Thunder Road,Born to Run,Rock,1975.0,4.0,7.0,3.0,4.666666666666667
+51,Bruce Springsteen,Badlands,Darkness on the Edge of Town,Rock,1978.0,7.0,7.0,4.0,6.0
+52,Fleetwood Mac,The Chain,Rumours,Rock,1977.0,6.0,7.0,4.0,5.666666666666667
+53,Fleetwood Mac,Go Your Own Way,Rumours,Rock,1977.0,7.0,6.0,4.0,5.666666666666667
+54,Fleetwood Mac,Rhiannon,Fleetwood Mac,Rock,1975.0,7.0,6.0,3.0,5.333333333333333
+55,Elvis Presley,Heartbreak Hotel,Elvis Presley,Rock and Roll,1956.0,5.0,6.0,3.0,4.666666666666667
+56,Elvis Presley,Hound Dog,Elvis Presley,Rock and Roll,1956.0,9.0,5.0,4.0,6.0
+57,Elvis Presley,Love Me Tender,Elvis,Rock and Roll,1956.0,3.0,5.0,2.0,3.3333333333333335
+58,Elvis Presley,Can't Help Falling in Love,Blue Hawaii,Pop,1961.0,6.0,7.0,2.0,5.0
+59,Elvis Presley,Suspicious Minds,From Elvis in Memphis,Rock and Roll,1969.0,8.0,7.0,4.0,6.333333333333333
+60,Michael Jackson,Beat It,Thriller,Pop,1982.0,9.0,7.0,4.0,6.666666666666667
+61,Michael Jackson,Billie Jean,Thriller,Pop,1982.0,10.0,8.0,5.0,7.666666666666667
+62,Michael Jackson,Smooth Criminal,Bad,Pop,1987.0,9.0,7.0,5.0,7.0
+63,Johnny Cash,Ring of Fire,Single,Country,1963.0,6.0,8.0,4.0,6.0
+64,Johnny Cash,Hurt,American IV: The Man Comes Around,Country,2002.0,3.0,9.0,3.0,5.0
+65,Johnny Cash,I Walk the Line,With His Hot and Blue Guitar,Country,1956.0,6.0,6.0,3.0,5.0
+66,The Police,Every Breath You Take,Synchronicity,Pop,1983.0,6.0,5.0,2.0,4.333333333333333
+67,The Police,Message in a Bottle,Reggatta de Blanc,Rock,1979.0,8.0,7.0,5.0,6.666666666666667
+68,The Police,Roxanne,Outlandos d'Amour,Rock,1978.0,7.0,6.0,4.0,5.666666666666667
+69,Prince,Purple Rain,Purple Rain,R&B,1984.0,6.0,7.0,3.0,5.333333333333333
+70,Prince,When Doves Cry,Purple Rain,R&B,1984.0,9.0,7.0,4.0,6.666666666666667
+71,Prince,1999,1999,R&B,1982.0,9.0,8.0,6.0,7.666666666666667
+72,Rihanna,Umbrella,Good Girl Gone Bad,Pop,2007.0,7.0,6.0,4.0,5.666666666666667
+73,Rihanna,We Found Love,Talk That Talk,Pop,2011.0,9.0,7.0,5.0,7.0
+74,Rihanna,Diamonds,Unapologetic,Pop,2012.0,6.0,8.0,3.0,5.666666666666667
+75,Eminem,Lose Yourself,8 Mile (Soundtrack),Hip Hop,2002.0,8.0,7.0,5.0,6.666666666666667
+76,Eminem,Stan,The Marshall Mathers LP,Hip Hop,2000.0,5.0,8.0,4.0,5.666666666666667
+77,Eminem,Love the Way You Lie,Recovery,Hip Hop,2010.0,7.0,6.0,4.0,5.666666666666667
+78,Beyoncé,Crazy in Love,Dangerously in Love,R&B,2003.0,9.0,7.0,5.0,7.0
+79,Beyoncé,Single Ladies (Put a Ring on It),I Am... Sasha Fierce,R&B,2008.0,9.0,6.0,5.0,6.666666666666667
+80,Beyoncé,Halo,I Am... Sasha Fierce,Pop,2008.0,5.0,8.0,3.0,5.333333333333333
+81,Kanye West,Stronger,Graduation,Hip Hop,2007.0,9.0,7.0,5.0,7.0
+82,Kanye West,Gold Digger,Late Registration,Hip Hop,2005.0,8.0,7.0,5.0,6.666666666666667
+83,Kanye West,Heartless,808s & Heartbreak,Hip Hop,2008.0,7.0,6.0,4.0,5.666666666666667
+84,Madonna,Like a Prayer,Like a Prayer,Pop,1989.0,8.0,7.0,4.0,6.333333333333333
+85,Madonna,Vogue,I'm Breathless,Pop,1990.0,9.0,7.0,5.0,7.0
+86,Madonna,Material Girl,Like a Virgin,Pop,1984.0,7.0,6.0,4.0,5.666666666666667
+87,David Bowie,Space Oddity,David Bowie,Rock,1969.0,6.0,7.0,4.0,5.666666666666667
+88,David Bowie,Heroes,Heroes,Rock,1977.0,5.0,8.0,4.0,5.666666666666667
+89,David Bowie,Let's Dance,Let's Dance,Rock,1983.0,8.0,7.0,5.0,6.666666666666667
+90,Beyoncé,Formation,Lemonade,R&B,2016.0,8.0,8.0,5.0,7.0
+91,Beyoncé,Run the World (Girls),4,R&B,2011.0,9.0,7.0,5.0,7.0
+92,Beyoncé,Drunk in Love,Beyoncé,R&B,2013.0,7.0,6.0,4.0,5.666666666666667
+93,Taylor Swift,Bad Blood,1989,Pop,2014.0,8.0,6.0,5.0,6.333333333333333
+94,Taylor Swift,Love Story,Fearless,Pop,2008.0,6.0,7.0,4.0,5.666666666666667
+95,Taylor Swift,Delicate,Reputation,Pop,2017.0,7.0,7.0,3.0,5.666666666666667
+96,Michael Jackson,Beat It,Thriller,Pop,1982.0,9.0,7.0,5.0,7.0
+97,Michael Jackson,Man in the Mirror,Bad,Pop,1987.0,6.0,8.0,3.0,5.666666666666667
+98,Michael Jackson,The Way You Make Me Feel,Bad,Pop,1987.0,8.0,7.0,4.0,6.333333333333333
+99,Lady Gaga,Bad Romance,The Fame Monster,Pop,2009.0,9.0,7.0,5.0,7.0
+100,Lady Gaga,Poker Face,The Fame,Pop,2008.0,8.0,7.0,4.0,6.333333333333333
+101,Lady Gaga,Shallow,A Star Is Born (Soundtrack),Pop,2018.0,6.0,8.0,4.0,6.0
+102,Queen,We Will Rock You,News of the World,Rock,1977.0,10.0,7.0,4.0,7.0
+103,Queen,Killer Queen,Sheer Heart Attack,Rock,1974.0,7.0,8.0,4.0,6.333333333333333
+104,Queen,Radio Ga Ga,The Works,Rock,1984.0,8.0,7.0,5.0,6.666666666666667
+105,The Beatles,Let It Be,Let It Be,Pop,1970.0,4.0,8.0,3.0,5.0
+106,The Beatles,Eleanor Rigby,Revolver,Rock,1966.0,5.0,7.0,2.0,4.666666666666667
+107,The Beatles,Yesterday,Help!,Pop,1965.0,2.0,9.0,1.0,4.0
+108,The Rolling Stones,Paint It Black,Aftermath,Rock,1966.0,8.0,6.0,5.0,6.333333333333333
+109,The Rolling Stones,Jumpin' Jack Flash,Single,Rock,1968.0,9.0,7.0,5.0,7.0
+110,The Rolling Stones,Brown Sugar,Sticky Fingers,Rock,1971.0,9.0,7.0,5.0,7.0
+111,Led Zeppelin,Black Dog,Untitled (Led Zeppelin IV),Rock,1971.0,8.0,7.0,6.0,7.0
+112,Led Zeppelin,Rock and Roll,Untitled (Led Zeppelin IV),Rock,1971.0,9.0,8.0,6.0,7.666666666666667
+113,Led Zeppelin,Whole Lotta Love,Led Zeppelin II,Rock,1969.0,8.0,7.0,6.0,7.0
+114,Pink Floyd,Time,The Dark Side of the Moon,Rock,1973.0,6.0,8.0,4.0,6.0
+115,Pink Floyd,Money,The Dark Side of the Moon,Rock,1973.0,7.0,6.0,5.0,6.0
+116,Pink Floyd,Wish You Were Here,Wish You Were Here,Rock,1975.0,4.0,7.0,3.0,4.666666666666667

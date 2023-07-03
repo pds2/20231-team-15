@@ -1,28 +1,30 @@
 #include <iostream>
 #include "musica.cpp"
 #include "artista.cpp"
+#include "recomendacao.cpp"
 
+//Main temporário para testar a classe Musica e Artista
 int main() {
+
+    Musica musicas;
     
-    std::vector<Musica> musicas = Musica::carregarMusicas("/home/pedroaugtb/codes/vscode/spotify/musicas.csv");
+    std::vector<Musica> listaMusicas = musicas.lerMusicasDoCSV("../musicas.csv");
 
-    std::string artistaBuscado = "Queen";
+    Recomendacao recomendacao = Recomendacao(listaMusicas);
 
-    Musica::imprimirDetalhesPorTitulo(musicas, "Bohemian Rhapsody");
+    // Função para imprimir os detalhes de todas as músicas
+    // for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+    //     i->imprimirDetalhes();
+    // }
 
-    
-    // Criando um objeto Artista para o artista específico
-    Artista artista(artistaBuscado);
+    auto musicas_recomendadas_ordem = recomendacao.recomendar_musicas(listaMusicas[2]);
+    std::cout << listaMusicas[2].getTitulo() << std::endl;
 
-    // Adicionando as músicas relacionadas ao artista
-    for (const Musica& musica : musicas) {
-        if (musica.getArtista() == artista.getNome()) {
-            artista.adicionarMusica(musica);
-        }
+    std::cout << "MAIS RECOMENDADAS" << std::endl;
+
+    for (int i = 0; i < listaMusicas.size(); i++) {
+        std::cout << musicas_recomendadas_ordem[i].second.getTitulo() << ":" << musicas_recomendadas_ordem[i].first << std::endl;
     }
-
-    // Imprimindo as músicas e álbuns do artista
-    artista.imprimirMusicasEAlbuns();
 
     return 0;
 }

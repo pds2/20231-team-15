@@ -8,7 +8,18 @@
 #include <string>
  
 
-//teste
+class MusicException : public std::exception {
+public:
+    MusicException(const std::string& mensagem) : mensagem_(mensagem) {}
+
+    const char* what() const noexcept override {
+        return mensagem_.c_str();
+    }
+
+private:
+    std::string mensagem_;
+};
+
 
 class Musica {
 private:
@@ -57,6 +68,6 @@ public:
     // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
     std::vector<Musica> lerMusicasDoCSV(const std::string& nomeArquivo);
 
-};
+}; 
 
 #endif

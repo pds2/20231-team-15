@@ -116,13 +116,16 @@ std::vector<Musica> Musica::lerMusicasDoCSV(const std::string& nomeArquivo) {
             continue;  // Pula para a próxima linha
         }
 
+        if(!arquivo.is_open()) {
+            throw MusicException("Erro ao abrir o arquivo.");
+        }
+
         // Extrai os valores da linha
         int id;
         try {
             id = std::stoi(valores[0]);
         } catch (const std::invalid_argument& e) {
-            std::cout << "Erro ao converter id: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            throw MusicException("Erro ao converter id: " + std::string(e.what()));
         }
 
         std::string artista = valores[1];
@@ -130,44 +133,39 @@ std::vector<Musica> Musica::lerMusicasDoCSV(const std::string& nomeArquivo) {
         std::string album = valores[3];
         std::string genero = valores[4];
 
-        int ano;
+        int ano; 
         try {
             ano = std::stoi(valores[5]);
         } catch (const std::invalid_argument& e) {
-            std::cout << "Erro ao converter ano: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            throw MusicException("Erro ao converter ano: " + std::string(e.what()));
         }
 
         int dancabilidade;
         try {
             dancabilidade = std::stoi(valores[6]);
         } catch (const std::invalid_argument& e) {
-            std::cout << "Erro ao converter dancabilidade: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            throw MusicException("Erro ao converter dancabilidade: " + std::string(e.what()));
         }
 
         int sentimento;
         try {
             sentimento = std::stoi(valores[7]);
         } catch (const std::invalid_argument& e) {
-            std::cout << "Erro ao converter sentimento: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            throw MusicException("Erro ao converter sentimento: " + std::string(e.what()));
         }
 
         int barulho;
         try {
             barulho = std::stoi(valores[8]);
         } catch (const std::invalid_argument& e) {
-            std::cout << "Erro ao converter barulho: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            throw MusicException("Erro ao converter barulho: " + std::string(e.what()));
         }
 
         double media;
         try {
             media = std::stod(valores[9]);
         } catch (const std::invalid_argument& e) {
-            std::cout << "Erro ao converter media: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            throw MusicException("Erro ao converter media: " + std::string(e.what()));
         }
 
         // Cria um objeto Musica e o adiciona ao vetor

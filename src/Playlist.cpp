@@ -6,10 +6,10 @@ std::string Playlist::get_usuario(){
     return _usuario.get_nome();
 }
 
-void Playlist::adicionar_musica(Musica m) override{
+void Playlist::adicionar_musica(Musica m) {
     for (Musica x : _listamusica){
-        if (m == x){
-            std::cout<< "Música já existente na playlist!" << std::endl
+        if (m.getId() == x.getId()){
+            std::cout<< "Música já existente na playlist!" << std::endl;
         }
     }
     _listamusica.push_back(m);

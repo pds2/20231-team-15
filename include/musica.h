@@ -8,8 +8,6 @@
 #include <string>
  
 
-//teste
-
 class Musica {
 private:
     int _id;

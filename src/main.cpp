@@ -2,6 +2,7 @@
 #include "musica.cpp"
 #include "artista.cpp"
 
+//Main temporário para testar a classe Musica e Artista
 int main() {
 
     Musica musicas;

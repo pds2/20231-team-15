@@ -15,6 +15,9 @@ public:
     // Construtor
     Artista(const std::string& nome);
 
+    // Retorna nome do artista
+    std::string get_nome() const;
+
     // Função para listar as músicas do artista
     void armazenarMusicas(const std::vector<Musica>& musicas) const;
 

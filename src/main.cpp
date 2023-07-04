@@ -46,16 +46,21 @@ int main() {
 
     std::cout << "Digite o Usuário:"<< std::endl;
     std::cin>>user;
-    if (!b.verificar_usuario(user)){
-        std::cout<< "Usuário não existe amigão!!!"<< std::endl;
-    } else {
-        std::cout<<"Digite a Senha:"<< std::endl;
-        std::cin>> senha;
-        if (!b.verificar_senha(senha)){
-            std::cout<< "Senha errada"<< std::endl;
-        } else {
-           std::cout<< "Seja bem vindo"<< std::endl; 
-        }
+    std::cout << "Digite a Senha:" << std::endl;
+    std::cin>>senha;
+
+    try {
+        b.verificar_usuario(user);
+    } catch (usuario_nao_existe_e()) {
+        std::cout<<"Usuário não existe. digite novamente"<<std::endl;
+    }
+    try {
+        b.verificar_senha(user,senha);
+    } catch (senha_incorreta_e()){
+        std::cout<<"Senha Incorreta. digite novamente"<<std::endl;
+    }
+    if (b.verificar_senha(user,senha)){
+        std::cout<<"welcome!!"<<std::endl;
     }
 
     return 0;

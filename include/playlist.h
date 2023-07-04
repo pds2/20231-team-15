@@ -22,7 +22,7 @@ class Playlist : public Lista_musica {
         Playlist(std::string nome, Usuario usuario);
         std::string get_usuario();
         void adicionar_musica (Musica m);
-
+        void remover_musica (Musica m);
 };
 
 #endif

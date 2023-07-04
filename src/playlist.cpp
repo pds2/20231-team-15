@@ -14,3 +14,11 @@ void Playlist::adicionar_musica(Musica m) {
     }
     _lista_musica.push_back(m);
 }
+
+void Playlist::remover_musica(Musica m) {
+    for (auto it = _lista_musica.begin(); it != _lista_musica.end(); it++){
+        if (it->get_id() = m.get_id()){
+            _lista_musica.erase(it);
+        }
+    }
+}

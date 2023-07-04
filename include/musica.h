@@ -29,31 +29,31 @@ public:
     Musica(int id, const std::string& artista, const std::string& titulo, const std::string& album,
            const std::string& genero, int ano, int dancabilidade, int sentimento, int barulho, double media);
 
-    std::string getTitulo() const;
+    std::string get_titulo() const;
 
-    std::string getArtista() const;
+    std::string get_artista() const;
 
-    std::string getAlbum() const;
+    std::string get_album() const;
 
-    std::string getGenero() const;
+    std::string get_genero() const;
 
-    int getAno() const;
+    int get_ano() const;
 
-    int getId() const;
+    int get_id() const;
 
-    int getDancabilidade() const;
+    int get_dancabilidade() const;
 
-    int getSentimento() const;
+    int get_sentimento() const;
 
-    int getBarulho() const;
+    int get_barulho() const;
 
-    double getMedia() const;
+    double get_media() const;
 
     // Função para imprimir os detalhes da música
     void imprimir_detalhes() const;
 
     // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
-    std::vector<Musica> lerMusicasDoCSV(const std::string& nomeArquivo);
+    std::vector<Musica> ler_musicas_do_csv(const std::string& nomeArquivo);
 
 };
 

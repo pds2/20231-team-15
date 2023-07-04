@@ -21,51 +21,51 @@ Musica::Musica() {
 }
 
 // Função para retornar o id da música
-int Musica::getId() const {
+int Musica::get_id() const {
     return _id;
 }
 
-std::string Musica::getTitulo() const {
+std::string Musica::get_titulo() const {
     return _titulo;
 }
 
 // Função para retornar o artista da música
-std::string Musica::getArtista() const{
+std::string Musica::get_artista() const{
     return _artista;
 }
 
 // Função para retornar o álbum da música
-std::string Musica::getAlbum() const {
+std::string Musica::get_album() const {
     return _album;
 }
 
 // Função para retornar o gênero da música
-std::string Musica::getGenero() const {
+std::string Musica::get_genero() const {
     return _genero;
 }
 
 // Função para retornar o ano da música
-int Musica::getAno() const {
+int Musica::get_ano() const {
     return _ano;
 }
 
 // Função para retornar a dancabilidade da música   
-int Musica::getDancabilidade() const {
+int Musica::get_dancabilidade() const {
     return _dancabilidade;
 }
 
 // Função para retornar o sentimento da música
-int Musica::getSentimento() const {
+int Musica::get_sentimento() const {
     return _sentimento;
 }
 
 // Função para retornar o barulho da música
-int Musica::getBarulho() const {
+int Musica::get_barulho() const {
     return _barulho;
 }
 
 // Função para retornar a média da música
-double Musica::getMedia() const {
+double Musica::get_media() const {
     return _media;
 }
 
@@ -85,7 +85,7 @@ void Musica::imprimir_detalhes() const{
 }
 
 // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
-std::vector<Musica> Musica::lerMusicasDoCSV(const std::string& nomeArquivo) {
+std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
     std::ifstream arquivo(nomeArquivo);
     std::string linha;
     std::vector<Musica> musicas;

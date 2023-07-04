@@ -22,9 +22,9 @@ public:
     std::string get_nome() const;
 
     // Função para listar as músicas do artista
-    void armazenarMusicas(const std::vector<Musica>& musicas) const;
+    void armazenar_musicas(const std::vector<Musica>& musicas) const;
 
-    void imprimirDiscografia() const;
+    void imprimir_discografia() const;
 };
 
 

@@ -2,8 +2,12 @@
 
 int Lista_musica::_id = 0;
 
-Lista_musica::Lista_musica(int id) {
+Lista_musica::Lista_musica() {
     id = ++_id;    
+}
+
+Lista_musica::get_id() {
+    return id;
 }
 
 int Lista_musica::get_tamanho(){

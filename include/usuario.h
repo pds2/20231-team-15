@@ -14,6 +14,7 @@ class Usuario{
         genero gosto_;
     public:
         Usuario( std::string username, std::string password);
+        Usuario() = default;
         std::string get_nome();
         std::string get_senha();
         genero get_gosto();

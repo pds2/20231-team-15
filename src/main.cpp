@@ -6,6 +6,9 @@
 #include "../include/banco_usuarios.h"
 #include "../include/lista_musica.h"
 #include "../include/artista.h"
+#include "../include/discografia.h"
+#include "../include/biblioteca.h"
+#include "../include/conjunto_listas.h"
 #include <vector>
 
 
@@ -37,8 +40,6 @@ int main() {
 
     //Imprimir musica 101
     listaMusicas[100].imprimir_detalhes();
-
-
 
     return 0;
 }

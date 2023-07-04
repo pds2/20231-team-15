@@ -1,6 +1,7 @@
 #ifndef BANCO_USUARIOS_H
 #define BANCO_USUARIOS_H
 
+#include <sstream>
 #include <fstream>
 #include <string>
 #include <map>

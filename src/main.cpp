@@ -14,14 +14,14 @@ int main() {
 
     Musica musicas;
 
-    std::vector<Musica> listaMusicas = musicas.lerMusicasDoCSV("/home/pedroaugtb/codes/vscode/20231-team-15-1/musicas.csv");
+    std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv("/home/pedroaugtb/codes/vscode/20231-team-15-1/musicas.csv");
 
     // Função para imprimir os detalhes de todas as músicas
     //for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
     //    i->imprimir_detalhes();
     //}
 
-    int a = 0;
+    //int a = 0;
 
     // Função para ver se tem músicas repetidas
     //for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {

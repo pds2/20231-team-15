@@ -1,4 +1,5 @@
-#include "../include/ListaMusica.h"
+#include "../include/lista_musica.h"
+
 int Lista_musica::_id = 0;
 
 Lista_musica::Lista_musica(int id) {

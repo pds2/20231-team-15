@@ -2,7 +2,7 @@
 #define ALBUM_H
 #include<string>
 #include "artista.h"
-#include "ListaMusica.h"
+#include "lista_musica.h"
 
 class Album : public Lista_musica {
     private:
@@ -11,7 +11,7 @@ class Album : public Lista_musica {
     public:
         std::string get_autor();
         Album(Artista artista);
-        void adicionar_musica(Musica m);
+        void adicionar_musica(Musica m) override;
 
 };
 

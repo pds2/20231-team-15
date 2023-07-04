@@ -70,7 +70,7 @@ double Musica::getMedia() const {
 }
 
 // Função para imprimir os detalhes da música
-void Musica::imprimirDetalhes() const{
+void Musica::imprimir_detalhes() const{
     std::cout << "Id: " << _id << std::endl;
     std::cout << "Artista: " << _artista << std::endl;
     std::cout << "Título: " << _titulo << std::endl;

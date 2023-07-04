@@ -1,4 +1,4 @@
-#include "../include/Album.h"
+#include "../include/album.h"
 
 std::string Album::get_autor(){
     return _artista.get_nome();
@@ -6,9 +6,9 @@ std::string Album::get_autor(){
 
 Album::Album(Artista artista): _artista(artista) {}
 
-void Album::adicionar_musica(Musica m) {
+void Album::adicionar_musica(Musica m) override{
     for (Musica x : _lista_musica){
-        if (m == x){
+        if (m.getId() == x.getId()){
             std::cout<< "Música já existente no álbum!" << std::endl
         }
     }

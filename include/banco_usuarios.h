@@ -2,7 +2,7 @@
 #define BANCO_USUARIOS_H
 
 #include <map>
-#include "Usuario.h"
+#include "usuario.h"
 
 class senha_incorreta_e{};
 class usuario_nao_existe_e{};

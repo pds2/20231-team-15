@@ -1,8 +1,8 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
 #include<string>
-#include "Usuario.h"
-#include "ListaMusica.h"
+#include "usuario.h"
+#include "lista_musica.h"
 
 class Playlist : public Lista_musica {
     private:

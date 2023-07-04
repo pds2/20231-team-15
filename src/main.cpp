@@ -11,7 +11,7 @@ int main() {
 
     // Função para imprimir os detalhes de todas as músicas
     for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
-        i->imprimirDetalhes();
+        i->imprimir_detalhes();
     }
 
     return 0;

@@ -4,7 +4,7 @@
 #include <memory>
 #include <vector>
 
-#include "lista_musica.h"
+#include "playlist.h"
 
 class Biblioteca {
     public: 
@@ -13,14 +13,14 @@ class Biblioteca {
         int get_id() const;
 
         void listar_itens();
-        void inserir_item(const Lista_musica &item);
-        void excluir_item(const Lista_musica &item);
+        void inserir_item(const Playlist &item);
+        void excluir_item(const Playlist &item);
         //void editar_item(const Lista_musica &item);
 
     private:
         static int contador_id_biblioteca;
         int _id_biblioteca;
-        std::vector<Lista_musica> m_biblioteca;
+        std::vector<Playlist> m_biblioteca;
 };
 
 #endif

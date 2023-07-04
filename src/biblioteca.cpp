@@ -16,11 +16,11 @@ void Biblioteca::listar_itens() {
     }
 };
 
-void Biblioteca::inserir_item(const Lista_musica &item) {
+void Biblioteca::inserir_item(const Playlist &item) {
     m_biblioteca.push_back(std::move(item));
 };
 
-void Biblioteca::excluir_item(const Lista_musica &item) {
+void Biblioteca::excluir_item(const Playlist &item) {
     for (auto it = m_biblioteca.begin(); it != m_biblioteca.end(); ++it) {
         if (it->get_id() == item.get_id()) {
             m_biblioteca.erase(it);

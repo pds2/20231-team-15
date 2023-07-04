@@ -1,7 +1,8 @@
-#include "usuario.h"
+#include "../include/usuario.h"
 
 Usuario::Usuario( std::string username, std::string password):
         username_(username), password_ (password){}
+        
 std::string Usuario::get_nome(){
     return username_;
 }

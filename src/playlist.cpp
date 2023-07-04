@@ -9,7 +9,7 @@ std::string Playlist::get_usuario(){
 void Playlist::adicionar_musica(Musica m) override{
     for (Musica x : _lista_musica){
         if (m.getId() == x.getId()){
-            std::cout<< "Música já existente na playlist!" << std::endl
+            throw musica_repetida_playlist_e();
         }
     }
     _lista_musica.push_back(m);

@@ -1,8 +1,9 @@
 #ifndef LISTAMUSICA_H
 #define LISTAMUSICA_H
-#include "musica.h"
 
 #include <vector>
+
+#include "musica.h"
 
 class Lista_musica{
     private:

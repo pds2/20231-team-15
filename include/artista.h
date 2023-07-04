@@ -1,12 +1,12 @@
 #ifndef ARTISTA_H
 #define ARTISTA_H
 
-#include "musica.h"
-
 #include <iostream>
 #include <vector>
 #include <string>
  
+#include "musica.h"
+
 class Artista {
 private:
     std::string _nome;

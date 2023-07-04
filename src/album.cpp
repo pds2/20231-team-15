@@ -9,7 +9,7 @@ Album::Album(Artista artista): _artista(artista) {}
 void Album::adicionar_musica(Musica m) override{
     for (Musica x : _lista_musica){
         if (m.getId() == x.getId()){
-            std::cout<< "Música já existente no álbum!" << std::endl
+            throw musica_repetida_album_e();
         }
     }
     _lista_musica.push_back(m);

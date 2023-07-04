@@ -1,7 +1,10 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
+#include<string>
+#include "usuario.h"
+#include "lista_musica.h"
 
-class Playlist : public ListaMusica {
+class Playlist : public Lista_musica {
     private:
         std::string _nome;
         Usuario _usuario;

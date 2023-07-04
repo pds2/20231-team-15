@@ -15,7 +15,7 @@ class Biblioteca {
         void listar_itens();
         void inserir_item(const Lista_musica &item);
         void excluir_item(const Lista_musica &item);
-        void editar_item(const Lista_musica &item);
+        //void editar_item(const Lista_musica &item);
 
     private:
         static int contador_id_biblioteca;

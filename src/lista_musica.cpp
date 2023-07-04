@@ -6,7 +6,7 @@ Lista_musica::Lista_musica() {
     id = ++_id;    
 }
 
-Lista_musica::get_id() {
+int Lista_musica::get_id() const {
     return id;
 }
 

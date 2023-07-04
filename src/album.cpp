@@ -6,7 +6,7 @@ std::string Album::get_autor(){
 
 Album::Album(Artista artista): _artista(artista) {}
 
-void Album::adicionar_musica(Musica m) override{
+void Album::adicionar_musica(Musica m) {
     for (Musica x : _lista_musica){
         if (m.getId() == x.getId()){
             throw musica_repetida_album_e();

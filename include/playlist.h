@@ -21,7 +21,7 @@ class Playlist : public Lista_musica {
     public:
         Playlist(std::string nome, Usuario usuario);
         std::string get_usuario();
-        void adicionar_musica (Musica m) override;
+        void adicionar_musica (Musica m);
 
 };
 

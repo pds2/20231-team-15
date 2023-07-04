@@ -21,7 +21,7 @@ class Album : public Lista_musica {
     public:
         std::string get_autor();
         Album(Artista artista);
-        void adicionar_musica(Musica m) override;
+        void adicionar_musica(Musica m);
 
 };
 

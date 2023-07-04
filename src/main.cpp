@@ -24,16 +24,20 @@ int main() {
     int a = 0;
 
     // Função para ver se tem músicas repetidas
-    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
-        for (auto j = i + 1; j < listaMusicas.end(); j++) {
-            if (i->getTitulo() == j->getTitulo()) {
-                std::cout << "Música repetida: " << i->getTitulo() << std::endl;
-                a++;
-            }
-        }
-    }
+    //for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+    //    for (auto j = i + 1; j < listaMusicas.end(); j++) {
+    //        if (i->getTitulo() == j->getTitulo()) {
+    //            std::cout << "Música repetida: " << i->getTitulo() << std::endl;
+    //            a++;
+    //        }
+    //    }
+    //}
+//
+    //if(a==0) std::cout << "Não há músicas repetidas" << std::endl;
 
-    if(a==0) std::cout << "Não há músicas repetidas" << std::endl;
+    //Imprimir musica 101
+    listaMusicas[100].imprimir_detalhes();
+
 
 
     return 0;

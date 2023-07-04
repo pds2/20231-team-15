@@ -11,8 +11,8 @@ int Biblioteca::get_id() const {
 };
 
 void Biblioteca::listar_itens() {
-    for (int it = 0; it < m_biblioteca.size(); ++it) {
-        m_biblioteca[it].exibe_musicas();
+    for (auto it = m_biblioteca.begin(); it != m_biblioteca.end(); ++it) {
+        it->exibe_musicas();
     }
 };
 
@@ -21,14 +21,14 @@ void Biblioteca::inserir_item(const Lista_musica &item) {
 };
 
 void Biblioteca::excluir_item(const Lista_musica &item) {
-    for (int it = 0; it < m_biblioteca.size(); ++it) {
-        if (m_biblioteca[it].get_id() == item.get_id()) {
-            m_biblioteca.erase(m_biblioteca.begin()+it);
+    for (auto it = m_biblioteca.begin(); it != m_biblioteca.end(); ++it) {
+        if (it->get_id() == item.get_id()) {
+            m_biblioteca.erase(it);
             break;
         }
     }
 };
 
-void Biblioteca::editar_item(const Lista_musica &item) {
-
-};
+//void Biblioteca::editar_item(const Lista_musica &item) {
+//
+//};

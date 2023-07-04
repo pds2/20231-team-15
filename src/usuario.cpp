@@ -9,6 +9,3 @@ std::string Usuario::get_nome(){
 std::string Usuario::get_senha(){
     return password_;
 }
-genero Usuario::get_gosto(){
-    return gosto_;
-}

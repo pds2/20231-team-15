@@ -1,6 +1,13 @@
 #include <iostream>
-#include "musica.cpp"
-#include "artista.cpp"
+#include "../include/playlist.h"
+#include "../include/usuario.h"
+#include "../include/musica.h"
+#include "../include/album.h"
+#include "../include/banco_usuarios.h"
+#include "../include/lista_musica.h"
+#include "../include/artista.h"
+#include <vector>
+
 
 //Main temporário para testar a classe Musica e Artista
 int main() {

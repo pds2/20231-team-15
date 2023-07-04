@@ -10,11 +10,11 @@ auto Recomendacao::recomendar_musicas(const Musica &musica) {
 
     for (Musica musica_a_comparar : m_lista_musicas) {
 
-        if (musica_a_comparar.getId() == musica.getId()) {
+        if (musica_a_comparar.get_id() == musica.get_id()) {
             continue;
         }
 
-        double diferenca = std::abs(musica.getMedia() - musica_a_comparar.getMedia());
+        double diferenca = std::abs(musica.get_media() - musica_a_comparar.get_media());
         diferencas.push_back(std::make_pair(diferenca, musica_a_comparar));
 
         if (diferencas.size() > 1) {

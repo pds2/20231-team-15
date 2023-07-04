@@ -8,7 +8,7 @@ std::string Playlist::get_usuario(){
 
 void Playlist::adicionar_musica(Musica m) {
     for (Musica x : _lista_musica){
-        if (m.getId() == x.getId()){
+        if (m.get_id() == x.get_id()){
             throw musica_repetida_playlist_e();
         }
     }

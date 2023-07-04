@@ -9,10 +9,10 @@
 
 class Recomendacao {
     private:
-    std::vector <Musica> m_listaMusicas;
+    std::vector <Musica> m_lista_musicas;
         
     public:
-        Recomendacao(std::vector <Musica> listaMusica);
+        Recomendacao(std::vector <Musica> lista_musicas);
         auto recomendar_musicas(const Musica &musica);
 
 };

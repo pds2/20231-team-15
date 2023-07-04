@@ -1,46 +1,14 @@
 #include "../include/recomendacao.h"
 
-Recomendacao::Recomendacao(std::vector<Musica> listaMusicas) {
-    m_listaMusicas = listaMusicas;
+Recomendacao::Recomendacao(std::vector<Musica> lista_musicas) {
+    m_lista_musicas = lista_musicas;
 };
-
-// Musica Recomendacao::retornarSemelhante(const Musica musica) {
-//   Musica semelhante = m_musicas[0];
-//   int distancia_semelhante = std::abs(musica.media - semelhante.media);
-
-//   for (const auto& musica_a_comparar : m_musicas) {
-//     if (musica_a_comparar.id == musica.id) {
-//       continue;
-//     }
-    
-//     int distancia = std::abs(musica.media - musica_a_comparar.media);
-
-//     if (distancia < distancia_semelhante) {
-//       semelhante = musica_a_comparar;
-//       distancia_semelhante = distancia;
-//     }
-//   }
-
-//   return semelhante;
-// }
-
-// std::map<int, float> Recomendacao::ordenarMusicas(Musica musica) {
-//   // map -> key: id, value: distancia
-//   std::map<int, float> musicas_ordenadas_distancia;
-
-//   for (auto& musica_a_comparar : m_musicas) {
-//     float distancia = std::abs(musica.media - musica_a_comparar.media);
-//     musicas_ordenadas_distancia[musica_a_comparar.id] = distancia;
-//   }
-
-  
-// }
 
 auto Recomendacao::recomendar_musicas(const Musica &musica) {
 
     std::vector<std::pair<double, Musica>> diferencas;
 
-    for (Musica musica_a_comparar : m_listaMusicas) {
+    for (Musica musica_a_comparar : m_lista_musicas) {
 
         if (musica_a_comparar.getId() == musica.getId()) {
             continue;

@@ -1,14 +1,14 @@
 #include <iostream>
-#include "../include/playlist.h"
+//#include "../include/playlist.h"
 #include "../include/usuario.h"
-#include "../include/musica.h"
+//#include "../include/musica.h"
 #include "../include/album.h"
 #include "../include/banco_usuarios.h"
 #include "../include/lista_musica.h"
-#include "../include/artista.h"
-#include "../include/discografia.h"
-#include "../include/biblioteca.h"
-#include "../include/conjunto_listas.h"
+//#include "../include/artista.h"
+//#include "../include/discografia.h"
+//#include "../include/biblioteca.h"
+//#include "../include/conjunto_listas.h"
 #include <vector>
 
 
@@ -41,12 +41,12 @@ int main() {
     //Imprimir musica 101
     //listaMusicas[100].imprimir_detalhes();    
     std::string user, senha;
-    BancoUsuarios b = BancoUsuarios("../usuarios.txt");
+    BancoUsuarios b = BancoUsuarios("usuarios.txt");
     b.adicionar_usuario("dayrinho123","lalala13"); 
 
     std::cout << "Digite o Usuário:"<< std::endl;
     std::cin>>user;
-    if (!b.verificar_usuario(user);){
+    if (!b.verificar_usuario(user)){
         std::cout<< "Usuário não existe amigão!!!"<< std::endl;
     } else {
         std::cout<<"Digite a Senha:"<< std::endl;

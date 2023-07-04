@@ -56,7 +56,7 @@ bool BancoUsuarios::verificar_senha(const std::string& nome, const std::string& 
     return false;
 }
 
-void BancoUsuarios::adicionar_usuario(std::string nome, std::string senha) {
+void BancoUsuarios::adicionar_usuario(const std::string& nome, const std::string& senha) {
     std::ofstream arquivo(_endereco_arquivo);
 
     if (arquivo.is_open()) {

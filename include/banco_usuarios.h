@@ -17,9 +17,9 @@ class BancoUsuarios{
     public:
         BancoUsuarios(std::string endereco);
         void salvar_usuarios();
-        void adicionar_usuario(std::string& nome, std::string& senha);
-        bool verificar_usuario(std::string& nome);
-        bool verificar_senha(std::string& nome, std::string& senha);
+        bool verificar_usuario(const std::string& nome);
+        bool verificar_senha(const std::string& nome, const std::string& senha);
+        void adicionar_usuario(const std::string& nome, const std::string& senha);
 };
 
 #endif

@@ -48,20 +48,23 @@ int main() {
     std::cin>>user;
     std::cout << "Digite a Senha:" << std::endl;
     std::cin>>senha;
-
-    try {
+    while(1){
+        try {
         b.verificar_usuario(user);
-    } catch (usuario_nao_existe_e()) {
+    } catch (usuario_nao_existe_e &u) {
         std::cout<<"Usuário não existe. digite novamente"<<std::endl;
     }
     try {
         b.verificar_senha(user,senha);
-    } catch (senha_incorreta_e()){
+    } catch (senha_incorreta_e &s){
         std::cout<<"Senha Incorreta. digite novamente"<<std::endl;
     }
     if (b.verificar_senha(user,senha)){
         std::cout<<"welcome!!"<<std::endl;
+        break;
     }
 
+    }
+    Usuario u = Usuario(user, senha);
     return 0;
 }

@@ -7,6 +7,6 @@ else ifeq ($(shell uname), Linux) # Linux
 	OS_EXTENSION := out
 endif
 
-linux:
+main:
 	g++ -Iinclude ./src/*.cpp -o main.$(OS_EXTENSION)
 	./main.$(OS_EXTENSION)

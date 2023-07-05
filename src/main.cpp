@@ -14,9 +14,11 @@
 
 //Main temporário para testar a classe Musica e Artista
 int main() {
+    // Caminho do arquivo csv contendo as músicas
+    std::string musicas_path = "./musicas.csv";
 
     Musica musicas;
-    std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv("/home/pedroaugtb/codes/vscode/20231-team-15-1/musicas.csv");
+    std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv(musicas_path);
     
     //Função para imprimir os detalhes de todas as músicas
     for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {

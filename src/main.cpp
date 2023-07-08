@@ -1,28 +1,43 @@
 #include <iostream>
+#include <string>
+#include <vector>
 #include <gtkmm.h>
+#include "../include/musica.h"
 
 int main(int argc, char* argv[])
 {
-  auto app = Gtk::Application::create(argc, argv, "org.gtkmm.examples.base");
+    std::string musicas_path = "./musicas.csv";
 
-  // Build UI from the XML file
-  auto builder = Gtk::Builder::create();
-  builder->add_from_file("my-ui.glade");
+    Musica musicas;
+    std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv(musicas_path);
 
-  // Load the CSS file
-  auto cssProvider = Gtk::CssProvider::create();
-  cssProvider->load_from_path("style.css");
+    //Função para imprimir os detalhes de todas as músicas
+    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+        i->imprimir_detalhes();
+    }
 
-  // Apply the CSS styles to the default screen
-  auto screen = Gdk::Screen::get_default();
-  auto styleContext = Gtk::StyleContext::create();
-  styleContext->add_provider_for_screen(screen, cssProvider, GTK_STYLE_PROVIDER_PRIORITY_USER);
 
-  // Get window and show all child widgets
-  Gtk::Window* window = nullptr;
-  builder->get_widget("my_window", window);
-  window->show_all();
-  window->maximize();
+    // Constroi app do GTK
+    auto app = Gtk::Application::create(argc, argv, "org.gtkmm.examples.base");
 
-  return app->run(*window);
+    // Build UI from the XML file
+    auto builder = Gtk::Builder::create();
+    builder->add_from_file("my-ui.glade");
+
+    // Load the CSS file
+    auto cssProvider = Gtk::CssProvider::create();
+    cssProvider->load_from_path("style.css");
+
+    // Apply the CSS styles to the default screen
+    auto screen = Gdk::Screen::get_default();
+    auto styleContext = Gtk::StyleContext::create();
+    styleContext->add_provider_for_screen(screen, cssProvider, GTK_STYLE_PROVIDER_PRIORITY_USER);
+
+    // Get window and show all child widgets
+    Gtk::Window* window = nullptr;
+    builder->get_widget("my_window", window);
+    window->show_all();
+    window->maximize();
+
+    return app->run(*window);
 }

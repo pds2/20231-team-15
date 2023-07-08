@@ -1,0 +1,137 @@
+<!-- Widget que representa uma música na lista -->
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<object class="GtkBox" id="music-item">
+		<property name="name">music-item</property>
+		<property name="visible">True</property>
+		<property name="can-focus">False</property>
+		<property name="halign">start</property>
+		<property name="spacing">10</property>
+		<child>
+			<object class="GtkImage">
+				<property name="visible">True</property>
+				<property name="can-focus">False</property>
+				<property name="pixbuf">../../../Downloads/jesus-is-king-2.png</property>
+			</object>
+			<packing>
+				<property name="expand">False</property>
+				<property name="fill">True</property>
+				<property name="position">0</property>
+			</packing>
+		</child>
+		<child>
+			<object class="GtkBox">
+				<property name="visible">True</property>
+				<property name="can-focus">False</property>
+				<property name="spacing">15</property>
+				<child>
+					<object class="GtkBox">
+						<property name="visible">True</property>
+						<property name="can-focus">False</property>
+						<property name="valign">center</property>
+						<property name="orientation">vertical</property>
+						<property name="spacing">8</property>
+						<child>
+							<object class="GtkImage">
+								<property name="visible">True</property>
+								<property name="can-focus">False</property>
+								<property name="halign">start</property>
+								<property name="pixbuf">../../../Downloads/album-icon.png</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">False</property>
+								<property name="position">0</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkLabel">
+								<property name="name">title</property>
+								<property name="visible">True</property>
+								<property name="can-focus">False</property>
+								<property name="label" translatable="yes">Jesus is King</property>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">False</property>
+								<property name="position">1</property>
+							</packing>
+						</child>
+						<child>
+							<object class="GtkBox" id="artist-name">
+								<property name="name">artist-name</property>
+								<property name="visible">True</property>
+								<property name="can-focus">False</property>
+								<property name="spacing">5</property>
+								<property name="baseline-position">bottom</property>
+								<child>
+									<object class="GtkImage">
+										<property name="visible">True</property>
+										<property name="can-focus">False</property>
+										<property name="pixbuf">../../../Downloads/user-icon.png</property>
+									</object>
+									<packing>
+										<property name="expand">False</property>
+										<property name="fill">True</property>
+										<property name="position">0</property>
+									</packing>
+								</child>
+								<child>
+									<object class="GtkLabel">
+										<property name="visible">True</property>
+										<property name="can-focus">False</property>
+										<property name="label" translatable="yes">Kanye West</property>
+									</object>
+									<packing>
+										<property name="expand">False</property>
+										<property name="fill">True</property>
+										<property name="position">1</property>
+									</packing>
+								</child>
+							</object>
+							<packing>
+								<property name="expand">False</property>
+								<property name="fill">False</property>
+								<property name="position">2</property>
+							</packing>
+						</child>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">False</property>
+						<property name="position">0</property>
+					</packing>
+				</child>
+				<child>
+					<object class="GtkLabel">
+						<property name="visible">True</property>
+						<property name="can-focus">False</property>
+						<property name="label" translatable="yes">3:15</property>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">1</property>
+					</packing>
+				</child>
+				<child>
+					<object class="GtkImage">
+						<property name="visible">True</property>
+						<property name="can-focus">False</property>
+						<property name="pixbuf">../../../Downloads/heart-icon.png</property>
+					</object>
+					<packing>
+						<property name="expand">False</property>
+						<property name="fill">True</property>
+						<property name="position">2</property>
+					</packing>
+				</child>
+			</object>
+			<packing>
+				<property name="expand">False</property>
+				<property name="fill">True</property>
+				<property name="position">1</property>
+			</packing>
+		</child>
+	</object>
+</interface>

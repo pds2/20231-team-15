@@ -1,12 +1,5 @@
-OS_EXTENSION :=
-
-# Detected operating system extension
-ifeq ($(OS), Windows_NT) # Windows
-	OS_EXTENSION := exe
-else ifeq ($(shell uname), Linux) # Linux
-	OS_EXTENSION := out
-endif
-
+# A compilação funciona no ambiente Linux.
+# Necessita da biblioteca de desenvolvimento do GTK, libgtkmm-3.0-dev
 main:
-	g++ -Iinclude ./src/*.cpp -o main.$(OS_EXTENSION)
-	./main.$(OS_EXTENSION)
+	g++ ./src/*.cpp -o main.out `pkg-config --cflags --libs gtkmm-3.0` -std=c++17
+	./main.out

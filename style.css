@@ -1,0 +1,43 @@
+#wrapper-main {
+    color: white;
+}
+
+#sidebar-left {
+    background-color: #2D2E37;
+    padding: 16px;
+}
+
+#wrapper-right {
+    background-color: #1C1A24;
+}
+
+#box-center-wrapper {
+    background-color: #2D2E37;
+}
+
+/* Box center */
+#box-center {
+    background-color: #1C1A24;
+    border-radius: 50px 0 0 50px;
+}
+
+#box-center #title {
+    font-size: 25px;
+    color: white;
+}
+
+/* Sidebar Right */
+
+#wrapper-sidebar-right {
+    background-color: #1C1A24;
+}
+
+#sidebar-right {
+    padding: 0 30px;
+    background-color: #2D2E37;
+    border-radius: 50px 0 0 50px;
+}
+
+#sidebar-right #title {
+    font-size: 25px;
+}

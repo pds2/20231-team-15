@@ -1,7 +1,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <gtkmm.h>
+#include <gtkmm/window.h>
+#include <gtkmm/builder.h>
+#include <gtkmm/cssprovider.h>
+#include <gtkmm/listbox.h>
+#include <gtkmm/box.h>
+#include <gtkmm/label.h>
+#include <gtkmm/image.h>
+#include "../include/music_item_widget.h"
 #include "../include/musica.h"
 
 int main(int argc, char* argv[])
@@ -20,8 +27,7 @@ int main(int argc, char* argv[])
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.examples.base");
 
     // Build UI from the XML file
-    auto builder = Gtk::Builder::create();
-    builder->add_from_file("my-ui.glade");
+    auto builder = Gtk::Builder::create_from_file("my-ui.glade");
 
     // Load the CSS file
     auto cssProvider = Gtk::CssProvider::create();
@@ -38,16 +44,22 @@ int main(int argc, char* argv[])
     window->show_all();
     window->maximize();
 
-    // Widget lista de músicas
+    // Widget listbox
     Gtk::ListBox* music_list_box = nullptr;
     builder->get_widget("music-list-box", music_list_box);
 
-    // Widget musica-item
     auto builder2 = Gtk::Builder::create();
-    builder2->add_from_file("music-item.xml");
-    Gtk::Widget* music_item = nullptr;
-    builder2->get_widget("music-item", music_item);
-    music_list_box->add(*music_item);
 
+    MusicItem* music_item = nullptr;
+    for (int i = 0; i < 2; i++) {
+        builder2->add_from_file("music-item.xml");
+        builder2->get_widget_derived("music-item", music_item);
+
+        music_item->setTitle("Teste demais haha");
+        music_item->setDuration("2:13");
+        music_item->setArtist("Lebiff");
+        music_list_box->append(*music_item);
+    }
+    
     return app->run(*window);
 }

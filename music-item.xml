@@ -8,15 +8,20 @@
 		<property name="halign">start</property>
 		<property name="spacing">10</property>
 		<child>
-			<object class="GtkImage" id="cover">
-				<property name="name">cover</property>
+			<object class="GtkBox" id="cover-wrapper">
+				<property name="name">cover-wrapper</property>
+				<property name="width-request">80</property>
+				<property name="height-request">80</property>
 				<property name="visible">True</property>
 				<property name="can-focus">False</property>
-				<property name="pixbuf">../../../Downloads/jesus-is-king-2.png</property>
+				<property name="orientation">vertical</property>
+				<child>
+					<placeholder/>
+				</child>
 			</object>
 			<packing>
 				<property name="expand">False</property>
-				<property name="fill">True</property>
+				<property name="fill">False</property>
 				<property name="position">0</property>
 			</packing>
 		</child>
@@ -133,7 +138,7 @@
 			<packing>
 				<property name="expand">False</property>
 				<property name="fill">True</property>
-				<property name="position">1</property>
+				<property name="position">2</property>
 			</packing>
 		</child>
 	</object>

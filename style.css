@@ -42,16 +42,23 @@
     font-size: 25px;
 }
 
-/* Music box list */
+/* Music list box */
 #music-list-box {
     background-color: #1C1A24;
 }
 
-#music-list-box #title {
+/* Music item */
+#music-item #cover {
+    background-color: #fff;
+    border-radius: 16px;
+}
+
+#music-item #title {
     font-size: 20px;
 }
 
-#music-list-box #artist-name {
+#music-item #artist {
     color: #757578;
     font-size: 12px;
 }
+

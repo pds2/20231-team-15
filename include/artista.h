@@ -25,6 +25,9 @@ public:
     
     int get_id() const;
 
+    // Função para retornar as músicas do artista
+    std::vector<Musica> get_artistas_musicas() const;
+
     // Função para listar as músicas do artista
     void armazenar_musicas(const std::vector<Musica>& musicas) const;
 

@@ -1,12 +1,13 @@
-#ifndef TP2_BIBLIOTECA
-#define TP2_BIBLIOTECA
+#ifndef BIBLIOTECA
+#define BIBLIOTECA
 
 #include <memory>
 #include <vector>
 
+#include "conjunto_listas.h"
 #include "playlist.h"
 
-class Biblioteca {
+class Biblioteca : public Conjunto_listas {
     public: 
         Biblioteca();
 

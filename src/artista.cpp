@@ -1,14 +1,22 @@
 #include "../include/artista.h"
 #include "../include/musica.h"
 
+int Artista::contador_id_artista = 0;
+
+
 // Construtor
 Artista::Artista(const std::string& nome) {
+    _id_artista = ++contador_id_artista;
     _nome = nome;
 }
 
 // Retorna nome do artista
 std::string Artista::get_nome() const {
     return _nome;
+}
+
+int Artista::get_id() const {
+    return _id_artista;
 }
  
 // Função para armazenar as músicas do artista
@@ -19,6 +27,11 @@ void Artista::armazenar_musicas(const std::vector<Musica>& musicas) const{
             artistasMusicas.push_back(musica);
         }
     }
+}
+
+void Artista::imprimir_artista() const {
+    std::cout << "Id: " << _id_artista;
+    std::cout << "  Nome: " << _nome << std::endl;
 }
 
 void Artista::imprimir_discografia() const {

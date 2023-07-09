@@ -1,34 +1,46 @@
 #include <iostream>
-#include "../include/playlist.h"
-#include "../include/usuario.h"
-#include "../include/musica.h"
-#include "../include/album.h"
-#include "../include/banco_usuarios.h"
-#include "../include/lista_musica.h"
-#include "../include/artista.h"
-#include "../include/discografia.h"
-#include "../include/biblioteca.h"
-#include "../include/conjunto_listas.h"
+#include "./playlist.cpp"
+#include "./usuario.cpp"
+#include "./musica.cpp"
+#include "./album.cpp"
+#include "./banco_usuarios.cpp"
+#include "./lista_musica.cpp"
+#include "./artista.cpp"
+#include "./discografia.cpp"
+#include "./biblioteca.cpp"
+#include "./conjunto_listas.cpp"
+#include "./sistema.cpp"
+#include "./recomendacao.cpp"
 #include <vector>
 
 
 //Main temporário para testar a classe Musica e Artista
 int main() {
-    // Caminho do arquivo csv contendo as músicas
-    std::string musicas_path = "./musicas.csv";
 
-    Musica musicas;
-    std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv(musicas_path);
+    // Inicializando o sistema
+    Sistema sistema;
+    // Recomendacao recomendacao;  
+
+    // Caminho do arquivo csv contendo as músicas
+    std::string musicas_path = "../musicas.csv";
+    auto lista_musicas = sistema.inicializar_musicas(musicas_path);
+    auto lista_artistas = sistema.inicializar_artistas(lista_musicas);
+    auto lista_albuns = sistema.inicializar_albuns(lista_musicas, lista_artistas);
     
     //Função para imprimir os detalhes de todas as músicas
     //musicas.imprimir_todas_musicas(listaMusicas);
 
-    //Função para ver se tem músicas repetidas
-    musicas.musica_repetida(listaMusicas);
-    
+    // Listar todas as músicas no programa, apenas com id, titulo e artista
+    // sistema.listar_id_musica_artista(lista_musicas);
+    // Listar todos os artistas no programa
+    // sistema.listar_artistas(lista_artistas);
+    // Listar todos os albuns no programa
+    // sistema.listar_albuns(lista_albuns);
+
+    lista_albuns[5].exibe_musicas();
 
     //Imprimir musica 101
-    listaMusicas[100].imprimir_detalhes();   
+    // listaMusicas[100].imprimir_detalhes();   
 
 
     //std::string user, senha;

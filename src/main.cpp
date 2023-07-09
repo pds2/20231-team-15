@@ -73,15 +73,5 @@ int main(int argc, char* argv[])
         music_list_box->append(*music_item);
     }
 
-    // for (int i = 0; i < 2; i++) {
-    //     builder2->add_from_file("music-item.xml");
-    //     builder2->get_widget_derived("music-item", music_item);
-
-    //     music_item->setTitle("Teste demais haha");
-    //     music_item->setDuration("2:13");
-    //     music_item->setArtist("Lebiff");
-    //     music_list_box->append(*music_item);
-    // }
-    
     return app->run(*window);
 }

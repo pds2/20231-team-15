@@ -69,6 +69,11 @@ double Musica::get_media() const {
     return _media;
 }
 
+// Função get musica
+//Musica Musica::get_musica() const {
+//    return *this;
+//}
+
 //Função para imprimir os detalhes de todas as músicas
 void Musica::imprimir_todas_musicas(std::vector<Musica> listaMusicas) const {
     for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {

@@ -1,17 +1,20 @@
 #include "../include/music_item_widget.h"
+#include <gtkmm/stylecontext.h>
+#include <gtkmm/cssprovider.h>
+
 
 MusicItem::MusicItem(
     BaseObjectType* cobject, 
     const Glib::RefPtr<Gtk::Builder>& builder
 ) : 
     Gtk::Box(cobject), builder{builder},
-    cover{nullptr}, 
+    cover_wrapper{nullptr},
     title{nullptr},
     artist{nullptr},
     duration{nullptr}
 {
-    // Seleciona widgets do builder.
-    builder->get_widget("cover", cover);
+    // Get widgets from the ui file
+    builder->get_widget("cover-wrapper", cover_wrapper);
     builder->get_widget("title", title);
     builder->get_widget("artist", artist);
     builder->get_widget("duration", duration);
@@ -20,10 +23,20 @@ MusicItem::MusicItem(
 MusicItem::~MusicItem() {};
 
 void MusicItem::setCover(const std::string& file_path) {
-    auto pixbuf = Gdk::Pixbuf::create_from_file(file_path);
-    pixbuf = pixbuf->scale_simple(80, 80, Gdk::INTERP_BILINEAR);
+    // Cover size
+    cover_wrapper->set_size_request(80, 80);
 
-    cover->set(pixbuf);
+    auto styleContext = cover_wrapper->get_style_context();
+    auto cssProvider = Gtk::CssProvider::create();
+
+    // Set background-image to cover image
+    std::string css_data = "box {"
+                          "   background-image: url('" + file_path + "');"
+                          "}";
+
+    // Apply css to music-item
+    cssProvider->load_from_data(css_data);
+    styleContext->add_provider(cssProvider, GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 }
 
 void MusicItem::setTitle(const std::string& str) {

@@ -23,7 +23,7 @@ public:
 
 protected:
     Glib::RefPtr<Gtk::Builder> builder;
-    Gtk::Image* cover;
+    Gtk::Box* cover_wrapper;
     Gtk::Label* title;
     Gtk::Label* artist;
     Gtk::Label* duration;

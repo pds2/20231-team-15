@@ -62,3 +62,10 @@
     font-size: 12px;
 }
 
+/* Cover wrapper */
+#music-item #cover-wrapper {
+    background-image: url("./images/covers/11.png");
+    background-position: center;
+    background-size: 80px;
+    border-radius: 16px;
+}

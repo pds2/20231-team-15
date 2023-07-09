@@ -21,6 +21,8 @@ MusicItem::~MusicItem() {};
 
 void MusicItem::setCover(const std::string& file_path) {
     auto pixbuf = Gdk::Pixbuf::create_from_file(file_path);
+    pixbuf = pixbuf->scale_simple(80, 80, Gdk::INTERP_BILINEAR);
+
     cover->set(pixbuf);
 }
 

@@ -76,6 +76,20 @@ void Musica::imprimir_todas_musicas(std::vector<Musica> listaMusicas) const {
     }
 }
 
+//Função para ver se tem músicas repetidas
+void Musica::musica_repetida(std::vector<Musica> listaMusicas) const {
+    int a = 0;
+    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+        for (auto j = i + 1; j < listaMusicas.end(); j++) {
+            if (i->get_titulo() == j->get_titulo()) {
+                std::cout << "Música repetida: " << i->get_titulo() << std::endl;
+                a++;
+            }
+        }
+    }
+    if(a==0) std::cout << "Não há músicas repetidas" << std::endl;
+}
+
 // Função para imprimir os detalhes da música
 void Musica::imprimir_detalhes() const{
     std::cout << "Id: " << _id << std::endl;

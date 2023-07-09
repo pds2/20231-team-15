@@ -21,24 +21,16 @@ int main() {
     std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv(musicas_path);
     
     //Função para imprimir os detalhes de todas as músicas
-    musicas.imprimir_todas_musicas(listaMusicas);
-    
-    //int a = 0;
-    // //Função para ver se tem músicas repetidas
-    //for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
-    //    for (auto j = i + 1; j < listaMusicas.end(); j++) {
-    //        if (i->get_titulo() == j->get_titulo()) {
-    //            std::cout << "Música repetida: " << i->get_titulo() << std::endl;
-    //            a++;
-    //        }
-    //    }
-    //}
-    
+    //musicas.imprimir_todas_musicas(listaMusicas);
 
-    //if(a==0) std::cout << "Não há músicas repetidas" << std::endl;
+    //Função para ver se tem músicas repetidas
+    musicas.musica_repetida(listaMusicas);
+    
 
     //Imprimir musica 101
-    //listaMusicas[100].imprimir_detalhes();    
+    listaMusicas[100].imprimir_detalhes();   
+
+
     //std::string user, senha;
     //BancoUsuarios b = BancoUsuarios("usuarios.txt");
     //b.adicionar_usuario("dayrinho123", "lalala13"); 

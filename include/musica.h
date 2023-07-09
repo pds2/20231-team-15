@@ -54,6 +54,8 @@ public:
 
     void imprimir_todas_musicas(std::vector<Musica>) const;
 
+    void musica_repetida(std::vector<Musica>) const;
+
     // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
     std::vector<Musica> ler_musicas_do_csv(const std::string& nomeArquivo);
 

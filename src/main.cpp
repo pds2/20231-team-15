@@ -21,9 +21,7 @@ int main() {
     std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv(musicas_path);
     
     //Função para imprimir os detalhes de todas as músicas
-    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
-        i->imprimir_detalhes();
-    }
+    musicas.imprimir_todas_musicas(listaMusicas);
     
     //int a = 0;
     // //Função para ver se tem músicas repetidas

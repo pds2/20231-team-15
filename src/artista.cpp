@@ -18,6 +18,11 @@ std::string Artista::get_nome() const {
 int Artista::get_id() const {
     return _id_artista;
 }
+
+// Função para retornar as músicas do artista
+std::vector<Musica> Artista::get_artistas_musicas() const { 
+    return artistas_musicas;
+}
  
 // Função para armazenar as músicas do artista
 void Artista::armazenar_musicas(const std::vector<Musica>& musicas) const{

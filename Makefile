@@ -10,3 +10,7 @@ endif
 main:
 	g++ -Iinclude ./src/*.cpp -o main.$(OS_EXTENSION)
 	./main.$(OS_EXTENSION)
+
+test:
+	g++ -Iinclude ./src/*.cpp ./tests/*.cpp ./program/tester.cpp -o test.$(OS_EXTENSION)
+	./test.$(OS_EXTENSION)

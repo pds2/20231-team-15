@@ -1,5 +1,5 @@
-#ifndef TP2_BIBLIOTECA
-#define TP2_BIBLIOTECA
+#ifndef CONJUNTO_LISTAS
+#define CONJUNTO_LISTAS
 
 #include <memory>
 #include <vector>

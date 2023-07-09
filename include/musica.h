@@ -62,6 +62,8 @@ public:
     // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
     std::vector<Musica> ler_musicas_do_csv(const std::string& nomeArquivo);
 
+    void imprimir_id_musica_artista();
+
 };
 
 #endif

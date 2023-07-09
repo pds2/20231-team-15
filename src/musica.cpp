@@ -203,3 +203,9 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
 
     return musicas;
 }
+
+void Musica::imprimir_id_musica_artista() {
+    std::cout << "Id: " << _id;
+    std::cout << "  Artista: " << _artista;
+    std::cout << "          Titulo: " << _titulo << std::endl;
+}

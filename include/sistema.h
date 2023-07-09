@@ -14,14 +14,23 @@
 
 class Sistema {
     public:
+        // Funções referentes à classe Usuario
         Usuario login(BancoUsuarios b);
+
+        // Funções referentes à classe playlist
         void criar_playlist(std::string user, std::string nome);
+
+        // Funções referentes à classe música
         std::vector <Musica> inicializar_musicas(const std::string& arquivo_path);
+        void listar_id_musica_artista(std::vector <Musica> lista_musicas) const;
+
+        // Funções referentes à classe Artista
         std::vector <Artista> inicializar_artistas(const std::vector <Musica>& lista_musicas);
+        void listar_artistas(std::vector <Artista> lista_artistas) const;
+
+        // Funções referentes à classe Album
         std::vector <Album> inicializar_albuns(const std::vector <Musica>& lista_musicas, const std::vector <Artista>& lista_artistas);
         std::vector <Album> inserir_musicas_album(std::vector <Album> lista_albuns, std::vector <Musica> lista_musicas);
-        void listar_id_musica_artista(std::vector <Musica> lista_musicas) const;
-        void listar_artistas(std::vector <Artista> lista_artistas) const;
         void listar_albuns(std::vector <Album> listar_albuns) const;
 };     
 

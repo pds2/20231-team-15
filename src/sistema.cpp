@@ -28,7 +28,6 @@ std::vector <Artista> Sistema::inicializar_artistas(const std::vector <Musica>& 
 }
 
 std::vector <Album> Sistema::inicializar_albuns(const std::vector <Musica>& lista_musicas, const std::vector <Artista>& lista_artistas) {
-
     std::vector <Album> lista_albuns;
     for (const auto& musica : lista_musicas) {
         for (const auto& artista : lista_artistas) {
@@ -42,31 +41,22 @@ std::vector <Album> Sistema::inicializar_albuns(const std::vector <Musica>& list
     for (auto it_1 = lista_albuns.begin(); it_1 != lista_albuns.end(); ++it_1) {
         for (auto it_2 = lista_albuns.begin(); it_2 != lista_albuns.end(); ++it_2) {
             if (it_1->get_nome() == it_2->get_nome() && it_1->get_id() != it_2->get_id()) {
-
                 lista_albuns.erase(it_2);
             }
         }
     }
-
     lista_albuns = inserir_musicas_album(lista_albuns, lista_musicas);
     return lista_albuns;
 }
 
 std::vector <Album> Sistema::inserir_musicas_album(std::vector <Album> lista_albuns, std::vector <Musica> lista_musicas) {
-
     for (auto& album : lista_albuns) {
         for (const auto& musica : lista_musicas) {
             if (album.get_nome() == musica.get_album()) {
-                // std::cout << "\n Album: " << std::endl;
                 album.adicionar_musica(musica);
-                // album.exibe_musicas();
             }
         }
     }
-
-    // std::cout << "\n\nTeste final: " << std::endl;
-    // lista_albuns[0].exibe_musicas();
-
     return lista_albuns;
 }
 

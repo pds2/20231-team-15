@@ -177,11 +177,11 @@
                     <property name="name">music-list-box</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
+                    <property name="halign">start</property>
                     <child>
                       <object class="GtkListBoxRow">
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
-                        <property name="halign">start</property>
                         <child>
                           <object class="GtkBox" id="music-item">
                             <property name="name">music-item</property>

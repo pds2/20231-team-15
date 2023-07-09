@@ -51,15 +51,37 @@ int main(int argc, char* argv[])
     auto builder2 = Gtk::Builder::create();
 
     MusicItem* music_item = nullptr;
-    for (int i = 0; i < 2; i++) {
+
+    auto it = listaMusicas.begin();
+    Musica musica;
+    for (int i = 0; i < 10; i++) {
+        it += i;
+        musica = *it;
+        
+        // Constrói widget music_item do arquivo de ui
         builder2->add_from_file("music-item.xml");
         builder2->get_widget_derived("music-item", music_item);
 
-        music_item->setTitle("Teste demais haha");
-        music_item->setDuration("2:13");
-        music_item->setArtist("Lebiff");
+        // Define campos do music_item
+        std::string cover_path = "./images/covers/"+std::to_string(musica.get_id())+".png";
+        music_item->setTitle(musica.get_titulo());
+        music_item->setArtist(musica.get_artista());
+        music_item->setCover(cover_path);
+
+
+        // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);
     }
+
+    // for (int i = 0; i < 2; i++) {
+    //     builder2->add_from_file("music-item.xml");
+    //     builder2->get_widget_derived("music-item", music_item);
+
+    //     music_item->setTitle("Teste demais haha");
+    //     music_item->setDuration("2:13");
+    //     music_item->setArtist("Lebiff");
+    //     music_list_box->append(*music_item);
+    // }
     
     return app->run(*window);
 }

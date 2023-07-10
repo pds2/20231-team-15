@@ -156,50 +156,50 @@ Usuario Sistema::login(BancoUsuarios b){
     return u;
 }
 
-//METODOS DA CLASSE PLAYLIST
+// METODOS DA CLASSE PLAYLIST
 
-// void Sistema::criar_playlist(std::string user){
-//     std::string nome;
-//     std::cout << "Digite o nome da playlist:" << std::endl;
-//     std::getline(std::cin, nome);
-//     Playlist p = Playlist(nome, user);
-// }
+void Sistema::criar_playlist(std::string user){
+    std::string nome;
+    std::cout << "Digite o nome da playlist:" << std::endl;
+    std::getline(std::cin, nome);
+    Playlist p = Playlist(nome, user);
+}
 
-// void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas){
-//     std::string edit;
-//     while (std::getline(std::cin, edit) && edit != "fim") {
-//         switch (edit){
-//             case "trocar":
-//                 int m1, m2;
-//                 std::cin >> m1 >> m2;
-//                 p.trocar_musica(m1,m2);
-//                 break;
-//             case "remover":
-//                 int id;
-//                 std::cin >> id;
-//                 for (Musica m: lista_musicas ){
-//                     if (m.get_id() == id){
-//                         p.remover_musica(m);
-//                         break;
-//                     }
-//                 }
-//                 std::cout << "ID inválido." << std::endl;
-//                 break;
-//             case "adicionar":
-//                 int id;
-//                 std::cin >> id;
-//                 for (Musica m: lista_musicas ){
-//                     if (m.get_id() == id){
-//                         p.adicionar_musica(m);
-//                         break;
-//                     }
-//                 }
-//                 std::cout << "ID inválido." << std::endl;
-//                 break;
+void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas){
+    std::string edit;
+    while (std::getline(std::cin, edit) && edit != "fim") {
+        switch (edit){
+            case "trocar":
+                int m1, m2;
+                std::cin >> m1 >> m2;
+                p.trocar_musica(m1,m2);
+                break;
+            case "remover":
+                int id;
+                std::cin >> id;
+                for (Musica m: lista_musicas ){
+                    if (m.get_id() == id){
+                        p.remover_musica(m);
+                        break;
+                    }
+                }
+                std::cout << "ID inválido." << std::endl;
+                break;
+            case "adicionar":
+                int id;
+                std::cin >> id;
+                for (Musica m: lista_musicas ){
+                    if (m.get_id() == id){
+                        p.adicionar_musica(m);
+                        break;
+                    }
+                }
+                std::cout << "ID inválido." << std::endl;
+                break;
 
-//         }
-//     }
-// }
+        }
+    }
+}
 
 
 // METODOS DA CLASSE RECOMENDACAO

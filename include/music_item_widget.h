@@ -23,9 +23,8 @@ public:
     );
     virtual ~MusicItem();
 
+    void setMusic(Musica* musica);
     void setId(int id);
-    // Lista com as músicas
-    void setListaMusica(std::vector<Musica>* lista_musica);
 
     void setTitle(const std::string& str);
     void setCover(const std::string& file_path);
@@ -36,8 +35,8 @@ public:
     bool onLikeClicked(GdkEventButton* event);
 
 protected:
+    Musica* music; // Music object which this widget is related to.
     int id;
-    std::vector<Musica>* lista_musica;
     bool is_liked;
 
     Glib::RefPtr<Gtk::Builder> builder;

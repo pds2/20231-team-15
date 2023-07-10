@@ -246,6 +246,7 @@
                                                 <property name="name">title</property>
                                                 <property name="visible">True</property>
                                                 <property name="can-focus">False</property>
+                                                <property name="halign">start</property>
                                                 <property name="label" translatable="yes">Jesus is King</property>
                                               </object>
                                               <packing>

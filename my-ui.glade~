@@ -191,7 +191,7 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <child>
-                                  <object class="GtkBox" id="music-item1">
+                                  <object class="GtkBox" id="music-item">
                                     <property name="name">music-item</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>

@@ -7,14 +7,14 @@ else ifeq ($(shell uname), Linux) # Linux
 	OS_EXTENSION := out
 endif
 
-main:
-	g++ -Iinclude ./src/*.cpp ./program/main.cpp -o main.$(OS_EXTENSION)
+terminal:
+	g++ -Iinclude ./src/*.cpp ./program/terminal-main.cpp -o main.$(OS_EXTENSION)
 	./main.$(OS_EXTENSION)
 
 # A compilação da interface funciona no ambiente Linux.
 # Necessita da biblioteca de desenvolvimento do GTK, libgtkmm-3.0-dev.
 gui:
-	g++ ./src/*.cpp -o main.out `pkg-config --cflags --libs gtkmm-3.0` -Iinclude -std=c++17
+	g++ ./src/*.cpp ./src/widgets/*.cpp ./program/gui-main.cpp -o main.out `pkg-config --cflags --libs gtkmm-3.0` -Iinclude -std=c++17
 	./main.out
 
 test:

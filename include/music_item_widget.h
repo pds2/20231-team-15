@@ -33,12 +33,14 @@ public:
     // Method to handle the like click event
     bool onLikeClicked(GdkEventButton* event);
 
-    // Signals
+    // Signal emmited when MusicItem is liked.
     sigc::signal<void, MusicItem*> signal_liked();
+    // Signal emmited when MusicItem is unliked.
+    sigc::signal<void, MusicItem*> signal_unliked();
 
 private:
-    sigc::signal<void, MusicItem*> signal_liked_; // Signal emmited when MusicItem is liked.
-    // sigc::signal<void, MusicItem*> signal_unliked_;
+    sigc::signal<void, MusicItem*> signal_liked_;
+    sigc::signal<void, MusicItem*> signal_unliked_;
 
     // Music object which this widget is related to.
     // Contains all the data related to this widget.

@@ -17,7 +17,8 @@ MusicItem::MusicItem(
     title{nullptr},
     artist{nullptr},
     artist_icon{nullptr},
-    duration{nullptr}
+    duration{nullptr},
+    is_liked{false}
 {
     // Get widgets from the ui file
     builder->get_widget("cover-wrapper", cover_wrapper);
@@ -86,8 +87,17 @@ void MusicItem::setDuration(const std::string& str) {
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
     std::cout << "Like clicado!" << std::endl;
 
+    is_liked = !is_liked;
+
+    std::string heart_path = "./images/icons/heart-icon.png";
+    std::string heart_filled_path = "./images/icons/user-icon.png";
+
     // Update like icon
-    like_icon->set("../../images/icons/like-icon.png");
+    if (is_liked) {
+        like_icon->set(heart_path);
+    } else {
+        like_icon->set(heart_filled_path);
+    }
 
     return true;
 }

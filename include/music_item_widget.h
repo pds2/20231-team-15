@@ -47,6 +47,8 @@ protected:
     Gtk::Label* artist;
     Gtk::Image* artist_icon;
     Gtk::Label* duration;
+
+    bool is_liked;
 };
 
 #endif

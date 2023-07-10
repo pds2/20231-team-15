@@ -28,8 +28,8 @@ void Playlist::remover_musica(Musica m) {
 }
 
 void Playlist::trocar_musica (int musica1, int musica2){
-    if (musica1< 0 || musica1 >= playlist.getTamanho() ||
-        musica2 < 0 || musica2 >= playlist.getTamanho()) {
+    if (musica1< 0 || musica1 >= this->get_tamanho() ||
+        musica2 < 0 || musica2 >= this->get_tamanho()) {
         std::cout << "Posições inválidas!" << std::endl;
         return;
     } else {

@@ -1,23 +1,49 @@
-#include "../include/music_item_widget.h"
+#include <iostream>
 #include <gtkmm/stylecontext.h>
 #include <gtkmm/cssprovider.h>
-
+#include "../include/music_item_widget.h"
 
 MusicItem::MusicItem(
     BaseObjectType* cobject, 
-    const Glib::RefPtr<Gtk::Builder>& builder
+    const Glib::RefPtr<Gtk::Builder>& builder,
+    bool is_playlist
 ) : 
     Gtk::Box(cobject), builder{builder},
     cover_wrapper{nullptr},
+    type_icon{nullptr},
+    type_text{nullptr},
+    like_wrapper{nullptr},
     title{nullptr},
     artist{nullptr},
+    artist_icon{nullptr},
     duration{nullptr}
 {
     // Get widgets from the ui file
     builder->get_widget("cover-wrapper", cover_wrapper);
+    builder->get_widget("type-icon", type_icon);
+    builder->get_widget("type-text", type_text);
+    builder->get_widget("like-wrapper", like_wrapper);
     builder->get_widget("title", title);
     builder->get_widget("artist", artist);
+    builder->get_widget("artist-icon", artist_icon);
     builder->get_widget("duration", duration);
+
+    // Add handler to like-wrapper
+    like_wrapper->signal_button_press_event().connect(
+        sigc::mem_fun(*this, &MusicItem::onLikeClicked)
+    );
+
+    // Check if Widget is not a playlist
+    if (!is_playlist) {
+        type_text->hide();
+        return;
+    }
+
+    // Widget is a playlist. Add styles related to the playlist item.    
+    duration->hide();
+    like_wrapper->hide();
+    type_icon->hide();
+    artist_icon->hide();
 }
 
 MusicItem::~MusicItem() {};
@@ -50,3 +76,11 @@ void MusicItem::setArtist(const std::string& str) {
 void MusicItem::setDuration(const std::string& str) {
     duration->set_label(str);
 }
+
+bool MusicItem::onLikeClicked(GdkEventButton* event) {
+    std::cout << "Like clicado!" << std::endl;
+
+    return true;
+}
+
+

@@ -46,7 +46,9 @@ int main() {
             sistema.listar_artistas(lista_artistas);
         } else if (comando == "ls_al") {
             sistema.listar_albuns(lista_albuns);
-        } else if (comando == "r_m") {
+        } else if (comando == "ls_disc") {
+            sistema.exibir_discografia(lista_artistas, lista_albuns);
+        }else if (comando == "r_m") {
             sistema.recomendar_musicas(lista_musicas);
         } else if (comando == "clear") {
             sistema.limpar_terminal();

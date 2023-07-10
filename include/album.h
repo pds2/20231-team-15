@@ -22,6 +22,7 @@ class Album : public Lista_musica {
         Album(std::string nome, Artista artista);
         std::string get_nome() const;
         std::string get_autor() const;
+        Artista get_artista() const;
         void adicionar_musica(Musica m);
         void exibe_musicas();
         void imprimir_informacoes();

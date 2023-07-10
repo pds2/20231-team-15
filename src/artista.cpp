@@ -1,13 +1,16 @@
 #include "../include/artista.h"
-#include "../include/musica.h"
 
 int Artista::contador_id_artista = 0;
-
 
 // Construtor
 Artista::Artista(const std::string& nome) {
     _id_artista = ++contador_id_artista;
     _nome = nome;
+}
+
+// Construtor default
+Artista::Artista() {
+    _id_artista = ++contador_id_artista;
 }
 
 // Retorna nome do artista

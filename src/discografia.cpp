@@ -1,6 +1,8 @@
 #include "../include/discografia.h"
 
-Discografia::Discografia() {}
+Discografia::Discografia(const Artista& artista) {
+    _artista = artista;
+}
 
 void Discografia::listar_itens() {
     for (auto it = m_discografia.begin(); it != m_discografia.end(); ++it) {

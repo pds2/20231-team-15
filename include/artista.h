@@ -19,7 +19,7 @@ public:
     Artista(const std::string& nome);
 
     // Construtor default
-    Artista() = default;
+    Artista();
 
     // Retorna nome do artista
     std::string get_nome() const;

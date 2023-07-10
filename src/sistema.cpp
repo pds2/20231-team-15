@@ -10,6 +10,7 @@ void Sistema::iniciar_sistema() {
     std::cout << "- Listar as musicas disponiveis no programa: ls_m" << std::endl;
     std::cout << "- Listar os artistas disponiveis no programa: ls_at" << std::endl;
     std::cout << "- Listar os albuns disponiveis no programa: ls_al" << std::endl;
+    std::cout << "- Listar a discografia do artista desejado: ls_disc" << std::endl;
     std::cout << "- Receber n recomendacoes de uma musica: r_m" << std::endl;
     std::cout << "- Limpar o terminal: clear" << std::endl;
     std::cout << "- Finalizar programa: end\n" << std::endl;
@@ -80,6 +81,15 @@ void Sistema::listar_artistas(std::vector <Artista> lista_artistas) const {
     }
 }
 
+Artista Sistema::identificar_artista_por_id(int id, std::vector <Artista> lista_artistas) const {
+    for (const auto& artista : lista_artistas) {
+        if (artista.get_id() == id) {
+            return artista;
+        }
+    }
+    throw id_artista_nao_existe();
+}
+
 
 //    METODOS DA CLASSE ALBUM
 
@@ -120,6 +130,35 @@ std::vector <Album> Sistema::inserir_musicas_album(std::vector <Album> lista_alb
 void Sistema::listar_albuns(std::vector <Album> listar_albuns) const {
     for (auto i = listar_albuns.begin(); i < listar_albuns.end(); i++) {
         i->imprimir_informacoes();
+    }
+}
+
+// METODOS DA CLASSE DISCOGRAFIA
+
+void Sistema::exibir_discografia(std::vector <Artista> listar_artistas, std::vector <Album> listar_albuns) const {
+
+    while (true) {
+        std::cout << "Digite o id do artista que deseja visualizar a discografia: ";
+        int id_artista;
+        std::cin >> id_artista;
+        Artista artista;
+        try {
+            artista = identificar_artista_por_id(id_artista, listar_artistas);
+
+            Discografia discografia(artista);
+
+            for (const auto& album : listar_albuns) {
+                if (album.get_autor() == artista.get_nome()) {
+                    discografia.inserir_item(album);
+                }
+            }
+            
+            discografia.listar_itens();
+
+        } catch (id_artista_nao_existe &e) {
+            std::cout << "Id do artista eh inexistente." << std::endl;
+        }   
+        break;
     }
 }
 

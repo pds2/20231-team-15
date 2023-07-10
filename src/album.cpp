@@ -12,6 +12,10 @@ std::string Album::get_autor() const {
     return _artista.get_nome();
 }
 
+Artista Album::get_artista() const {
+    return _artista;
+}
+
 void Album::adicionar_musica(Musica m) {
     for (Musica x : _lista_musica){
         if (m.get_id() == x.get_id()){

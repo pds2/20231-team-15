@@ -5,7 +5,7 @@ Este projeto foi efetuado para a disciplina de Programação e Desenvolvimento d
 
 ### Alunos
 
-* Igor
+* Igor Rocha Santos                         2022037574
 * Lucas Dayrell de Andrade Machado          2020035329
 * Pedro Augusto Torres Bento                2022104352
 * Victoria Estanislau Ramos de Oliveira     2021037490

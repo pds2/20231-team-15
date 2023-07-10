@@ -20,7 +20,7 @@ int main() {
     Sistema sistema;
 
     // Caminho do arquivo csv contendo as músicas
-    std::string musicas_path = "../musicas.csv";
+    std::string musicas_path = "./musicas.csv";
 
     // Incicializando músicas, artistas e albuns
     auto lista_musicas = sistema.inicializar_musicas(musicas_path);

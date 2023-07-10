@@ -11,23 +11,24 @@ Este projeto foi efetuado para a disciplina de Programação e Desenvolvimento d
 * Victoria Estanislau Ramos de Oliveira     2021037490
 
 
-# User Stories
+### User Stories
 
-1. **[Como]** usuário, **[desejo]** poder editar minha playlist **[para]** adicionar e ordenar as músicas de acordo com minha preferência.
+1. **Como** usuário, **desejo** poder visualizar as músicas, álbuns e artistas disponíveis no sistema **Para** explorar algo novo.
 
-2. **[Como]** usuário, **[quero]** navegar em minha biblioteca **[para]** visualizar e criar minhas playlists personalizadas.
+2. **Como** usuário, **gostaria** de poder visualizar as discografia de um artistas, **para** conhecer melhor seu trabalho.
 
-3. **[Como]** usuário, **[gostaria]** que o sistema recomendasse as próximas músicas da playlist **[para]** descobrir novas músicas.
+3. **Como** usuário, **desejo** poder editar minha playlist **para** adicionar e ordenar as músicas de acordo com minha preferência.
 
-4. **[Como]** usuário, **[desejo]** poder visualizar as músicas, álbuns e artistas disponíveis no sistema **[Para]** explorar algo novo.
+4. **Como** usuário, **quero** navegar em minha biblioteca **para** visualizar e criar minhas playlists personalizadas.
 
-5. **[Como]** usuário, **[quero]**  enviar uma música como input **[para]** receber uma recomendação de músicas semelhantes.
+5. **Como** usuário, **gostaria** que o sistema recomendasse as próximas músicas da playlist **para** descobrir novas músicas.
 
-6. **[Como]** usuário, **[gostaria]** de poder visualizar as informações de um artista, incluindo sua discografia e artistas semelhantes, **[para]** conhecer melhor seu trabalho.
+6. **Como** usuário, **quero**  enviar uma música como input **para** receber uma recomendação de músicas semelhantes.
 
+# Interface
 
-### Interface
    * Feita por meio da biblioteca GTK
+
 #### Telas
    * Home (Sistema): tela central cujo usuário poderá visualizar as músicas disponíveis no sistema e receber algumas recomendações
    * Álbum (Album): tela que exibirá as musicas do album de um artista

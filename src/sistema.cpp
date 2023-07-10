@@ -10,7 +10,8 @@ void Sistema::iniciar_sistema() {
     std::cout << "- Listar as musicas disponiveis no programa: ls_m" << std::endl;
     std::cout << "- Listar os artistas disponiveis no programa: ls_at" << std::endl;
     std::cout << "- Listar os albuns disponiveis no programa: ls_al" << std::endl;
-    std::cout << "- Listar os albuns disponiveis no programa: clear" << std::endl;
+    std::cout << "- Receber n recomendacoes de uma musica: r_m" << std::endl;
+    std::cout << "- Limpar o terminal: clear" << std::endl;
     std::cout << "- Finalizar programa: end\n" << std::endl;
     std::cout << "Digite agora o comando desejado: " << std::endl;
 }
@@ -19,7 +20,6 @@ void Sistema::limpar_terminal() {
     #ifdef _WIN32
         // Limpar o terminal no Windows
         system("cls");
-
     #else
         // Limpar o terminal em sistemas UNIX (Linux, macOS, etc.)
         system("clear");
@@ -43,6 +43,15 @@ void Sistema::listar_id_musica_artista(std::vector <Musica> lista_musicas) const
     for (auto i = lista_musicas.begin(); i < lista_musicas.end(); i++) {
         i->imprimir_id_musica_artista();
     }
+}
+
+Musica Sistema::identificar_musica_por_id(int id, std::vector <Musica> lista_musicas) const {
+    for (const auto& musica : lista_musicas) {
+        if (musica.get_id() == id) {
+            return musica;
+        }
+    }
+    throw id_musica_nao_existe();
 }
 
 
@@ -149,50 +158,86 @@ Usuario Sistema::login(BancoUsuarios b){
 
 //METODOS DA CLASSE PLAYLIST
 
-void Sistema::criar_playlist(std::string user){
-    std::string nome;
-    std::cout << "Digite o nome da playlist:" << std::endl;
-    std::getline(std::cin, nome);
-    Playlist p = Playlist(nome, user);
-}
+// void Sistema::criar_playlist(std::string user){
+//     std::string nome;
+//     std::cout << "Digite o nome da playlist:" << std::endl;
+//     std::getline(std::cin, nome);
+//     Playlist p = Playlist(nome, user);
+// }
 
-void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas){
-    std::string edit;
-    while (std::getline(std::cin, edit) && edit != "fim") {
-        switch (edit){
-            case "trocar":
-                int m1, m2;
-                std::cin >> m1 >> m2;
-                p.trocar_musica(m1,m2);
-                break;
-            case "remover":
-                int id;
-                std::cin >> id;
-                for (Musica m: lista_musicas ){
-                    if (m.get_id() == id){
-                        p.remover_musica(m);
-                        break;
-                    }
-                }
-                std::cout << "ID inválido." << std::endl;
-                break;
-            case "adicionar":
-                int id;
-                std::cin >> id;
-                for (Musica m: lista_musicas ){
-                    if (m.get_id() == id){
-                        p.adicionar_musica(m);
-                        break;
-                    }
-                }
-                std::cout << "ID inválido." << std::endl;
-                break;
+// void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas){
+//     std::string edit;
+//     while (std::getline(std::cin, edit) && edit != "fim") {
+//         switch (edit){
+//             case "trocar":
+//                 int m1, m2;
+//                 std::cin >> m1 >> m2;
+//                 p.trocar_musica(m1,m2);
+//                 break;
+//             case "remover":
+//                 int id;
+//                 std::cin >> id;
+//                 for (Musica m: lista_musicas ){
+//                     if (m.get_id() == id){
+//                         p.remover_musica(m);
+//                         break;
+//                     }
+//                 }
+//                 std::cout << "ID inválido." << std::endl;
+//                 break;
+//             case "adicionar":
+//                 int id;
+//                 std::cin >> id;
+//                 for (Musica m: lista_musicas ){
+//                     if (m.get_id() == id){
+//                         p.adicionar_musica(m);
+//                         break;
+//                     }
+//                 }
+//                 std::cout << "ID inválido." << std::endl;
+//                 break;
 
-        }
-    }
-}
+//         }
+//     }
+// }
+
+
 // METODOS DA CLASSE RECOMENDACAO
 
-std::vector <Musica> Sistema::recomendar_n_musicas(int n, Musica musica, std::vector <Musica> lista_musicas) {
+void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas) {
 
+    while (true) {
+        std::cout << "Digite o id da musica que deseja uma recomendacao: ";
+        int id_musica;
+        std::cin >> id_musica;
+
+        Musica musica;
+
+        try {
+            musica = identificar_musica_por_id(id_musica, lista_musicas);
+
+            std::cout << "Digite o numero de recomendacoes que deseja: ";
+            int numero_recomendacoes;
+            std::cin >> numero_recomendacoes;
+
+            try {
+                Recomendacao recomendacao(lista_musicas);
+                auto recomendacoes = recomendacao.recomendar_n_musicas(numero_recomendacoes, musica);
+                
+                std::cout << "Recomendacao para a musica: " << musica.get_titulo() << std::endl;
+                for (const auto& musica_recomendada : recomendacoes) {
+                    std::cout << "\n" << std::endl;
+                    musica_recomendada.imprimir_detalhes();
+                }
+
+            } catch (numero_de_musicas_superior_ao_existente &e) {
+                std::cout << "Numero de musicas desejado para recomendacao eh superior ao numero existente no sistema." << std::endl;     
+            }
+
+        } catch (id_musica_nao_existe &e) {
+            std::cout << "Id da musica eh inexistente." << std::endl;
+        }
+
+        break;
+    }
 }

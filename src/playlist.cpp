@@ -17,21 +17,22 @@ void Playlist::adicionar_musica(Musica m) {
     _lista_musica.push_back(m);
 }
 
-void Playlist::remover_musica(Musica m) {
-    auto it = std::find_if(_lista_musica.begin(), _lista_musica.end(), [&](const Musica& x) {
-        return x.get_id() == m.get_id();
-    });
+// void Playlist::remover_musica(Musica m) {
+//     auto it = std::find_if(_lista_musica.begin(), _lista_musica.end(), [&](const Musica& x) {
+//         return x.get_id() == m.get_id();
+//     });
 
-    if (it != _lista_musica.end()) {
-        _lista_musica.erase(it);
-    }
-}
-void Playlist::trocar_musica (int musica1, int musica2){
-    if (musica1< 0 || musica1 >= playlist.getTamanho() ||
-        musica2 < 0 || musica2 >= playlist.getTamanho()) {
-        std::cout << "Posições inválidas!" << std::endl;
-        return;
-    } else {
-        std::swap(_lista_musica[musica1], _lista_musica[musica2]);
-    }
-}
+//     if (it != _lista_musica.end()) {
+//         _lista_musica.erase(it);
+//     }
+// }
+
+// void Playlist::trocar_musica (int musica1, int musica2){
+//     if (musica1< 0 || musica1 >= playlist.getTamanho() ||
+//         musica2 < 0 || musica2 >= playlist.getTamanho()) {
+//         std::cout << "Posições inválidas!" << std::endl;
+//         return;
+//     } else {
+//         std::swap(_lista_musica[musica1], _lista_musica[musica2]);
+//     }
+// }

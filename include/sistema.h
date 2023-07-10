@@ -13,6 +13,8 @@
 #include "discografia.h"
 #include "recomendacao.h"
 
+class id_musica_nao_existe {};
+
 class Sistema {
     public:
         //    METODOS DO SISTEMA
@@ -42,6 +44,13 @@ class Sistema {
          * @param lista_musicas A lista de músicas a serem listadas.
          */
         void listar_id_musica_artista(std::vector <Musica> lista_musicas) const;
+
+        /**
+         * @brief Função para encontrar o objeto da classe musica por meio do id
+         * @param id o id da musica desejada.
+         * @param lista_musicas A lista de músicas a ser percorrida.
+         */
+        Musica identificar_musica_por_id(int id, std::vector <Musica> lista_musicas) const;
 
 
         //    METODOS DA CLASSE ARTISTA
@@ -110,7 +119,7 @@ class Sistema {
 
         // METODOS DA CLASSE RECOMENDACAO
 
-        std::vector <Musica> recomendar_n_musicas(int n, Musica musica, std::vector <Musica> lista_musicas);
+        void recomendar_musicas(std::vector <Musica> lista_musicas);
     private:
 
 };     

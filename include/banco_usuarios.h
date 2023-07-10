@@ -8,15 +8,18 @@
 
 #include "usuario.h"
 
+// Exceções
 class senha_incorreta_e{};
 class usuario_nao_existe_e{};
 class arquivo_nao_encontrado_e{};
 
+// Classe BancoUsuarios
 class BancoUsuarios{
     private:
         std::map<std::string, Usuario> _usuarios;
         std::string _endereco_arquivo;
     public:
+    // Construtor
         BancoUsuarios(std::string endereco);
         void salvar_usuarios();
         bool verificar_usuario(const std::string& nome);

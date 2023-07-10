@@ -55,6 +55,10 @@ void MusicItem::setData(Musica* data)  {
     this->data = data;
 }
 
+Musica* MusicItem::getData() {
+    return data;
+}
+
 void MusicItem::setCover(const std::string& file_path) {
     // Cover size
     cover_wrapper->set_size_request(80, 80);

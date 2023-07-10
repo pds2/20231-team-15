@@ -21,8 +21,9 @@ public:
         const Glib::RefPtr<Gtk::Builder>& builder,
         bool is_playlist = false
     );
-    virtual ~MusicItem();
+    virtual ~MusicItem();   
 
+    Musica* getData();
     void setData(Musica* data);
     void setTitle(const std::string& str);
     void setCover(const std::string& file_path);

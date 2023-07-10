@@ -32,10 +32,6 @@ MusicItem* createMusicItem(
     return music_item;
 }
 
-void handleLikeClicked(MusicItem* music_item) {
-    std::cout << "De fora funcionou kkkk" << std::endl;
-}
-
 class LibraryList : public Gtk::ListBox {
 public:
     LibraryList(
@@ -49,6 +45,7 @@ public:
 
     void appendMusic(MusicItem* music_item) {
         Musica* data = music_item->getData();
+        std::cout << data->get_titulo() << std::endl;
 
         // Create new MusicItem widget from "data"
         auto music_builder = Gtk::Builder::create_from_file("music-item.xml");
@@ -68,11 +65,6 @@ int main(int argc, char* argv[])
 
     Musica musicas;
     std::vector<Musica> lista_musica = musicas.ler_musicas_do_csv(musicas_path);
-
-    //Função para imprimir os detalhes de todas as músicas
-    // for (auto i = lista_musica.begin(); i < lista_musica.end(); i++) {
-    //     i->imprimir_detalhes();
-    // }
 
     // Constroi app do GTK
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.examples.base");
@@ -117,10 +109,8 @@ int main(int argc, char* argv[])
             &musica
         );
 
-        // music_item->signal_like_clicked().connect(sigc::ptr_fun(&handleLikeClicked));
         music_item->signal_like_clicked()
             .connect(sigc::mem_fun(library_list, &LibraryList::appendMusic));
-        // sigc::mem_fun(&listBox, &MyCustomListBox::onLikeButtonClicked)
 
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);

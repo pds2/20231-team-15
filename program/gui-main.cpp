@@ -11,6 +11,31 @@
 #include "../include/music_item_widget.h"
 #include "../include/musica.h"
 
+MusicItem* createMusicItem(
+    Glib::RefPtr<Gtk::Builder> builder, 
+    Musica musica,
+    std::vector<Musica>* lista_musica
+)
+{
+    MusicItem* music_item = nullptr;
+
+    // Constrói widget music_item do arquivo de ui
+    builder->add_from_file("music-item.xml");
+    builder->get_widget_derived("music-item", music_item);
+
+    // Define campos do music_item
+    music_item->setId(musica.get_id());
+    music_item->setListaMusica(lista_musica);
+
+    std::string cover_path = "./images/covers/"+std::to_string(musica.get_id())+".png";
+
+    music_item->setTitle(musica.get_titulo());
+    music_item->setArtist(musica.get_artista());
+    music_item->setCover(cover_path);
+
+    return music_item;
+}
+
 int main(int argc, char* argv[])
 {
     std::string musicas_path = "./musicas.csv";
@@ -55,24 +80,17 @@ int main(int argc, char* argv[])
     // ### EXIBE TODAS AS MÚSICAS ###
     builder = Gtk::Builder::create();
 
-    MusicItem* music_item = nullptr;
     auto it = lista_musica.begin();
     Musica musica;
     for (int i = 0; i < 10; i++) {  
         it += i;
         musica = *it;
 
-        // Constrói widget music_item do arquivo de ui
-        builder->add_from_file("music-item.xml");
-        builder->get_widget_derived("music-item", music_item);
-
-        // Define campos do music_item
-        music_item->setId(musica.get_id());
-        music_item->setListaMusica(&lista_musica);
-        std::string cover_path = "./images/covers/"+std::to_string(musica.get_id())+".png";
-        music_item->setTitle(musica.get_titulo());
-        music_item->setArtist(musica.get_artista());
-        music_item->setCover(cover_path);
+        MusicItem* music_item = createMusicItem(
+            builder, 
+            musica, 
+            &lista_musica
+        );
 
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);

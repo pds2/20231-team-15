@@ -55,5 +55,5 @@
         "mutex": "cpp",
         "thread": "cpp"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }

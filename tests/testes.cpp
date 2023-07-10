@@ -258,77 +258,78 @@ TEST_CASE("11 - Teste Recomendacao") {
     }
 }
 
-// TEST_CASE("12 - Teste Playlist") {
-//     std::string nome = "Minha Playlist";
-//     std::string username = "usuario123";
+TEST_CASE("12 - Teste Playlist") {
+    std::string nome = "Minha Playlist";
+    std::string username = "usuario123";
 
-//     Playlist playlist(nome, username);
+    Playlist playlist(nome, username);
 
-//     SUBCASE("Teste get_nome e get_usuario") {
-//         CHECK_EQ(playlist.get_nome(), nome);
-//         CHECK_EQ(playlist.get_usuario(), username);
-//     }
+    SUBCASE("Teste get_nome e get_usuario") {
+        CHECK_EQ(playlist.get_nome(), nome);
+        CHECK_EQ(playlist.get_usuario(), username);
+    }
 
-//     SUBCASE("Teste adicionar_musica e get_tamanho") {
-//         Musica musica1(1, "Artista 1", "Título 1", "Álbum 1", "Gênero 1", 2021, 5, 7, 3, 4.5);
-//         Musica musica2(2, "Artista 2", "Título 2", "Álbum 2", "Gênero 2", 2022, 4, 6, 2, 3.5);
+    SUBCASE("Teste adicionar_musica e get_tamanho") {
+        Musica musica1(1, "Artista 1", "Título 1", "Álbum 1", "Gênero 1", 2021, 5, 7, 3, 4.5);
+        Musica musica2(2, "Artista 2", "Título 2", "Álbum 2", "Gênero 2", 2022, 4, 6, 2, 3.5);
 
-//         playlist.adicionar_musica(musica1);
-//         playlist.adicionar_musica(musica2);
+        playlist.adicionar_musica(musica1);
+        playlist.adicionar_musica(musica2);
 
-//         CHECK_EQ(playlist.get_tamanho(), 2);
-//     }
+        CHECK_EQ(playlist.get_tamanho(), 2);
+    }
 
-//     SUBCASE("Teste remover_musica e get_tamanho") {
-//         Musica musica1(1, "Artista 1", "Título 1", "Álbum 1", "Gênero 1", 2021, 5, 7, 3, 4.5);
-//         Musica musica2(2, "Artista 2", "Título 2", "Álbum 2", "Gênero 2", 2022, 4, 6, 2, 3.5);
+    SUBCASE("Teste remover_musica e get_tamanho") {
+        Musica musica1(1, "Artista 1", "Título 1", "Álbum 1", "Gênero 1", 2021, 5, 7, 3, 4.5);
+        Musica musica2(2, "Artista 2", "Título 2", "Álbum 2", "Gênero 2", 2022, 4, 6, 2, 3.5);
 
-//         playlist.adicionar_musica(musica1);
-//         playlist.adicionar_musica(musica2);
+        playlist.adicionar_musica(musica1);
+        playlist.adicionar_musica(musica2);
 
-//         playlist.remover_musica(musica1);
+        playlist.remover_musica(musica1);
 
-//         CHECK_EQ(playlist.get_tamanho(), 1);
-//     }
+        CHECK_EQ(playlist.get_tamanho(), 1);
+    }
 
     
-//     SUBCASE("Teste trocar_musica") {
-//         Musica musica1(1, "Artista 1", "Título 1", "Álbum 1", "Gênero 1", 2021, 5, 7, 3, 4.5);
-//         Musica musica2(2, "Artista 2", "Título 2", "Álbum 2", "Gênero 2", 2022, 4, 6, 2, 3.5);
-//         Musica musica3(3, "Artista 3", "Título 3", "Álbum 3", "Gênero 3", 2023, 3, 5, 1, 2.5);
+    SUBCASE("Teste trocar_musica") {
+        Musica musica1(1, "Artista 1", "Título 1", "Álbum 1", "Gênero 1", 2021, 5, 7, 3, 4.5);
+        Musica musica2(2, "Artista 2", "Título 2", "Álbum 2", "Gênero 2", 2022, 4, 6, 2, 3.5);
+        Musica musica3(3, "Artista 3", "Título 3", "Álbum 3", "Gênero 3", 2023, 3, 5, 1, 2.5);
 
-//         playlist.adicionar_musica(musica1);
-//         playlist.adicionar_musica(musica2);
-//         playlist.adicionar_musica(musica3);
+        playlist.adicionar_musica(musica1);
+        playlist.adicionar_musica(musica2);
+        playlist.adicionar_musica(musica3);
 
-//         SUBCASE("Teste de troca válida") {
-//             int posicao1 = 0;
-//             int posicao2 = 2;
 
-//             playlist.trocar_musica(posicao1, posicao2);
+        SUBCASE("Teste de troca válida") {
+            int posicao1 = 0;
+            int posicao2 = 2;
 
-//             CHECK_EQ(playlist.get_id(), musica3.get_id());
-//             CHECK_EQ(playlist.get_id(), musica1.get_id());
-//         }
+            playlist.trocar_musica(posicao1, posicao2);
 
-//         SUBCASE("Teste de troca inválida") {
-//             int posicao1 = -1;
-//             int posicao2 = 5;
+            CHECK_EQ(playlist.get_musica_da_posicao(posicao1).get_id(), musica3.get_id());
+            CHECK_EQ(playlist.get_musica_da_posicao(posicao2).get_id(), musica1.get_id());
+        }
 
-//             // Redirecionar a saída para um stringstream para capturar a mensagem de erro
-//             std::stringstream output;
-//             std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+        SUBCASE("Teste de troca inválida") {
+            int posicao1 = -1;
+            int posicao2 = 5;
 
-//             playlist.trocar_musica(posicao1, posicao2);
+            // Redirecionar a saída para um stringstream para capturar a mensagem de erro
+            std::stringstream output;
+            std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
 
-//             std::string expectedOutput = "Posições inválidas!\n";
+            playlist.trocar_musica(posicao1, posicao2);
 
-//             CHECK_EQ(output.str(), expectedOutput);
+            std::string expectedOutput = "Posições inválidas!\n";
 
-//             std::cout.rdbuf(oldCoutBuffer);
-//         }
-//     }
-// }
+            CHECK_EQ(output.str(), expectedOutput);
+
+            std::cout.rdbuf(oldCoutBuffer);
+        }
+    }
+}
 
 
 

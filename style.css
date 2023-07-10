@@ -61,6 +61,7 @@
 #cover-wrapper {
     background-position: center;
     background-size: 80px;
+    background-repeat: no-repeat;
     border-radius: 16px;
 }
 
@@ -73,11 +74,6 @@
     background-color: inherit;
 }
 
-#playlist-item #type-text {
-    color: #757578;
-    font-size: 12px;
-}
-
 .playlist #title {
     font-size: 20px;
     color: #fff;
@@ -85,4 +81,10 @@
 
 .playlist #cover-wrapper {
     background-color: #727AC5;
+    background-size: auto;
+}
+
+.playlist #type-text {
+    color: #757578;
+    font-size: 12px;
 }

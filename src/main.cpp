@@ -44,11 +44,16 @@ int main(int argc, char* argv[])
     window->show_all();
     window->maximize();
 
-    // Widget listbox
+    // Song ListBox
     Gtk::ListBox* music_list_box = nullptr;
     builder->get_widget("music-list-box", music_list_box);
 
-    auto builder2 = Gtk::Builder::create();
+    // Library ListBox
+    Gtk::ListBox* library_list = nullptr;
+    builder->get_widget("library-list", library_list);
+
+    // ### EXIBE TODAS AS MÚSICAS ###
+    builder = Gtk::Builder::create();
 
     MusicItem* music_item = nullptr;
 
@@ -59,8 +64,8 @@ int main(int argc, char* argv[])
         musica = *it;
         
         // Constrói widget music_item do arquivo de ui
-        builder2->add_from_file("music-item.xml");
-        builder2->get_widget_derived("music-item", music_item);
+        builder->add_from_file("music-item.xml");
+        builder->get_widget_derived("music-item", music_item);
 
         // Define campos do music_item
         std::string cover_path = "./images/covers/"+std::to_string(musica.get_id())+".png";
@@ -72,6 +77,15 @@ int main(int argc, char* argv[])
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);
     }
+
+    // ### INSERE PLAYLIST NA BIBLIOTECA ###
+    MusicItem* playlist_item = nullptr;
+    builder->add_from_file("music-item.xml");
+    builder->get_widget_derived("music-item", playlist_item, true);
+
+    library_list->append(*playlist_item);
+    playlist_item->setArtist("15 músicas");
+    playlist_item->setCover("./images/icons/playlist-icon.png");
 
     return app->run(*window);
 }

@@ -34,7 +34,7 @@ Este projeto foi efetuado para a disciplina de Programação e Desenvolvimento d
 1. Clone o repositório:
 
 ```
-cd 20231-TEAM-15
+git clone https://github.com/pds2/20231-team-15.git
 ``` 
 
 1. Entre no diretório do repositório.

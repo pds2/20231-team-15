@@ -11,6 +11,7 @@
 #include <gtkmm/image.h>
 #include <gtkmm/label.h>
 #include <gtkmm/builder.h>
+#include <gtkmm/eventbox.h>
 
 class MusicItem : public Gtk::Box {
 public:
@@ -24,9 +25,12 @@ public:
 protected:
     Glib::RefPtr<Gtk::Builder> builder;
     Gtk::Box* cover_wrapper;
+    Gtk::EventBox* like_wrapper;
     Gtk::Label* title;
     Gtk::Label* artist;
     Gtk::Label* duration;
+
+    bool onLikeClicked(GdkEventButton* event);
 };
 
 #endif

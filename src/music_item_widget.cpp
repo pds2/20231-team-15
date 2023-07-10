@@ -1,7 +1,7 @@
-#include "../include/music_item_widget.h"
+#include <iostream>
 #include <gtkmm/stylecontext.h>
 #include <gtkmm/cssprovider.h>
-
+#include "../include/music_item_widget.h"
 
 MusicItem::MusicItem(
     BaseObjectType* cobject, 
@@ -9,15 +9,22 @@ MusicItem::MusicItem(
 ) : 
     Gtk::Box(cobject), builder{builder},
     cover_wrapper{nullptr},
+    like_wrapper{nullptr},
     title{nullptr},
     artist{nullptr},
     duration{nullptr}
 {
     // Get widgets from the ui file
     builder->get_widget("cover-wrapper", cover_wrapper);
+    builder->get_widget("like-wrapper", like_wrapper);
     builder->get_widget("title", title);
     builder->get_widget("artist", artist);
     builder->get_widget("duration", duration);
+
+    // Add handler to like-wrapper
+    like_wrapper->signal_button_press_event().connect(
+        sigc::mem_fun(*this, &MusicItem::onLikeClicked)
+    );
 }
 
 MusicItem::~MusicItem() {};
@@ -50,3 +57,11 @@ void MusicItem::setArtist(const std::string& str) {
 void MusicItem::setDuration(const std::string& str) {
     duration->set_label(str);
 }
+
+bool MusicItem::onLikeClicked(GdkEventButton* event) {
+    std::cout << "Like clicado!" << std::endl;
+
+    return true;
+}
+
+

@@ -251,7 +251,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
             std::cin >> id;
             bool idEncontrado = false;
             for (Musica m : lista_musicas) {
-                if (m.get_id() == id) {
+                if (m.get_id() == id){
                     p.adicionar_musica(m);
                     idEncontrado = true;
                     std::cout << "Música " << id << " adicionada com sucesso!" << std::endl;

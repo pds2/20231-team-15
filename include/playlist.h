@@ -8,12 +8,7 @@
 #include "usuario.h"
 #include "lista_musica.h"
 
-class musica_repetida_playlist_e : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "Música já existente na playlist. Deseja prosseguir?";
-    }
-};
+class musica_repetida_playlist_e : public std::exception {};
 
 class Playlist : public Lista_musica {
     private:

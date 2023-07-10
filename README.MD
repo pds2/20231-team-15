@@ -53,9 +53,7 @@ make terminal
 make test
 ```
 
-
-
-Para utilizar o programa no terminal será preciso que em seu dispositivo 
+O sistema ao inicializar irá listar os comandos para o uso do sistema. Divirta-se!
 
 
 # Interface

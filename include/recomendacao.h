@@ -15,7 +15,7 @@ class Recomendacao {
         
     public:
         Recomendacao(std::vector <Musica> lista_musicas);
-        auto ordenar_musicas(const Musica &musica);
+        std::vector<std::pair<double, Musica>> ordenar_musicas(const Musica &musica);
         std::vector <Musica> recomendar_n_musicas(int numero_de_musicas, const Musica &musica);
 
 };

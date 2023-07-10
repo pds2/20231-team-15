@@ -2,6 +2,8 @@
 
 Playlist::Playlist(std::string nome, Usuario usuario) : _nome(nome), _usuario(usuario){}
 
+Playlist::~Playlist(){}
+
 std::string Playlist::get_usuario(){
     return _usuario.get_nome();
 }
@@ -15,12 +17,22 @@ void Playlist::adicionar_musica(Musica m) {
     _lista_musica.push_back(m);
 }
 
-void Playlist::remover_musica(Musica m) {
-    for (auto it = _lista_musica.begin(); it != _lista_musica.end(); it++) {
-        const int id = it->get_id();
+//consertar o find_if
+ void Playlist::remover_musica(Musica m) {
+    auto it = std::find_if(_lista_musica.begin(), _lista_musica.end(), [&](const Musica& x) {
+         return x.get_id() == m.get_id();
+     });
+     if (it != _lista_musica.end()) {
+         _lista_musica.erase(it);
+     }
+ }
 
-        if (id == m.get_id()){
-            _lista_musica.erase(it);
-        }
+void Playlist::trocar_musica (int musica1, int musica2){
+    if (musica1< 0 || musica1 >= this->get_tamanho() ||
+        musica2 < 0 || musica2 >= this->get_tamanho()) {
+        std::cout << "Posições inválidas!" << std::endl;
+        return;
+    } else {
+        std::swap(_lista_musica[musica1], _lista_musica[musica2]);
     }
 }

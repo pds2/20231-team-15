@@ -69,6 +69,32 @@ double Musica::get_media() const {
     return _media;
 }
 
+// Função get musica
+//Musica Musica::get_musica() const {
+//    return *this;
+//}
+
+//Função para imprimir os detalhes de todas as músicas
+void Musica::imprimir_todas_musicas(std::vector<Musica> listaMusicas) const {
+    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+        i->imprimir_detalhes();
+    }
+}
+
+//Função para ver se tem músicas repetidas
+void Musica::musica_repetida(std::vector<Musica> listaMusicas) const {
+    int a = 0;
+    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+        for (auto j = i + 1; j < listaMusicas.end(); j++) {
+            if (i->get_titulo() == j->get_titulo()) {
+                std::cout << "Música repetida: " << i->get_titulo() << std::endl;
+                a++;
+            }
+        }
+    }
+    if(a==0) std::cout << "Não há músicas repetidas" << std::endl;
+}
+
 // Função para imprimir os detalhes da música
 void Musica::imprimir_detalhes() const{
     std::cout << "Id: " << _id << std::endl;
@@ -176,4 +202,10 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
     }
 
     return musicas;
+}
+
+void Musica::imprimir_id_musica_artista() {
+    std::cout << "Id: " << _id;
+    std::cout << "  Artista: " << _artista;
+    std::cout << "          Titulo: " << _titulo << std::endl;
 }

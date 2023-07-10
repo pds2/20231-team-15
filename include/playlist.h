@@ -1,6 +1,7 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
 
+#include <algorithm>
 #include <string>
 #include <exception>
 
@@ -19,10 +20,12 @@ class Playlist : public Lista_musica {
         std::string _nome;
         Usuario _usuario;
     public:
+        ~Playlist();
         Playlist(std::string nome, Usuario usuario);
         std::string get_usuario();
         void adicionar_musica (Musica m);
         void remover_musica (Musica m);
+        void trocar_musica (int musica1, int musica2);
 };
 
 #endif

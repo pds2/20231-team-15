@@ -7,13 +7,16 @@
 
 #include "musica.h"
 
+class numero_de_musicas_superior_ao_existente{};
+
 class Recomendacao {
     private:
     std::vector <Musica> m_lista_musicas;
         
     public:
         Recomendacao(std::vector <Musica> lista_musicas);
-        auto recomendar_musicas(const Musica &musica);
+        auto ordenar_musicas(const Musica &musica);
+        std::vector <Musica> recomendar_n_musicas(int numero_de_musicas, const Musica &musica);
 
 };
 

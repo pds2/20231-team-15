@@ -49,11 +49,20 @@ public:
 
     double get_media() const;
 
+    // Função get musica
+    //Musica get_musica() const;
+
     // Função para imprimir os detalhes da música
     void imprimir_detalhes() const;
 
+    void imprimir_todas_musicas(std::vector<Musica>) const;
+
+    void musica_repetida(std::vector<Musica>) const;
+
     // Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
     std::vector<Musica> ler_musicas_do_csv(const std::string& nomeArquivo);
+
+    void imprimir_id_musica_artista();
 
 };
 

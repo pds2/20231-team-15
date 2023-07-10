@@ -4,7 +4,7 @@ Recomendacao::Recomendacao(std::vector<Musica> lista_musicas) {
     m_lista_musicas = lista_musicas;
 };
 
-auto Recomendacao::recomendar_musicas(const Musica &musica) {
+auto Recomendacao::ordenar_musicas(const Musica &musica) {
 
     std::vector<std::pair<double, Musica>> diferencas;
 
@@ -36,3 +36,18 @@ auto Recomendacao::recomendar_musicas(const Musica &musica) {
 bool comparar_diferenca_medias(const double & distancia_musica_atual, const double & distancia_musica_seguinte) {
     return distancia_musica_atual < distancia_musica_seguinte;
 };
+
+std::vector <Musica> Recomendacao::recomendar_n_musicas(int numero_de_musicas, const Musica &musica) {
+
+    if (numero_de_musicas > m_lista_musicas.size()) {
+        throw numero_de_musicas_superior_ao_existente();
+    }
+
+    auto ordenadas = ordenar_musicas(musica);
+    std::vector <Musica> n_recomendadas;
+    for (int i = 0; i < numero_de_musicas; i++) {
+        n_recomendadas.push_back(ordenadas[i].second);
+    }
+
+    return n_recomendadas;
+}

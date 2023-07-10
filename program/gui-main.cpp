@@ -54,7 +54,30 @@ public:
         this->append(*new_music_item);
     }
 
-protected:
+    void removeMusic(MusicItem* music_item) {
+        int id = music_item->getData()->get_id();
+        std::vector<Gtk::Widget *> children = this->get_children();
+
+        for (auto child : children) {
+            auto row = dynamic_cast<Gtk::ListBoxRow*>(child);
+            auto item = dynamic_cast<MusicItem*>(row->get_child());
+
+            // Row could not be casted to MusicItem.
+            if (item == nullptr) {
+                continue;
+            }
+            
+            int current_id = item->getData()->get_id();
+            // Remove item with id of unliked item
+            if (current_id == id) {
+                this->remove(*child);
+            }
+        }
+
+
+    }
+
+private:
     Glib::RefPtr<Gtk::Builder> builder;
 };
 
@@ -108,8 +131,12 @@ int main(int argc, char* argv[])
             musica
         );
 
+        // Liked signal
         music_item->signal_liked()
             .connect(sigc::mem_fun(library_list, &LibraryList::appendMusic));
+        // Unliked signal
+        music_item->signal_unliked()
+            .connect(sigc::mem_fun(library_list, &LibraryList::removeMusic));
 
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);

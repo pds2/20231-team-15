@@ -50,7 +50,7 @@ public:
     double get_media() const;
 
     // Função get musica
-    //Musica get_musica() const;
+    Musica get_musica() const;
 
     // Função para imprimir os detalhes da música
     void imprimir_detalhes() const;

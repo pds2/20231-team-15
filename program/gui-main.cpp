@@ -36,6 +36,32 @@ void handleLikeClicked(MusicItem* music_item) {
     std::cout << "De fora funcionou kkkk" << std::endl;
 }
 
+class LibraryList : public Gtk::ListBox {
+public:
+    LibraryList(
+        BaseObjectType* cobject, 
+        const Glib::RefPtr<Gtk::Builder>& builder
+    ) : 
+        Gtk::ListBox(cobject), builder{builder} 
+    {}
+
+    virtual ~LibraryList() {};
+
+    void appendMusic(MusicItem* music_item) {
+        Musica* data = music_item->getData();
+
+        // Create new MusicItem widget from "data"
+        auto music_builder = Gtk::Builder::create_from_file("music-item.xml");
+        MusicItem* new_music_item = createMusicItem(music_builder, data);
+
+        // Append new MusicItem to library_list
+        this->append(*new_music_item);
+    }
+
+protected:
+    Glib::RefPtr<Gtk::Builder> builder;
+};
+
 int main(int argc, char* argv[])
 {
     std::string musicas_path = "./musicas.csv";
@@ -73,9 +99,8 @@ int main(int argc, char* argv[])
     Gtk::ListBox* music_list_box = nullptr;
     builder->get_widget("music-list-box", music_list_box);
 
-    // Library ListBox
-    Gtk::ListBox* library_list = nullptr;
-    builder->get_widget("library-list", library_list);
+    LibraryList* library_list = nullptr;
+    builder->get_widget_derived("library-list", library_list);
 
     // ### EXIBE TODAS AS MÚSICAS ###
     builder = Gtk::Builder::create();
@@ -86,27 +111,20 @@ int main(int argc, char* argv[])
         it += i;
         musica = *it;
 
+        // Cria widget music_item
         MusicItem* music_item = createMusicItem(
             builder, 
             &musica
         );
 
-        music_item->signal_like_clicked().connect(sigc::ptr_fun(&handleLikeClicked));
+        // music_item->signal_like_clicked().connect(sigc::ptr_fun(&handleLikeClicked));
+        music_item->signal_like_clicked()
+            .connect(sigc::mem_fun(library_list, &LibraryList::appendMusic));
+        // sigc::mem_fun(&listBox, &MyCustomListBox::onLikeButtonClicked)
 
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);
     }
-
-
-
-    // ### INSERE PLAYLIST NA BIBLIOTECA ###
-    MusicItem* playlist_item = nullptr;
-    builder->add_from_file("music-item.xml");
-    builder->get_widget_derived("music-item", playlist_item, true);
-
-    library_list->append(*playlist_item);
-    playlist_item->setArtist("15 músicas");
-    playlist_item->setCover("./images/icons/playlist-icon.png");
 
     return app->run(*window);
 }

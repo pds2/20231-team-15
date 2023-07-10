@@ -258,6 +258,7 @@ TEST_CASE("11 - Teste Recomendacao") {
     }
 }
 
+// Testes da classe Playlist
 TEST_CASE("12 - Teste Playlist") {
     std::string nome = "Minha Playlist";
     std::string username = "usuario123";

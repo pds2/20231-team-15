@@ -4,41 +4,73 @@
 #include <iostream>
 #include <vector>
 #include <string>
- 
+
 #include "musica.h"
 
-class Artista {
-private:
-    static int contador_id_artista;
-    int _id_artista;
-    std::string _nome;
-    std::vector<Musica> artistas_musicas;
+/**
+
+    @class Artista
+    @brief Representa um artista musical.
+    */
+    class Artista {
+    private:
+    static int contador_id_artista; // Contador de IDs dos artistas */
+    int _id_artista; // ID do artista */
+    std::string _nome; // Nome do artista */
+    std::vector<Musica> artistas_musicas; // Lista de músicas do artista */
 
 public:
-    // Construtor
-    Artista(const std::string& nome);
+/**
+* @brief Construtor da classe Artista.
+* @param nome O nome do artista.
+*/
+Artista(const std::string& nome);
 
-    // Construtor default
-    Artista();
+/**
+ * @brief Construtor default da classe Artista.
+ */
+Artista();
 
-    // Retorna nome do artista
-    std::string get_nome() const;
-    
-    int get_id() const;
+/**
+ * @brief Retorna o nome do artista.
+ * @return O nome do artista.
+ */
+std::string get_nome() const;
 
-    // Função para retornar as músicas do artista
-    std::vector<Musica> get_artistas_musicas() const;
+/**
+ * @brief Retorna o ID do artista.
+ * @return O ID do artista.
+ */
+int get_id() const;
 
-    // Função para listar as músicas do artista
-    void armazenar_musicas(const std::vector<Musica>& musicas);
+/**
+ * @brief Retorna as músicas do artista.
+ * @return Um vetor contendo as músicas do artista.
+ */
+std::vector<Musica> get_artistas_musicas() const;
 
-    void imprimir_artista() const;
+/**
+ * @brief Armazena as músicas do artista.
+ * @param musicas Um vetor contendo as músicas a serem armazenadas.
+ */
+void armazenar_musicas(const std::vector<Musica>& musicas);
 
-    void imprimir_discografia() const;
+/**
+ * @brief Imprime as informações do artista.
+ */
+void imprimir_artista() const;
 
-    void imprimir_musicas(const std::vector<Musica>& musicas) const;
+/**
+ * @brief Imprime a discografia do artista.
+ */
+void imprimir_discografia() const;
+
+/**
+ * @brief Imprime as músicas do artista.
+ * @param musicas Um vetor contendo as músicas a serem impressas.
+ */
+void imprimir_musicas(const std::vector<Musica>& musicas) const;
+
 };
 
-
-
-#endif
+#endif // ARTISTA_H

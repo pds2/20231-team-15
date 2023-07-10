@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
             musica
         );
 
-        music_item->signal_like_clicked()
+        music_item->signal_liked()
             .connect(sigc::mem_fun(library_list, &LibraryList::appendMusic));
 
         // Adiciona music_item ao ListBox

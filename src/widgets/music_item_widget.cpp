@@ -95,20 +95,19 @@ bool MusicItem::onLikeClicked(GdkEventButton* event) {
     std::string heart_path = "./images/icons/heart-icon.png";
     std::string heart_filled_path = "./images/icons/heart-solid-icon.png";
 
-    // Update like icon
+    // MusicItem was liked
     if (is_liked) {
         like_icon->set(heart_path);
     } else {
         like_icon->set(heart_filled_path);
+        // Emit signal_liked
+        signal_liked_.emit(this);
     }
-
-    // Emit signal_like_clicked_
-    signal_like_clicked_.emit(this);
 
     return true;
 }
 
 // Signals
-sigc::signal<void, MusicItem*> MusicItem::signal_like_clicked() {
-    return signal_like_clicked_;
+sigc::signal<void, MusicItem*> MusicItem::signal_liked() {
+    return signal_liked_;
 }

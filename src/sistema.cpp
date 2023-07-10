@@ -157,12 +157,12 @@ Usuario Sistema::login(BancoUsuarios b){
 }
 
 // METODOS DA CLASSE PLAYLIST
-//void Sistema::criar_playlist(std::string user){
-//    std::string nome;
-//    std::cout << "Digite o nome da playlist:" << std::endl;
-//    std::getline(std::cin, nome);
-//    Playlist p(nome, user);
-//}
+void Sistema::criar_playlist(std::string user){
+    std::string nome;
+    std::cout << "Digite o nome da playlist:" << std::endl;
+    std::getline(std::cin, nome);
+    Playlist p(nome, user);
+}
 
 
 void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {

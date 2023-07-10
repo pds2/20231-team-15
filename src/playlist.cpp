@@ -1,11 +1,11 @@
 #include "../include/playlist.h"
 
-Playlist::Playlist(std::string nome, Usuario usuario) : _nome(nome), _usuario(usuario){}
+Playlist::Playlist(std::string nome, std::string username) : _nome(nome), _username(username){}
 
 Playlist::~Playlist(){}
 
 std::string Playlist::get_usuario(){
-    return _usuario.get_nome();
+    return _username;
 }
 
 void Playlist::adicionar_musica(Musica m) {
@@ -17,7 +17,6 @@ void Playlist::adicionar_musica(Musica m) {
     _lista_musica.push_back(m);
 }
 
-//consertar o find_if
  void Playlist::remover_musica(Musica m) {
     auto it = std::find_if(_lista_musica.begin(), _lista_musica.end(), [&](const Musica& x) {
          return x.get_id() == m.get_id();

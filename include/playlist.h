@@ -18,10 +18,10 @@ public:
 class Playlist : public Lista_musica {
     private:
         std::string _nome;
-        Usuario _usuario;
+        std::string _username;
     public:
         ~Playlist();
-        Playlist(std::string nome, Usuario usuario);
+        Playlist(std::string nome, std::string _username);
         std::string get_usuario();
         void adicionar_musica (Musica m);
         void remover_musica (Musica m);

@@ -234,13 +234,11 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
             std::cout << "Digite o ID da música a ser removida" << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
-            for (Musica m : p) {
+            for (Musica &m : p) {
                 if (m.get_id() == id) {
                     p.remover_musica(m);
                     std::cout << "Música " << id << " removida com sucesso!" << std::endl;
                     idEncontrado = true;
-
-                    break;
                 }
             }
             if (!idEncontrado) {
@@ -251,12 +249,11 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                 std::cout << "Digite o ID da música a ser adicionada." << std::endl;
                 std::cin >> id;
                 bool idEncontrado = false;
-                for (Musica m : lista_musicas) {
+                for (Musica &m : lista_musicas) {
                     if (m.get_id() == id){
                         p.adicionar_musica(m);
                         idEncontrado = true;
                         std::cout << "Música " << id << " adicionada com sucesso!" << std::endl;
-                        break;
                     }
                 }
                     if (!idEncontrado) {

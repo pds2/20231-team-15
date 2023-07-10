@@ -23,6 +23,7 @@ public:
     );
     virtual ~MusicItem();
 
+    void setId(int id);
     // Lista com as músicas
     void setListaMusica(std::vector<Musica>* lista_musica);
 
@@ -35,7 +36,9 @@ public:
     bool onLikeClicked(GdkEventButton* event);
 
 protected:
+    int id;
     std::vector<Musica>* lista_musica;
+    bool is_liked;
 
     Glib::RefPtr<Gtk::Builder> builder;
     Gtk::Box* cover_wrapper;
@@ -48,7 +51,6 @@ protected:
     Gtk::Image* artist_icon;
     Gtk::Label* duration;
 
-    bool is_liked;
 };
 
 #endif

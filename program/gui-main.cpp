@@ -67,6 +67,7 @@ int main(int argc, char* argv[])
         builder->get_widget_derived("music-item", music_item);
 
         // Define campos do music_item
+        music_item->setId(musica.get_id());
         music_item->setListaMusica(&lista_musica);
         std::string cover_path = "./images/covers/"+std::to_string(musica.get_id())+".png";
         music_item->setTitle(musica.get_titulo());

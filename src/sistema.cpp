@@ -12,8 +12,9 @@ void Sistema::iniciar_sistema() {
     std::cout << "- Listar os albuns disponiveis no programa: ls_al" << std::endl;
     std::cout << "- Listar a discografia do artista desejado: ls_disc" << std::endl;
     std::cout << "- Receber n recomendacoes de uma musica: r_m" << std::endl;
-    std::cout << "- Criar uma Playlist: cp NomeDaPlaylist" << std::endl;
+    std::cout << "- Criar uma Playlist: cp" << std::endl;
     std::cout << "- Listar Playlists: lp" << std::endl;
+    std::cout << "- Ver as músicas da playlist: vp" << std::endl;
     std::cout << "- Editar uma das suas Playlists: edit" << std::endl;
     std::cout << "- Limpar o terminal: clear" << std::endl;
     std::cout << "- Finalizar programa: end\n" << std::endl;
@@ -246,12 +247,14 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     }
         else if (edit == "a") {
             int id;
+            std::cout << "Digite o ID da música a ser adicionada." << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
             for (Musica m : lista_musicas) {
                 if (m.get_id() == id) {
                     p.adicionar_musica(m);
                     idEncontrado = true;
+                    std::cout << "Música " << id << " adicionada com sucesso!" << std::endl;
                     break;
                 }
             }

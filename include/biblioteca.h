@@ -15,6 +15,7 @@ class Biblioteca : public Conjunto_listas {
         void excluir_item(int id);
         std::vector<Playlist>::iterator begin();
         std::vector<Playlist>::iterator end();
+        bool ta_vazia();
         // void editar_item(const Playlist &item);
 
     private:

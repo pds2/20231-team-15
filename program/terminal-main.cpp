@@ -48,20 +48,33 @@ int main() {
             sistema.listar_albuns(lista_albuns);
         } else if (comando == "ls_disc") {
             sistema.exibir_discografia(lista_artistas, lista_albuns);
-        }else if (comando == "r_m") {
+        } else if (comando == "r_m") {
             sistema.recomendar_musicas(lista_musicas);
         } else if (comando == "clear") {
             sistema.limpar_terminal();
         } else if (comando == "end") {
             break;
         } else if (comando == "cp") {
-            std::string usuario;
-            iss >> usuario;
-            Playlist p = sistema.criar_playlist(usuario);
+            Playlist p = sistema.criar_playlist("admin");
             b.inserir_item(p);
+            std::cout << "Playlist criada!" << std::endl;
         } else if (comando == "lp") {
+            if (b.ta_vazia()){
+                std::cout << "Sem playlists na biblioteca!" << std::endl;
+            } else {
+                b.listar_itens();
+            }
+        } else if (comando == "vp") {
             b.listar_itens();
-        } else if (comando == "edit") {
+            int id;
+            std::cout << "Qual o ID da playlist que deseja ver?" << std::endl;
+            std::cin >> id;
+            for (Playlist x : b) {
+                if (x.get_id() == id) {
+                    x.exibe_musicas();
+                }
+            }
+        }else if (comando == "edit") {
             b.listar_itens();
             int id;
             std::cout << "Qual o ID da playlist que deseja editar?" << std::endl;

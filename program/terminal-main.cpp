@@ -69,18 +69,21 @@ int main() {
             int id;
             std::cout << "Qual o ID da playlist que deseja ver?" << std::endl;
             std::cin >> id;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpar o fluxo de entrada
             for (Playlist x : b) {
                 if (x.get_id() == id) {
-                    x.exibe_musicas();
+                    std::cout << x.get_nome() << ":"<< std::endl;
+                    x.mostrar_playlist();
                 }
             }
-        }else if (comando == "edit") {
+        } else if (comando == "edit") {
             b.listar_itens();
             int id;
             std::cout << "Qual o ID da playlist que deseja editar?" << std::endl;
             std::cin >> id;
             for (Playlist x : b) {
                 if (x.get_id() == id) {
+                    x.mostrar_playlist();
                     sistema.editar_playlist(x, lista_musicas);
                 }
             }

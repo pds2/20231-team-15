@@ -34,3 +34,9 @@ void Playlist::trocar_musica (int musica1, int musica2){
         std::swap(_lista_musica[musica1], _lista_musica[musica2]);
     }
 }
+
+void Playlist:: mostrar_playlist(){
+    for (Musica x: _lista_musica){
+        x.imprimir_id_musica_artista();
+    }
+}

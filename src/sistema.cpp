@@ -225,43 +225,43 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     std::cout <<"Salvar alterações e sair: sair" << std::endl;
     std::string edit;
     while (std::getline(std::cin, edit) && edit != "sair") {
-    if (edit == "t") {
-        int m1, m2;
-        std::cin >> m1 >> m2;
-        p.trocar_musica(m1, m2);
-    }
-    else if (edit == "r") {
-        int id;
-        std::cin >> id;
-        bool idEncontrado = false;
-        for (Musica m : lista_musicas) {
-            if (m.get_id() == id) {
-                p.remover_musica(m);
-                idEncontrado = true;
-                break;
-            }
+        if (edit == "t") {
+            int m1, m2;
+            std::cin >> m1 >> m2;
+            p.trocar_musica(m1, m2);
         }
-        if (!idEncontrado) {
-            std::cout << "ID inválido." << std::endl;
-        }
-    }
-        else if (edit == "a") {
+        else if (edit == "r") {
             int id;
-            std::cout << "Digite o ID da música a ser adicionada." << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
             for (Musica m : lista_musicas) {
-                if (m.get_id() == id){
-                    p.adicionar_musica(m);
+                if (m.get_id() == id) {
+                    p.remover_musica(m);
                     idEncontrado = true;
-                    std::cout << "Música " << id << " adicionada com sucesso!" << std::endl;
                     break;
                 }
             }
-                if (!idEncontrado) {
-                    std::cout << "ID inválido." << std::endl;
+            if (!idEncontrado) {
+                std::cout << "ID inválido." << std::endl;
             }
         }
+            else if (edit == "a") {
+                int id;
+                std::cout << "Digite o ID da música a ser adicionada." << std::endl;
+                std::cin >> id;
+                bool idEncontrado = false;
+                for (Musica m : lista_musicas) {
+                    if (m.get_id() == id){
+                        p.adicionar_musica(m);
+                        idEncontrado = true;
+                        std::cout << "Música " << id << " adicionada com sucesso!" << std::endl;
+                        break;
+                    }
+                }
+                    if (!idEncontrado) {
+                        std::cout << "ID inválido." << std::endl;
+                }
+            }
     }
 }
 

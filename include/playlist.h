@@ -22,6 +22,7 @@ class Playlist : public Lista_musica {
         void adicionar_musica (Musica m);
         void remover_musica (Musica m);
         void trocar_musica (int musica1, int musica2);
+        void mostrar_playlist();
 };
 
 #endif

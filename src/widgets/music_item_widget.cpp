@@ -91,7 +91,6 @@ void MusicItem::setDuration(const std::string& str) {
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
     bool is_liked = data->get_is_liked();
     data->set_is_liked(!is_liked);
-    // is_liked = !is_liked;
 
     std::string heart_path = "./images/icons/heart-icon.png";
     std::string heart_filled_path = "./images/icons/heart-solid-icon.png";

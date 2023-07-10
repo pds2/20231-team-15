@@ -36,7 +36,7 @@ public:
     // Signals
     sigc::signal<void, MusicItem*> signal_like_clicked();
 
-protected:
+private:
     sigc::signal<void, MusicItem*> signal_like_clicked_; // Signal emmited when MusicItem is liked.
 
     // Music object which this widget is related to.

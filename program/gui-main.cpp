@@ -45,7 +45,6 @@ public:
 
     void appendMusic(MusicItem* music_item) {
         Musica* data = music_item->getData();
-        std::cout << data->get_titulo() << std::endl;
 
         // Create new MusicItem widget from "data"
         auto music_builder = Gtk::Builder::create_from_file("music-item.xml");
@@ -97,16 +96,16 @@ int main(int argc, char* argv[])
     // ### EXIBE TODAS AS MÚSICAS ###
     builder = Gtk::Builder::create();
 
+    Musica* musica;
     auto it = lista_musica.begin();
-    Musica musica;
     for (int i = 0; i < 10; i++) {  
         it += i;
-        musica = *it;
+        musica = &(*it);
 
         // Cria widget music_item
         MusicItem* music_item = createMusicItem(
             builder, 
-            &musica
+            musica
         );
 
         music_item->signal_like_clicked()

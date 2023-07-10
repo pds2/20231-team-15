@@ -95,7 +95,18 @@ class Sistema {
         Usuario login(BancoUsuarios b);
 
         // METODOS DA CLASSE PLAYLIST
-        void criar_playlist(std::string user, std::string nome);
+        /**
+         * @brief Função para criar uma playlist.
+         * @param b Recebe a string correspondente ao username do usuário logado.
+         */
+        void criar_playlist(std::string user);
+
+        /**
+         * @brief Função para editar a playlist. Permite adicionar, remover e trocar músicas de lugar.
+         * @param b recebe uma referência para a Playlist a ser editada e o vetor de músicas que foi inicializado.
+         */
+        void editar_playlist(Playlist &p, std::vector<Musica> lista_musicas);
+
 
         // METODOS DA CLASSE RECOMENDACAO
 

@@ -8,7 +8,7 @@ else ifeq ($(shell uname), Linux) # Linux
 endif
 
 main:
-	g++ -Iinclude ./src/*.cpp -o main.$(OS_EXTENSION)
+	g++ -Iinclude ./src/*.cpp ./program/main.cpp -o main.$(OS_EXTENSION)
 	./main.$(OS_EXTENSION)
 
 test:

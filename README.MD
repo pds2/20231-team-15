@@ -25,6 +25,39 @@ Este projeto foi efetuado para a disciplina de Programação e Desenvolvimento d
 
 6. **Como** usuário, **quero**  enviar uma música como input **para** receber uma recomendação de músicas semelhantes.
 
+# Uso do programa
+
+### Pré-requisitos para uso no Terminal
+
+É preciso ter instalado em seu dispositivo um compilador de C++, o cmake e o git instalado. Após cumprir os requisitos, será preciso realizar a instalação do programa:
+
+1. Clone o repositório:
+
+```
+cd 20231-TEAM-15
+``` 
+
+1. Entre no diretório do repositório.
+
+```
+cd 20231-TEAM-15
+```
+3. Execute o comando make para gerar o projeto.
+
+```
+make terminal
+```
+
+4. (opcional) Execute o comando make test para testar o projeto.
+```
+make test
+```
+
+
+
+Para utilizar o programa no terminal será preciso que em seu dispositivo 
+
+
 # Interface
 
    * Feita por meio da biblioteca GTK

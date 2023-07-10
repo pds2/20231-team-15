@@ -90,7 +90,7 @@ bool MusicItem::onLikeClicked(GdkEventButton* event) {
     is_liked = !is_liked;
 
     std::string heart_path = "./images/icons/heart-icon.png";
-    std::string heart_filled_path = "./images/icons/user-icon.png";
+    std::string heart_filled_path = "./images/icons/heart-solid-icon.png";
 
     // Update like icon
     if (is_liked) {

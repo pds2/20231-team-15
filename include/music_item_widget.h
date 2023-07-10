@@ -24,7 +24,6 @@ public:
     virtual ~MusicItem();
 
     void setMusic(Musica* musica);
-    void setId(int id);
     void setTitle(const std::string& str);
     void setCover(const std::string& file_path);
     void setArtist(const std::string& str);
@@ -38,11 +37,10 @@ public:
 
 protected:
     sigc::signal<void, MusicItem*> signal_like_clicked_; // Signal emmited when MusicItem is liked.
-    
+
     // Music object which this widget is related to.
     // Contains all the data related to this widget.
     Musica* music;
-    int id;
 
     Glib::RefPtr<Gtk::Builder> builder;
     Gtk::Box* cover_wrapper;

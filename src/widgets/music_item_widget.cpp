@@ -8,9 +8,8 @@ MusicItem::MusicItem(
     const Glib::RefPtr<Gtk::Builder>& builder,
     bool is_playlist
 ) : 
-    music{nullptr},
-    id{0},
     Gtk::Box(cobject), builder{builder},
+    music{nullptr},
     cover_wrapper{nullptr},
     type_icon{nullptr},
     type_text{nullptr},
@@ -54,10 +53,6 @@ MusicItem::~MusicItem() {};
 
 void MusicItem::setMusic(Musica* musica)  {
     this->music = musica;
-}
-
-void MusicItem::setId(int id) {
-    this->id = id;
 }
 
 void MusicItem::setCover(const std::string& file_path) {

@@ -1,16 +1,32 @@
 #include "../include/album.h"
 
-std::string Album::get_autor(){
+Album::Album(std::string nome, Artista artista): _artista(artista) {
+    _nome = nome;
+}
+
+std::string Album::get_nome() const {
+    return _nome;
+}
+
+std::string Album::get_autor() const {
     return _artista.get_nome();
 }
 
-Album::Album(Artista artista): _artista(artista) {}
-
-void Album::adicionar_musica(Musica m) override{
+void Album::adicionar_musica(Musica m) {
     for (Musica x : _lista_musica){
-        if (m.getId() == x.getId()){
-            std::cout<< "Música já existente no álbum!" << std::endl
+        if (m.get_id() == x.get_id()){
+            throw musica_repetida_album_e();
         }
     }
     _lista_musica.push_back(m);
+}
+
+void Album::imprimir_informacoes() {
+    std::cout << "Id: " << Lista_musica::get_id();
+    std::cout << "  Nome: " << _nome;
+    std::cout << "          Artista: " << get_autor() << std::endl;
+}
+
+void Album::exibe_musicas() {
+    Lista_musica::exibe_musicas();
 }

@@ -93,8 +93,8 @@ void Musica::musica_repetida(std::vector<Musica> lista_musicas) const {
             }
         }
     }
-    if (!encontrou_repeticao)
-        std::cout << "Não há músicas repetidas" << std::endl;
+    // if (!encontrou_repeticao)
+    //     std::cout << "Não há músicas repetidas" << std::endl;
 }
 
 

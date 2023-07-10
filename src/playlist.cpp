@@ -42,3 +42,7 @@ void Playlist:: mostrar_playlist(){
         x.imprimir_id_musica_artista();
     }
 }
+
+Musica Playlist::get_musica_da_posicao(int pos){
+    return _lista_musica[pos];
+}

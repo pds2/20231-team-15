@@ -4,7 +4,7 @@ Recomendacao::Recomendacao(std::vector<Musica> lista_musicas) {
     m_lista_musicas = lista_musicas;
 };
 
-auto Recomendacao::ordenar_musicas(const Musica &musica) {
+std::vector<std::pair<double, Musica>> Recomendacao::ordenar_musicas(const Musica &musica) {
 
     std::vector<std::pair<double, Musica>> diferencas;
 

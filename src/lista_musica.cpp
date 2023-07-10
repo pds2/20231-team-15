@@ -6,6 +6,7 @@ Lista_musica::Lista_musica() {
     id = _id++;
 }
 
+
 Lista_musica::Lista_musica(const std::string& caminho_csv) {
     std::ifstream arquivo("musicas.csv");  // Abre o arquivo CSV
 

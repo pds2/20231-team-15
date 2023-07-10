@@ -12,7 +12,7 @@ class Discografia : public Conjunto_listas {
         Discografia(const Artista& artista);
         void listar_itens();
         void inserir_item(const Album &item);
-        void excluir_item(const Album &item);
+        void excluir_item(int id);
 
     private:
         Artista _artista;

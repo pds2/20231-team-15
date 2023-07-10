@@ -12,7 +12,7 @@ class Conjunto_listas {
 
         int get_id() const;
         virtual void listar_itens() = 0;
-        // virtual void excluir_item(const Album &item) = 0;
+        virtual void excluir_item(int id) = 0;
 
     private:
         static int contador_id_conjunto_listas;

@@ -30,7 +30,7 @@ public:
     std::vector<Musica> get_artistas_musicas() const;
 
     // Função para listar as músicas do artista
-    void armazenar_musicas(const std::vector<Musica>& musicas) const;
+    void armazenar_musicas(const std::vector<Musica>& musicas);
 
     void imprimir_artista() const;
 

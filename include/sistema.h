@@ -114,12 +114,21 @@ class Sistema {
          */
         Usuario login(BancoUsuarios b);
 
+        //METODOS DA CLASSE BIBLIOTECA
+
+        /**
+        * @brief Função para exibir as playlists da biblioteca;
+        */
+        Playlist& buscar_playlist(Biblioteca &b, int id);
+
+
         // METODOS DA CLASSE PLAYLIST
         /**
          * @brief Função para criar uma playlist.
          * @param b Recebe a string correspondente ao username do usuário logado.
+         * @return A playlist criada.
          */
-        void criar_playlist(std::string user);
+        Playlist criar_playlist(std::string user);
 
         /**
          * @brief Função para editar a playlist. Permite adicionar, remover e trocar músicas de lugar.

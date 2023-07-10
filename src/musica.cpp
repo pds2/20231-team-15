@@ -18,6 +18,7 @@ Musica::Musica(int id, const std::string& artista, const std::string& titulo, co
  
 //Construtor padrão
 Musica::Musica() {
+    _id == 0;
 }
 
 // Função para retornar o id da música
@@ -70,30 +71,32 @@ double Musica::get_media() const {
 }
 
 // Função get musica
-//Musica Musica::get_musica() const {
-//    return *this;
-//}
+Musica Musica::get_musica() const {
+    return *this;
+}
 
 //Função para imprimir os detalhes de todas as músicas
-void Musica::imprimir_todas_musicas(std::vector<Musica> listaMusicas) const {
-    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
+void Musica::imprimir_todas_musicas(std::vector<Musica> lista_musicas) const {
+    for (auto i = lista_musicas.begin(); i < lista_musicas.end(); i++) {
         i->imprimir_detalhes();
     }
 }
 
 //Função para ver se tem músicas repetidas
-void Musica::musica_repetida(std::vector<Musica> listaMusicas) const {
-    int a = 0;
-    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
-        for (auto j = i + 1; j < listaMusicas.end(); j++) {
+void Musica::musica_repetida(std::vector<Musica> lista_musicas) const {
+    bool encontrou_repeticao = false;
+    for (auto i = lista_musicas.begin(); i < lista_musicas.end(); i++) {
+        for (auto j = i + 1; j < lista_musicas.end(); j++) {
             if (i->get_titulo() == j->get_titulo()) {
                 std::cout << "Música repetida: " << i->get_titulo() << std::endl;
-                a++;
+                encontrou_repeticao = true;
             }
         }
     }
-    if(a==0) std::cout << "Não há músicas repetidas" << std::endl;
+    if (!encontrou_repeticao)
+        std::cout << "Não há músicas repetidas" << std::endl;
 }
+
 
 // Função para imprimir os detalhes da música
 void Musica::imprimir_detalhes() const{

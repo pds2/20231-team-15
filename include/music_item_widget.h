@@ -38,9 +38,11 @@ public:
 
 protected:
     sigc::signal<void, MusicItem*> signal_like_clicked_; // Signal emmited when MusicItem is liked.
-    Musica* music; // Music object which this widget is related to.
+    
+    // Music object which this widget is related to.
+    // Contains all the data related to this widget.
+    Musica* music;
     int id;
-    bool is_liked;
 
     Glib::RefPtr<Gtk::Builder> builder;
     Gtk::Box* cover_wrapper;

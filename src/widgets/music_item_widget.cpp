@@ -19,8 +19,7 @@ MusicItem::MusicItem(
     title{nullptr},
     artist{nullptr},
     artist_icon{nullptr},
-    duration{nullptr},
-    is_liked{false}
+    duration{nullptr}
 {
     // Get widgets from the ui file
     builder->get_widget("cover-wrapper", cover_wrapper);
@@ -91,7 +90,9 @@ void MusicItem::setDuration(const std::string& str) {
 }
 
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
-    is_liked = !is_liked;
+    bool is_liked = music->get_is_liked();
+    music->set_is_liked(!is_liked);
+    // is_liked = !is_liked;
 
     std::string heart_path = "./images/icons/heart-icon.png";
     std::string heart_filled_path = "./images/icons/heart-solid-icon.png";

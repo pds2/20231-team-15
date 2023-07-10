@@ -224,28 +224,29 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     std::cout <<"Trocar duas Músicas: t" << std::endl;
     std::cout <<"Salvar alterações e sair: sair" << std::endl;
     std::string edit;
-    while (std::getline(std::cin, edit) && edit != "sair") {
+    while (std::cin >> edit && edit != "sair") {
         if (edit == "t") {
             int m1, m2;
             std::cin >> m1 >> m2;
             p.trocar_musica(m1, m2);
-        }
-        else if (edit == "r") {
+        } else if (edit == "r") {
             int id;
+            std::cout << "Digite o ID da música a ser removida" << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
-            for (Musica m : lista_musicas) {
+            for (Musica m : p) {
                 if (m.get_id() == id) {
                     p.remover_musica(m);
+                    std::cout << "Música " << id << " removida com sucesso!" << std::endl;
                     idEncontrado = true;
+
                     break;
                 }
             }
             if (!idEncontrado) {
                 std::cout << "ID inválido." << std::endl;
             }
-        }
-            else if (edit == "a") {
+        } else if (edit == "a") {
                 int id;
                 std::cout << "Digite o ID da música a ser adicionada." << std::endl;
                 std::cin >> id;

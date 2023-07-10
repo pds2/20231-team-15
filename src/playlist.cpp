@@ -38,11 +38,24 @@ void Playlist::trocar_musica (int musica1, int musica2){
 }
 
 void Playlist:: mostrar_playlist(){
-    for (Musica x: _lista_musica){
-        x.imprimir_id_musica_artista();
+    if (_lista_musica.empty()){
+        std::cout << "Playlist vazia."<< std::endl;
+    } else {
+        int i = 0;
+        for (auto it = _lista_musica.begin(); it != _lista_musica.end(); ++it) {
+        std::cout << ++i << "." << it->get_artista() << " - " << it ->get_titulo() << " ID:" << it->get_id() << std::endl;
+        }
     }
 }
 
 Musica Playlist::get_musica_da_posicao(int pos){
     return _lista_musica[pos];
+}
+
+std::vector<Musica>::iterator Playlist::begin(){
+    return _lista_musica.begin();
+}
+
+std::vector<Musica>::iterator Playlist::end(){
+    return _lista_musica.begin();
 }

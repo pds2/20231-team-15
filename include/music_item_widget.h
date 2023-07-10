@@ -25,7 +25,6 @@ public:
 
     void setMusic(Musica* musica);
     void setId(int id);
-
     void setTitle(const std::string& str);
     void setCover(const std::string& file_path);
     void setArtist(const std::string& str);
@@ -34,7 +33,11 @@ public:
     // Method to handle the like click event
     bool onLikeClicked(GdkEventButton* event);
 
+    // Signals
+    sigc::signal<void, MusicItem*> signal_like_clicked();
+
 protected:
+    sigc::signal<void, MusicItem*> signal_like_clicked_; // Signal emmited when MusicItem is liked.
     Musica* music; // Music object which this widget is related to.
     int id;
     bool is_liked;

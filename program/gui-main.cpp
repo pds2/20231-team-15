@@ -35,6 +35,10 @@ MusicItem* createMusicItem(
     return music_item;
 }
 
+void handleLikeClicked(MusicItem* music_item) {
+    std::cout << "De fora funcionou kkkk" << std::endl;
+}
+
 int main(int argc, char* argv[])
 {
     std::string musicas_path = "./musicas.csv";
@@ -90,9 +94,13 @@ int main(int argc, char* argv[])
             &musica
         );
 
+        music_item->signal_like_clicked().connect(sigc::ptr_fun(&handleLikeClicked));
+
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);
     }
+
+
 
     // ### INSERE PLAYLIST NA BIBLIOTECA ###
     MusicItem* playlist_item = nullptr;

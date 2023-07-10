@@ -91,8 +91,6 @@ void MusicItem::setDuration(const std::string& str) {
 }
 
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
-    std::cout << "Like clicado!" << std::endl;
-
     is_liked = !is_liked;
 
     std::string heart_path = "./images/icons/heart-icon.png";
@@ -105,7 +103,13 @@ bool MusicItem::onLikeClicked(GdkEventButton* event) {
         like_icon->set(heart_filled_path);
     }
 
+    // Emit signal_like_clicked_
+    signal_like_clicked_.emit(this);
+
     return true;
 }
 
-
+// Signals
+sigc::signal<void, MusicItem*> MusicItem::signal_like_clicked() {
+    return signal_like_clicked_;
+}

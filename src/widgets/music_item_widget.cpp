@@ -13,6 +13,7 @@ MusicItem::MusicItem(
     type_icon{nullptr},
     type_text{nullptr},
     like_wrapper{nullptr},
+    like_icon{nullptr},
     title{nullptr},
     artist{nullptr},
     artist_icon{nullptr},
@@ -23,6 +24,7 @@ MusicItem::MusicItem(
     builder->get_widget("type-icon", type_icon);
     builder->get_widget("type-text", type_text);
     builder->get_widget("like-wrapper", like_wrapper);
+    builder->get_widget("like-icon", like_icon);
     builder->get_widget("title", title);
     builder->get_widget("artist", artist);
     builder->get_widget("artist-icon", artist_icon);
@@ -47,6 +49,10 @@ MusicItem::MusicItem(
 }
 
 MusicItem::~MusicItem() {};
+
+void MusicItem::setListaMusica(std::vector<Musica>* lista_musica)  {
+    this->lista_musica = lista_musica;
+}
 
 void MusicItem::setCover(const std::string& file_path) {
     // Cover size
@@ -79,6 +85,9 @@ void MusicItem::setDuration(const std::string& str) {
 
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
     std::cout << "Like clicado!" << std::endl;
+
+    // Update like icon
+    like_icon->set("../../images/icons/like-icon.png");
 
     return true;
 }

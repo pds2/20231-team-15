@@ -16,12 +16,12 @@ int main(int argc, char* argv[])
     std::string musicas_path = "./musicas.csv";
 
     Musica musicas;
-    std::vector<Musica> listaMusicas = musicas.ler_musicas_do_csv(musicas_path);
+    std::vector<Musica> lista_musica = musicas.ler_musicas_do_csv(musicas_path);
 
     //Função para imprimir os detalhes de todas as músicas
-    for (auto i = listaMusicas.begin(); i < listaMusicas.end(); i++) {
-        i->imprimir_detalhes();
-    }
+    // for (auto i = lista_musica.begin(); i < lista_musica.end(); i++) {
+    //     i->imprimir_detalhes();
+    // }
 
     // Constroi app do GTK
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.examples.base");
@@ -56,23 +56,22 @@ int main(int argc, char* argv[])
     builder = Gtk::Builder::create();
 
     MusicItem* music_item = nullptr;
-
-    auto it = listaMusicas.begin();
+    auto it = lista_musica.begin();
     Musica musica;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++) {  
         it += i;
         musica = *it;
-        
+
         // Constrói widget music_item do arquivo de ui
         builder->add_from_file("music-item.xml");
         builder->get_widget_derived("music-item", music_item);
 
         // Define campos do music_item
+        music_item->setListaMusica(&lista_musica);
         std::string cover_path = "./images/covers/"+std::to_string(musica.get_id())+".png";
         music_item->setTitle(musica.get_titulo());
         music_item->setArtist(musica.get_artista());
         music_item->setCover(cover_path);
-
 
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);

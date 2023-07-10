@@ -11,6 +11,9 @@ void Sistema::iniciar_sistema() {
     std::cout << "- Listar os artistas disponiveis no programa: ls_at" << std::endl;
     std::cout << "- Listar os albuns disponiveis no programa: ls_al" << std::endl;
     std::cout << "- Receber n recomendacoes de uma musica: r_m" << std::endl;
+    std::cout << "- Criar uma Playlist: cp NomeDaPlaylist" << std::endl;
+    std::cout << "- Listar Playlists: lp" << std::endl;
+    std::cout << "- Editar uma das suas Playlists: edit" << std::endl;
     std::cout << "- Limpar o terminal: clear" << std::endl;
     std::cout << "- Finalizar programa: end\n" << std::endl;
     std::cout << "Digite agora o comando desejado: " << std::endl;
@@ -156,24 +159,38 @@ Usuario Sistema::login(BancoUsuarios b){
     return u;
 }
 
+//METODOS DA CLASSE BIBLIOTECA
+
+
+
 // METODOS DA CLASSE PLAYLIST
-void Sistema::criar_playlist(std::string user){
+
+//NÃO FUNCIONA BEM NO MAIN --- REVISAR (O ERRO NAO NECESSARIAMENTE TA AQUI)
+Playlist Sistema::criar_playlist(std::string user){
     std::string nome;
     std::cout << "Digite o nome da playlist:" << std::endl;
     std::getline(std::cin, nome);
     Playlist p(nome, user);
+
+    return p;
 }
 
 
 void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
+    p.exibe_musicas();
+    std::cout <<"EDIÇÃO DE PLAYLIST ------ COMANDOS:" <<std::endl;
+    std::cout <<"Adicionar Música: a" <<std::endl;
+    std::cout <<"Remover Música: r" << std::endl;
+    std::cout <<"Trocar duas Músicas: t" << std::endl;
+    std::cout <<"Salvar alterações e sair: sair" << std::endl;
     std::string edit;
-    while (std::getline(std::cin, edit) && edit != "fim") {
-    if (edit == "trocar") {
+    while (std::getline(std::cin, edit) && edit != "sair") {
+    if (edit == "t") {
         int m1, m2;
         std::cin >> m1 >> m2;
         p.trocar_musica(m1, m2);
     }
-    else if (edit == "remover") {
+    else if (edit == "r") {
         int id;
         std::cin >> id;
         bool idEncontrado = false;
@@ -188,7 +205,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
             std::cout << "ID inválido." << std::endl;
         }
     }
-        else if (edit == "adicionar") {
+        else if (edit == "a") {
             int id;
             std::cin >> id;
             bool idEncontrado = false;

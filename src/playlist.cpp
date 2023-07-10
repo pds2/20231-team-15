@@ -4,6 +4,10 @@ Playlist::Playlist(std::string nome, std::string username) : _nome(nome), _usern
 
 Playlist::~Playlist(){}
 
+std::string Playlist::get_nome(){
+    return _nome;
+}
+
 std::string Playlist::get_usuario(){
     return _username;
 }

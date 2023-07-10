@@ -48,11 +48,6 @@
 }
 
 /* Music item */
-#music-item #cover {
-    background-color: #fff;
-    border-radius: 16px;
-}
-
 #music-item #title {
     font-size: 20px;
 }
@@ -63,8 +58,31 @@
 }
 
 /* Cover wrapper */
-#music-item #cover-wrapper {
+#cover-wrapper {
     background-position: center;
     background-size: 80px;
     border-radius: 16px;
+}
+
+/* playlist item */
+#library-list {
+    background-color: inherit;
+}
+
+#playlist-item {
+    background-color: inherit;
+}
+
+#playlist-item #type-text {
+    color: #757578;
+    font-size: 12px;
+}
+
+.playlist #title {
+    font-size: 20px;
+    color: #fff;
+}
+
+.playlist #cover-wrapper {
+    background-color: #727AC5;
 }

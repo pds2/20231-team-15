@@ -157,46 +157,51 @@ Usuario Sistema::login(BancoUsuarios b){
 }
 
 // METODOS DA CLASSE PLAYLIST
+//void Sistema::criar_playlist(std::string user){
+//    std::string nome;
+//    std::cout << "Digite o nome da playlist:" << std::endl;
+//    std::getline(std::cin, nome);
+//    Playlist p(nome, user);
+//}
 
-void Sistema::criar_playlist(std::string user){
-    std::string nome;
-    std::cout << "Digite o nome da playlist:" << std::endl;
-    std::getline(std::cin, nome);
-    Playlist p = Playlist(nome, user);
-}
 
-void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas){
+void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     std::string edit;
     while (std::getline(std::cin, edit) && edit != "fim") {
-        switch (edit){
-            case "trocar":
-                int m1, m2;
-                std::cin >> m1 >> m2;
-                p.trocar_musica(m1,m2);
+    if (edit == "trocar") {
+        int m1, m2;
+        std::cin >> m1 >> m2;
+        p.trocar_musica(m1, m2);
+    }
+    else if (edit == "remover") {
+        int id;
+        std::cin >> id;
+        bool idEncontrado = false;
+        for (Musica m : lista_musicas) {
+            if (m.get_id() == id) {
+                p.remover_musica(m);
+                idEncontrado = true;
                 break;
-            case "remover":
-                int id;
-                std::cin >> id;
-                for (Musica m: lista_musicas ){
-                    if (m.get_id() == id){
-                        p.remover_musica(m);
-                        break;
-                    }
+            }
+        }
+        if (!idEncontrado) {
+            std::cout << "ID inválido." << std::endl;
+        }
+    }
+        else if (edit == "adicionar") {
+            int id;
+            std::cin >> id;
+            bool idEncontrado = false;
+            for (Musica m : lista_musicas) {
+                if (m.get_id() == id) {
+                    p.adicionar_musica(m);
+                    idEncontrado = true;
+                    break;
                 }
-                std::cout << "ID inválido." << std::endl;
-                break;
-            case "adicionar":
-                int id;
-                std::cin >> id;
-                for (Musica m: lista_musicas ){
-                    if (m.get_id() == id){
-                        p.adicionar_musica(m);
-                        break;
-                    }
-                }
-                std::cout << "ID inválido." << std::endl;
-                break;
-
+            }
+                if (!idEncontrado) {
+                    std::cout << "ID inválido." << std::endl;
+            }
         }
     }
 }

@@ -31,7 +31,9 @@ void Playlist::trocar_musica (int musica1, int musica2){
         std::cout << "Posições inválidas!" << std::endl;
         return;
     } else {
-        std::swap(_lista_musica[musica1], _lista_musica[musica2]);
+        Musica aux = _lista_musica[musica1];
+        _lista_musica[musica1] = _lista_musica[musica2];
+        _lista_musica[musica2] = aux;
     }
 }
 

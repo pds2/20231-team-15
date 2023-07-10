@@ -9,7 +9,7 @@ MusicItem::MusicItem(
     bool is_playlist
 ) : 
     Gtk::Box(cobject), builder{builder},
-    music{nullptr},
+    data{nullptr},
     cover_wrapper{nullptr},
     type_icon{nullptr},
     type_text{nullptr},
@@ -51,8 +51,8 @@ MusicItem::MusicItem(
 
 MusicItem::~MusicItem() {};
 
-void MusicItem::setMusic(Musica* musica)  {
-    this->music = musica;
+void MusicItem::setData(Musica* data)  {
+    this->data = data;
 }
 
 void MusicItem::setCover(const std::string& file_path) {
@@ -85,8 +85,8 @@ void MusicItem::setDuration(const std::string& str) {
 }
 
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
-    bool is_liked = music->get_is_liked();
-    music->set_is_liked(!is_liked);
+    bool is_liked = data->get_is_liked();
+    data->set_is_liked(!is_liked);
     // is_liked = !is_liked;
 
     std::string heart_path = "./images/icons/heart-icon.png";

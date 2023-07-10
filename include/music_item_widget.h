@@ -23,7 +23,7 @@ public:
     );
     virtual ~MusicItem();
 
-    void setMusic(Musica* musica);
+    void setData(Musica* data);
     void setTitle(const std::string& str);
     void setCover(const std::string& file_path);
     void setArtist(const std::string& str);
@@ -40,7 +40,7 @@ protected:
 
     // Music object which this widget is related to.
     // Contains all the data related to this widget.
-    Musica* music;
+    Musica* data;
 
     Glib::RefPtr<Gtk::Builder> builder;
     Gtk::Box* cover_wrapper;

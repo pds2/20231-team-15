@@ -9,7 +9,7 @@ endif
 
 terminal:
 	g++ -Iinclude ./src/*.cpp ./program/terminal-main.cpp -o main.$(OS_EXTENSION)
-	./main.$(OS_EXTENSION)
+	./terminal.$(OS_EXTENSION)
 
 # A compilação da interface funciona no ambiente Linux.
 # Necessita da biblioteca de desenvolvimento do GTK, libgtkmm-3.0-dev.

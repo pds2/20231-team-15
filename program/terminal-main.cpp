@@ -1,18 +1,18 @@
 #include <iostream>
 #include <vector>
 
-#include "../include/playlist.h"
-#include "../include/usuario.h"
-#include "../include/musica.h"
-#include "../include/album.h"
-#include "../include/banco_usuarios.h"
-#include "../include/lista_musica.h"
-#include "../include/artista.h"
-#include "../include/discografia.h"
-#include "../include/biblioteca.h"
-#include "../include/conjunto_listas.h"
-#include "../include/sistema.h"
-#include "../include/recomendacao.h"
+#include "../src/playlist.cpp"
+#include "../src/usuario.cpp"
+#include "../src/musica.cpp"
+#include "../src/album.cpp"
+#include "../src/banco_usuarios.cpp"
+#include "../src/lista_musica.cpp"
+#include "../src/artista.cpp"
+#include "../src/discografia.cpp"
+#include "../src/biblioteca.cpp"
+#include "../src/conjunto_listas.cpp"
+#include "../src/sistema.cpp"
+#include "../src/recomendacao.cpp"
 
 int main() {
 
@@ -20,7 +20,7 @@ int main() {
     Sistema sistema;
 
     // Caminho do arquivo csv contendo as músicas
-    std::string musicas_path = "./musicas.csv";
+    std::string musicas_path = "../musicas.csv";
 
     // Incicializando músicas, artistas e albuns
     auto lista_musicas = sistema.inicializar_musicas(musicas_path);
@@ -46,10 +46,20 @@ int main() {
             sistema.listar_artistas(lista_artistas);
         } else if (comando == "ls_al") {
             sistema.listar_albuns(lista_albuns);
+        } else if (comando == "ls_im") {
+            sistema.informacoes_da_musica(lista_musicas);
         } else if (comando == "ls_disc") {
             sistema.exibir_discografia(lista_artistas, lista_albuns);
         } else if (comando == "r_m") {
-            sistema.recomendar_musicas(lista_musicas);
+            sistema.recomendar_musicas(lista_musicas, "media");
+        } else if (comando == "r_m_d") {
+            sistema.recomendar_musicas(lista_musicas, "dancabilidade");
+        } else if (comando == "r_m_b") {
+            sistema.recomendar_musicas(lista_musicas, "barulho");
+        } else if (comando == "r_m_a") {
+            sistema.recomendar_musicas(lista_musicas, "ano");
+        } else if (comando == "r_m_al") {
+            sistema.recomendar_musica_aleatoria(lista_musicas);
         } else if (comando == "clear") {
             sistema.limpar_terminal();
         } else if (comando == "end") {

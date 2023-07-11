@@ -53,6 +53,12 @@ class Sistema {
          */
         Musica identificar_musica_por_id(int id, std::vector <Musica> lista_musicas) const;
 
+        /**
+         * @brief Função para visualizar as informações detalhadas da música
+         * @param lista_musicas A lista de músicas a ser percorrida.
+         */
+        void informacoes_da_musica(std::vector <Musica> lista_musicas);
+
 
         //    METODOS DA CLASSE ARTISTA
 
@@ -138,8 +144,8 @@ class Sistema {
 
 
         // METODOS DA CLASSE RECOMENDACAO
-
-        void recomendar_musicas(std::vector <Musica> lista_musicas);
+        void recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro);
+        void recomendar_musica_aleatoria(std::vector <Musica> lista_musicas);
     private:
 
 };     

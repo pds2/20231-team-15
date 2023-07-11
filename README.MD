@@ -76,10 +76,11 @@ O sistema ao inicializar irá listar os comandos para o uso do sistema. Divirta-
   sudo apt install libgtkmm-3.0-dev
   ```
 
-  Após isso, entre no diretório do projeto e execute o comando `make gui`. A interface será compilada e executada automaticamente.
+  Após isso, entre no diretório do projeto e execute o comando abaixo:
   ```
   make gui
   ```
+  A interface será compilada e executada automaticamente.
     
 
 #### Telas

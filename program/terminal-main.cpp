@@ -1,18 +1,8 @@
 #include <iostream>
 #include <vector>
 
-#include "../include/playlist.h"
-#include "../include/usuario.h"
-#include "../include/musica.h"
-#include "../include/album.h"
-#include "../include/banco_usuarios.h"
-#include "../include/lista_musica.h"
-#include "../include/artista.h"
-#include "../include/discografia.h"
-#include "../include/biblioteca.h"
-#include "../include/conjunto_listas.h"
 #include "../include/sistema.h"
-#include "../include/recomendacao.h"
+
 
 int main() {
 

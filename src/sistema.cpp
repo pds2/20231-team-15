@@ -225,8 +225,6 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
             std::cout << "Digite o ID da música a ser removida" << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
-
-            // Usar um iterador para percorrer a playlist
             auto it = p.begin();
             while (it != p.end()) {
                 if (it->get_id() == id) {
@@ -263,6 +261,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                 }
             } else if (edit == "sair"){
                 this->limpar_terminal();
+                
                 break;
             }
     }

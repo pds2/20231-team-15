@@ -67,19 +67,12 @@ int main() {
         } else if (comando == "vp") {
              if (b.ta_vazia()){
                 std::cout << "Sem playlists na biblioteca!" << std::endl;
-            } else {
-                b.listar_itens();
-                int id;
-                std::cout << "Qual o ID da playlist que deseja ver?" << std::endl;
-                std::cin >> id;
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpar o fluxo de entrada
+            } else  {
                 for (Playlist x : b) {
-                    if (x.get_id() == id) {
                         std::cout << x.get_nome() << ":"<< std::endl;
                         x.mostrar_playlist();
                     }
                 }
-            }
         } else if (comando == "edit") {
             b.listar_itens();
             int id;

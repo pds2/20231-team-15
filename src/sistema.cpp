@@ -14,7 +14,7 @@ void Sistema::iniciar_sistema() {
     std::cout << "- Receber n recomendacoes de uma musica: r_m" << std::endl;
     std::cout << "- Criar uma Playlist: cp" << std::endl;
     std::cout << "- Listar Playlists: lp" << std::endl;
-    std::cout << "- Ver as músicas da playlist: vp" << std::endl;
+    std::cout << "- Ver as músicas das suas playlists: vp" << std::endl;
     std::cout << "- Editar uma das suas Playlists: edit" << std::endl;
     std::cout << "- Limpar o terminal: clear" << std::endl;
     std::cout << "- Finalizar programa: end\n" << std::endl;
@@ -227,23 +227,29 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     while (std::cin >> edit) {
         if (edit == "t") {
             int m1, m2;
-            std::cout << "Digite os ids das duas músicas" << std::endl;
-            std::cin >> m1 >> m2;
-            p.trocar_musica(m1, m2);
+            std::cout << "Digite o índice da primeira música" << std::endl;
+            std::cin >> m1;
+            std::cout << "Digite o índice da segunda música" << std::endl;
+            std::cin >> m2;
+            p.trocar_musica(m1-1, m2-1);
+            std::cout<< "Você trocou a música " << m1 << " com a música " << m2 << "." << std::endl;
         } else if (edit == "r") {
+            int sizeantes = p.get_tamanho();
             int id;
             std::cout << "Digite o ID da música a ser removida" << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
             for (Musica &m : p) {
                 if (m.get_id() == id) {
-                    p.remover_musica(m);
-                    std::cout << "Música " << id << " removida com sucesso!" << std::endl;
                     idEncontrado = true;
+                    p.remover_musica(m);
+                    if (sizeantes > p.get_tamanho()){
+                        std::cout << "Música " << id << " removida com sucesso!" << std::endl;
+                    }
                 }
             }
             if (!idEncontrado) {
-                std::cout << "ID inválido." << std::endl;
+                std::cout << "ID não encontrado." << std::endl;
             }
         } else if (edit == "a") {
                 int sizeantes = p.get_tamanho();

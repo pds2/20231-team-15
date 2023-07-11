@@ -542,8 +542,8 @@
                                                 <property name="spacing">5</property>
                                                 <property name="baseline-position">bottom</property>
                                                 <child>
-                                                  <object class="GtkLabel" id="artist1">
-                                                    <property name="name">artist</property>
+                                                  <object class="GtkLabel" id="song-count">
+                                                    <property name="name">song-count</property>
                                                     <property name="visible">True</property>
                                                     <property name="can-focus">False</property>
                                                     <property name="label" translatable="yes">15 músicas</property>

@@ -88,6 +88,7 @@ int main(int argc, char* argv[])
 
     Musica musicas;
     std::vector<Musica> lista_musica = musicas.ler_musicas_do_csv(musicas_path);
+    int like_count = 0;
 
     // Constroi app do GTK
     auto app = Gtk::Application::create(argc, argv, "org.gtkmm.examples.base");
@@ -110,12 +111,23 @@ int main(int argc, char* argv[])
     window->show_all();
     window->maximize();
 
+    //  ### GET WIDGETS FROM UI FILE ###
+
     // Song ListBox
     Gtk::ListBox* music_list_box = nullptr;
     builder->get_widget("music-list-box", music_list_box);
 
+    // Library list
     LibraryList* library_list = nullptr;
     builder->get_widget_derived("library-list", library_list);
+
+    // Playlist liked
+    Gtk::Box* playlist_liked = nullptr;
+    Gtk::Label* song_count_label = nullptr;
+
+    builder->get_widget("playlist-liked", playlist_liked);
+    builder->get_widget("song-count", song_count_label);
+    song_count_label->set_label(std::to_string(like_count) + " músicas");
 
     // ### EXIBE TODAS AS MÚSICAS ###
     builder = Gtk::Builder::create();
@@ -132,12 +144,29 @@ int main(int argc, char* argv[])
             musica
         );
 
+
         // Liked signal
-        music_item->signal_liked()
-            .connect(sigc::mem_fun(library_list, &LibraryList::appendMusic));
+        music_item->signal_liked().connect([&like_count, library_list, song_count_label](MusicItem* music_item) {
+            
+            like_count++;
+            library_list->appendMusic(music_item);
+
+            song_count_label->set_label(std::to_string(like_count) + " músicas");
+            std::cout << "LIKE: " <<  like_count << std::endl;
+        });
+
         // Unliked signal
         music_item->signal_unliked()
             .connect(sigc::mem_fun(library_list, &LibraryList::removeMusic));
+
+        music_item->signal_unliked().connect([&like_count, library_list, song_count_label](MusicItem* music_item) {
+            
+            like_count--;
+            library_list->removeMusic(music_item);
+
+            song_count_label->set_label(std::to_string(like_count) + " músicas");
+            std::cout << "UNLIKE: " <<  like_count << std::endl;
+        });
 
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);

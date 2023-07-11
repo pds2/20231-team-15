@@ -1,6 +1,5 @@
 #include "../include/musica.h"
 
-// Construtor
 Musica::Musica(int id, const std::string& artista, const std::string& titulo, const std::string& album, 
                const std::string& genero, int ano, int dancabilidade, int sentimento, int 
                barulho, double media) {
@@ -15,13 +14,11 @@ Musica::Musica(int id, const std::string& artista, const std::string& titulo, co
     _barulho = barulho;
     _media = media;
 }
- 
-//Construtor padrão
+
 Musica::Musica() {
     _id == 0;
 }
 
-// Função para retornar o id da música
 int Musica::get_id() const {
     return _id;
 }
@@ -30,59 +27,48 @@ std::string Musica::get_titulo() const {
     return _titulo;
 }
 
-// Função para retornar o artista da música
 std::string Musica::get_artista() const{
     return _artista;
 }
 
-// Função para retornar o álbum da música
 std::string Musica::get_album() const {
     return _album;
 }
 
-// Função para retornar o gênero da música
 std::string Musica::get_genero() const {
     return _genero;
 }
 
-// Função para retornar o ano da música
 int Musica::get_ano() const {
     return _ano;
 }
 
-// Função para retornar a dancabilidade da música   
 int Musica::get_dancabilidade() const {
     return _dancabilidade;
 }
 
-// Função para retornar o sentimento da música
 int Musica::get_sentimento() const {
     return _sentimento;
 }
 
-// Função para retornar o barulho da música
 int Musica::get_barulho() const {
     return _barulho;
 }
 
-// Função para retornar a média da música
 double Musica::get_media() const {
     return _media;
 }
 
-// Função get musica
 Musica Musica::get_musica() const {
     return *this;
 }
 
-//Função para imprimir os detalhes de todas as músicas
 void Musica::imprimir_todas_musicas(std::vector<Musica> lista_musicas) const {
     for (auto i = lista_musicas.begin(); i < lista_musicas.end(); i++) {
         i->imprimir_detalhes();
     }
 }
 
-//Função para ver se tem músicas repetidas
 void Musica::musica_repetida(std::vector<Musica> lista_musicas) const {
     bool encontrou_repeticao = false;
     for (auto i = lista_musicas.begin(); i < lista_musicas.end(); i++) {
@@ -93,12 +79,8 @@ void Musica::musica_repetida(std::vector<Musica> lista_musicas) const {
             }
         }
     }
-    // if (!encontrou_repeticao)
-    //     std::cout << "Não há músicas repetidas" << std::endl;
 }
 
-
-// Função para imprimir os detalhes da música
 void Musica::imprimir_detalhes() const{
     std::cout << "Id: " << _id << std::endl;
     std::cout << "Artista: " << _artista << std::endl;
@@ -113,7 +95,6 @@ void Musica::imprimir_detalhes() const{
 
 }
 
-// Função para ler as músicas de um arquivo CSV e armazená-las em um vetor
 std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
     std::ifstream arquivo(nomeArquivo);
     std::string linha;
@@ -124,34 +105,29 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
         return musicas;
     }
 
-    // Ignora a primeira linha do arquivo
     std::getline(arquivo, linha);
 
-    // Lê cada linha do arquivo
     while (std::getline(arquivo, linha)) {
         std::stringstream linhaStream(linha);
         std::string dado;
         std::vector<std::string> valores;
 
-        // Divide a linha em valores separados por vírgula
         while (std::getline(linhaStream, dado, ',')) {
             valores.push_back(dado);
         }
 
-        // Verifica se a linha contém a quantidade esperada de valores
         const int NUM_VALORES_ESPERADOS = 10;
         if (valores.size() != NUM_VALORES_ESPERADOS) {
             std::cout << "Erro: linha inválida: " << linha << std::endl;
-            continue;  // Pula para a próxima linha
+            continue;
         }
 
-        // Extrai os valores da linha
         int id;
         try {
             id = std::stoi(valores[0]);
         } catch (const std::invalid_argument& e) {
             std::cout << "Erro ao converter id: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            continue;
         }
 
         std::string artista = valores[1];
@@ -164,7 +140,7 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
             ano = std::stoi(valores[5]);
         } catch (const std::invalid_argument& e) {
             std::cout << "Erro ao converter ano: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            continue;
         }
 
         int dancabilidade;
@@ -172,7 +148,7 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
             dancabilidade = std::stoi(valores[6]);
         } catch (const std::invalid_argument& e) {
             std::cout << "Erro ao converter dancabilidade: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            continue;
         }
 
         int sentimento;
@@ -180,7 +156,7 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
             sentimento = std::stoi(valores[7]);
         } catch (const std::invalid_argument& e) {
             std::cout << "Erro ao converter sentimento: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            continue;
         }
 
         int barulho;
@@ -188,7 +164,7 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
             barulho = std::stoi(valores[8]);
         } catch (const std::invalid_argument& e) {
             std::cout << "Erro ao converter barulho: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            continue;
         }
 
         double media;
@@ -196,14 +172,12 @@ std::vector<Musica> Musica::ler_musicas_do_csv(const std::string& nomeArquivo) {
             media = std::stod(valores[9]);
         } catch (const std::invalid_argument& e) {
             std::cout << "Erro ao converter media: " << e.what() << std::endl;
-            continue;  // Pula para a próxima linha
+            continue;
         }
 
-        // Cria um objeto Musica e o adiciona ao vetor
         Musica musica(id, artista, titulo, album, genero, ano, dancabilidade, sentimento, barulho, media);
         musicas.push_back(musica);
     }
-
     return musicas;
 }
 

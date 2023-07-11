@@ -36,7 +36,6 @@ std::vector <Musica> Recomendacao::recomendar_n_musicas(int numero_de_musicas, c
     for (int i = 0; i < numero_de_musicas; i++) {
         n_recomendadas.push_back(ordenadas[i].second);
     }
-
     return n_recomendadas;
 }
 
@@ -78,7 +77,6 @@ std::vector<std::pair<double, Musica>> Recomendacao::ordenar_musicas_dancabilida
             ordenar_diferencas(diferencas);
         }
     }
-
     return diferencas;
 }
 
@@ -99,7 +97,6 @@ std::vector<std::pair<double, Musica>> Recomendacao::ordenar_musicas_barulho(con
             ordenar_diferencas(diferencas);
         }
     }
-
     return diferencas;
 }
 
@@ -120,7 +117,6 @@ std::vector<std::pair<double, Musica>> Recomendacao::ordenar_musicas_ano(const M
             ordenar_diferencas(diferencas);
         }
     }
-
     return diferencas;
 }
 

@@ -227,6 +227,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     while (std::cin >> edit) {
         if (edit == "t") {
             int m1, m2;
+            std::cout << "Digite os ids das duas músicas" << std::endl;
             std::cin >> m1 >> m2;
             p.trocar_musica(m1, m2);
         } else if (edit == "r") {

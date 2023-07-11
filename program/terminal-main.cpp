@@ -85,7 +85,7 @@ int main() {
             int id;
             std::cout << "Qual o ID da playlist que deseja editar?" << std::endl;
             std::cin >> id;
-            for (Playlist x : b) {
+            for (Playlist &x : b) {
                 if (x.get_id() == id) {
                     x.mostrar_playlist();
                     sistema.editar_playlist(x, lista_musicas);

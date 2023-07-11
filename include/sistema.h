@@ -1,8 +1,6 @@
 #ifndef SISTEMA_H
 #define SISTEMA_H
 
-#include "usuario.h"
-#include "banco_usuarios.h"
 #include "musica.h"
 #include "artista.h"
 #include "lista_musica.h"
@@ -13,7 +11,16 @@
 #include "discografia.h"
 #include "recomendacao.h"
 
+/**
+    @class id_musica_nao_existe
+    @brief Exceção para o caso do id da música informado não existir no programa.
+*/
 class id_musica_nao_existe {};
+
+/**
+    @class id_artista_nao_existe
+    @brief Exceção para o caso do id do artista informado não existir no programa.
+*/
 class id_artista_nao_existe {};
 
 class Sistema {
@@ -111,14 +118,6 @@ class Sistema {
         void exibir_discografia(std::vector <Artista> listar_artistas, std::vector <Album> listar_albuns) const;
 
 
-        // METODOS DA CLASSE USUARIO
-
-        /**
-         * @brief Função para realizar o login do usuário.
-         * @param b O objeto BancoUsuarios contendo as informações de usuários e senhas.
-         * @return O objeto Usuario correspondente ao usuário que realizou o login com sucesso.
-         */
-        Usuario login(BancoUsuarios b);
 
         //METODOS DA CLASSE BIBLIOTECA
 
@@ -129,6 +128,7 @@ class Sistema {
 
 
         // METODOS DA CLASSE PLAYLIST
+
         /**
          * @brief Função para criar uma playlist.
          * @param b Recebe a string correspondente ao username do usuário logado.
@@ -144,10 +144,19 @@ class Sistema {
 
 
         // METODOS DA CLASSE RECOMENDACAO
-        void recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro);
-        void recomendar_musica_aleatoria(std::vector <Musica> lista_musicas);
-    private:
 
+        /**
+         * @brief Função para recomendar músicas dado algum parâmetro
+         * @param lista_musicas vetor de todas as músicas presentes no sistema
+         * @param parametro é o parâmetro de recomendação que será considerado 
+         */
+        void recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro);
+
+        /**
+         * @brief Função para recomendar músicas dado algum parâmetro
+         * @param lista_musicas vetor de todas as músicas presentes no sistema 
+         */
+        void recomendar_musica_aleatoria(std::vector <Musica> lista_musicas);
 };     
 
 #endif

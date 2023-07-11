@@ -5,7 +5,6 @@
 #include <string>
 #include <exception>
 
-#include "usuario.h"
 #include "lista_musica.h"
 
 /**

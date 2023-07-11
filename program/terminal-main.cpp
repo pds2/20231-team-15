@@ -90,7 +90,6 @@ int main() {
             std::cin >> id;
             for (Playlist &x : b) {
                 if (x.get_id() == id) {
-                    x.mostrar_playlist();
                     sistema.editar_playlist(x, lista_musicas);
                 }
             }

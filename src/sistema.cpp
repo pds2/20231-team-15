@@ -260,22 +260,27 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                 int sizeantes = p.get_tamanho();
                 int id;
                 std::cout << "Digite o ID da música a ser adicionada." << std::endl;
-                std::cin >> id;
-                bool idEncontrado = false;
-                for (Musica &m : lista_musicas) {
-                    if (m.get_id() == id){
-                        p.adicionar_musica(m);
-                        idEncontrado = true;
-                        if (sizeantes < p.get_tamanho()){
-                            std::cout << "Música " << m.get_id() << " adicionada." << std::endl;
+                if (std::cin >> id) {
+                    bool idEncontrado = false;
+                    for (Musica& m : lista_musicas) {
+                        if (m.get_id() == id) {
+                            p.adicionar_musica(m);
+                            idEncontrado = true;
+                            if (sizeantes < p.get_tamanho()) {
+                                std::cout << "Música " << m.get_id() << " adicionada." << std::endl;
+                            }
                         }
                     }
-                }
                     if (!idEncontrado) {
                         std::cout << "ID inválido." << std::endl;
+                    }
+                } else {
+                    std::cout << "Entrada inválida. Saia, tente novamente e insira um número inteiro para o ID." << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 }
             } else if (edit == "sair"){
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpar o fluxo de entrada
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 this->limpar_terminal();
                 break;
             }

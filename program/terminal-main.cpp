@@ -96,6 +96,8 @@ int main() {
             } catch (std::out_of_range const& e) {
                 std::cout << "ID fora do intervalo válido." << std::endl;
             }
+        } else {
+            std::cout<<"Comando inválido." << std::endl;
         }
     }
 

@@ -99,7 +99,6 @@ void Sistema::informacoes_da_musica(std::vector <Musica> lista_musicas) {
         break;
     }
 }
-
 //    METODOS DA CLASSE ARTISTA
 
 std::vector <Artista> Sistema::inicializar_artistas(const std::vector <Musica>& lista_musicas) {

@@ -239,19 +239,25 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
             std::cout << "Digite o ID da música a ser removida" << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
-            for (Musica &m : p) {
-                if (m.get_id() == id) {
+
+            // Usar um iterador para percorrer a playlist
+            auto it = p.begin();
+            while (it != p.end()) {
+                if (it->get_id() == id) {
                     idEncontrado = true;
-                    p.remover_musica(m);
-                    if (sizeantes > p.get_tamanho()){
+                    p.erase(it);
+                    if (sizeantes > p.get_tamanho()) {
                         std::cout << "Música " << id << " removida com sucesso!" << std::endl;
                     }
+                } else {
+                    ++it;
                 }
             }
+
             if (!idEncontrado) {
                 std::cout << "ID não encontrado." << std::endl;
-            }
-        } else if (edit == "a") {
+            }       
+            } else if (edit == "a") {
                 int sizeantes = p.get_tamanho();
                 int id;
                 std::cout << "Digite o ID da música a ser adicionada." << std::endl;

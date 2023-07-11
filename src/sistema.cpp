@@ -93,8 +93,8 @@ void Sistema::informacoes_da_musica(std::vector <Musica> lista_musicas) {
 
             musica.imprimir_detalhes();
 
-        } catch (id_artista_nao_existe &e) {
-            std::cout << "Id do artista eh inexistente." << std::endl;
+        } catch (id_musica_nao_existe &e) {
+            std::cout << "Música é inexistente." << std::endl;
         }   
         break;
     }

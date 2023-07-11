@@ -28,6 +28,7 @@ MusicItem* createMusicItem(
     music_item->setTitle(data->get_titulo());
     music_item->setArtist(data->get_artista());
     music_item->setCover(cover_path);
+    music_item->setDuration(std::to_string(data->get_ano()));
 
     return music_item;
 }

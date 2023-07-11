@@ -33,6 +33,12 @@ class Sistema {
         void iniciar_sistema();
 
         /**
+         * @brief Função para listar comandos
+         */
+
+        void listar_comandos();
+
+        /**
          * @brief Função para limpar o terminal.
          */
         void limpar_terminal();

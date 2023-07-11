@@ -20,7 +20,12 @@ void Sistema::iniciar_sistema() {
     // Imprime borda inferior
     std::cout << "\033[38;5;98m+" << linha << "+\033[0m" << std::endl;
 
-    std::cout << "\033[38;5;98mListagem dos comandos:\033[0m" << std::endl;
+    std::cout << "\033[38;5;98mPara vizualizar comandos digite ajuda\033[0m" << std::endl;
+
+    std::cout << "\033[38;5;98mDigite agora o comando desejado:\033[0m" << std::endl;
+}
+
+void Sistema::listar_comandos() {
     std::cout << "\033[38;5;98m---------------------------------\033[0m" << std::endl;
     std::cout << "- \033[38;5;98mListar as músicas disponíveis no programa:\033[0m \033[38;5;92mls_m\033[0m" << std::endl;
     std::cout << "- \033[38;5;98mListar os artistas disponíveis no programa:\033[0m \033[38;5;92mls_at\033[0m" << std::endl;
@@ -39,11 +44,7 @@ void Sistema::iniciar_sistema() {
     std::cout << "- \033[38;5;98mLimpar o terminal:\033[0m \033[38;5;92mclear\033[0m" << std::endl;
     std::cout << "- \033[38;5;98mFinalizar programa:\033[0m \033[38;5;92mend\033[0m" << std::endl;
     std::cout << "\033[38;5;98m---------------------------------\033[0m" << std::endl;
-
-    std::cout << "\033[38;5;98mDigite agora o comando desejado:\033[0m" << std::endl;
 }
-
-
 
 void Sistema::limpar_terminal() {
     #ifdef _WIN32

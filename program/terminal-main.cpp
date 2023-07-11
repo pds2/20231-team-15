@@ -52,6 +52,8 @@ int main() {
             sistema.recomendar_musica_aleatoria(lista_musicas);
         } else if (comando == "clear") {
             sistema.limpar_terminal();
+        } else if (comando == "ajuda") {
+            sistema.listar_comandos();
         } else if (comando == "end") {
             break;
         } else if (comando == "cp") {
@@ -87,7 +89,5 @@ int main() {
             std::cout << "Comando inválido." << std::endl;
         }
     }
-
-
     return 0;
 }

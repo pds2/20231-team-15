@@ -125,6 +125,8 @@ std::vector<std::pair<double, Musica>> Recomendacao::ordenar_musicas_ano(const M
 }
 
 Musica Recomendacao::recomendar_aleatoria() {
-    int indice_aleatorio = rand() % 100 + 1;
+    std::srand(std::time(nullptr)); // Inicializa a semente randômica com base no tempo atual
+
+    int indice_aleatorio = std::rand() % m_lista_musicas.size(); // Gera um índice aleatório dentro do tamanho da lista de músicas
     return m_lista_musicas[indice_aleatorio];
 }

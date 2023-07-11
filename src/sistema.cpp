@@ -190,46 +190,8 @@ void Sistema::exibir_discografia(std::vector <Artista> listar_artistas, std::vec
     }
 }
 
-
-// METODOS DA CLASSE USUARIO
-
-Usuario Sistema::login(BancoUsuarios b){
-        std::string username;
-        std::string senha;
-
-        while (true) {
-        std::cout << "Digite o Usuário:" << std::endl;
-        std::cin >> username;
-        std::cout << "Digite a Senha:" << std::endl;
-        std::cin >> senha;
-
-        try {
-            if (!b.verificar_usuario(username)) {
-                throw usuario_nao_existe_e();
-            }
-            if (b.verificar_senha(username, senha)) {
-                std::cout << "Welcome!!" << std::endl;
-                break;
-            } else {
-                throw senha_incorreta_e();
-            }
-        } catch (usuario_nao_existe_e &u) {
-            std::cout << "Usuário não existe. Digite novamente." << std::endl;
-        } catch (senha_incorreta_e &s) {
-            std::cout << "Senha incorreta. Digite novamente." << std::endl;
-        }
-    }
-    Usuario u = Usuario(username, senha);
-    return u;
-}
-
-//METODOS DA CLASSE BIBLIOTECA
-
-
-
 // METODOS DA CLASSE PLAYLIST
 
-//NÃO FUNCIONA BEM NO MAIN --- REVISAR (O ERRO NAO NECESSARIAMENTE TA AQUI)
 Playlist Sistema::criar_playlist(std::string user){
     std::string nome;
     std::cout << "Digite o nome da playlist:" << std::endl;
@@ -241,7 +203,7 @@ Playlist Sistema::criar_playlist(std::string user){
 
 
 void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
-    p.exibe_musicas();
+    p.mostrar_playlist();
     std::cout <<"EDIÇÃO DE PLAYLIST ------ COMANDOS:" <<std::endl;
     std::cout <<"Adicionar Música: a" <<std::endl;
     std::cout <<"Remover Música: r" << std::endl;
@@ -263,19 +225,23 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
             std::cout << "Digite o ID da música a ser removida" << std::endl;
             std::cin >> id;
             bool idEncontrado = false;
-            for (Musica &m : p) {
-                if (m.get_id() == id) {
+            auto it = p.begin();
+            while (it != p.end()) {
+                if (it->get_id() == id) {
                     idEncontrado = true;
-                    p.remover_musica(m);
-                    if (sizeantes > p.get_tamanho()){
+                    p.erase(it);
+                    if (sizeantes > p.get_tamanho()) {
                         std::cout << "Música " << id << " removida com sucesso!" << std::endl;
                     }
+                } else {
+                    ++it;
                 }
             }
+
             if (!idEncontrado) {
                 std::cout << "ID não encontrado." << std::endl;
-            }
-        } else if (edit == "a") {
+            }       
+            } else if (edit == "a") {
                 int sizeantes = p.get_tamanho();
                 int id;
                 std::cout << "Digite o ID da música a ser adicionada." << std::endl;
@@ -295,6 +261,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                 }
             } else if (edit == "sair"){
                 this->limpar_terminal();
+                
                 break;
             }
     }

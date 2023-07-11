@@ -5,7 +5,6 @@
 #include <string>
 #include <exception>
 
-#include "usuario.h"
 #include "lista_musica.h"
 
 /**
@@ -92,7 +91,10 @@ class Playlist : public Lista_musica {
  * @brief Iterador end.
  */
                 std::vector<Musica>::iterator end();
-
+/*
+* @brief função erase.
+*/
+                void erase(std::vector<Musica>::iterator it);
 };
 
 #endif // PLAYLIST_H

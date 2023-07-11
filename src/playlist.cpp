@@ -57,5 +57,8 @@ std::vector<Musica>::iterator Playlist::begin(){
 }
 
 std::vector<Musica>::iterator Playlist::end(){
-    return _lista_musica.begin();
+    return _lista_musica.end();
+}
+void Playlist::erase(std::vector<Musica>::iterator it){
+    _lista_musica.erase(it);
 }

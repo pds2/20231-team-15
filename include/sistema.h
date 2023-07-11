@@ -1,8 +1,6 @@
 #ifndef SISTEMA_H
 #define SISTEMA_H
 
-#include "usuario.h"
-#include "banco_usuarios.h"
 #include "musica.h"
 #include "artista.h"
 #include "lista_musica.h"
@@ -120,14 +118,6 @@ class Sistema {
         void exibir_discografia(std::vector <Artista> listar_artistas, std::vector <Album> listar_albuns) const;
 
 
-        // METODOS DA CLASSE USUARIO
-
-        /**
-         * @brief Função para realizar o login do usuário.
-         * @param b O objeto BancoUsuarios contendo as informações de usuários e senhas.
-         * @return O objeto Usuario correspondente ao usuário que realizou o login com sucesso.
-         */
-        Usuario login(BancoUsuarios b);
 
         //METODOS DA CLASSE BIBLIOTECA
 

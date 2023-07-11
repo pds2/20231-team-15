@@ -13,7 +13,7 @@ Este projeto foi efetuado para a disciplina de Programação e Desenvolvimento d
 
 ### User Stories
 
-1. **Como** usuário, **desejo** poder visualizar as músicas, álbuns e artistas disponíveis no sistema **Para** explorar algo novo.
+1. **Como** usuário, **desejo** poder visualizar as músicas, álbuns e artistas disponíveis no sistema **para** explorar algo novo.
 
 2. **Como** usuário, **gostaria** de poder visualizar as discografia de um artistas, **para** conhecer melhor seu trabalho.
 

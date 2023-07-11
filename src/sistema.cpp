@@ -241,7 +241,7 @@ Playlist Sistema::criar_playlist(std::string user){
 
 
 void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
-    p.exibe_musicas();
+    p.mostrar_playlist();
     std::cout <<"EDIÇÃO DE PLAYLIST ------ COMANDOS:" <<std::endl;
     std::cout <<"Adicionar Música: a" <<std::endl;
     std::cout <<"Remover Música: r" << std::endl;

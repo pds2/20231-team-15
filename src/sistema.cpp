@@ -1,6 +1,6 @@
 #include "../include/sistema.h"
 #include <iostream>
- 
+
  
 //    METODOS DO SISTEMA
 
@@ -80,23 +80,24 @@ Musica Sistema::identificar_musica_por_id(int id, std::vector <Musica> lista_mus
     throw id_musica_nao_existe();
 }
 
-void Sistema::informacoes_da_musica(std::vector <Musica> lista_musicas) {
+void Sistema::informacoes_da_musica(std::vector<Musica> lista_musicas) {
     while (true) {
-        std::cout << "Digite o id da musica que deseja visualizar os detalhes: ";
-        int id_musica;
-        std::cin >> id_musica;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        Musica musica;
+        std::cout << "Digite o ID da música que deseja visualizar os detalhes: ";
+        std::string id_musica_str;
+        std::getline(std::cin, id_musica_str);
 
         try {
-            musica = identificar_musica_por_id(id_musica, lista_musicas);
+            int id_musica = std::stoi(id_musica_str);
 
+            Musica musica = identificar_musica_por_id(id_musica, lista_musicas);
             musica.imprimir_detalhes();
 
-        } catch (id_musica_nao_existe &e) {
-            std::cout << "Música é inexistente." << std::endl;
-        }   
-        break;
+            break;
+        } catch (std::invalid_argument const& e) {
+            std::cout << "ID inválido. Insira um número inteiro para o ID da música." << std::endl;
+        } catch (id_musica_nao_existe& e) {
+            std::cout << "Música não existe." << std::endl;
+        }
     }
 }
 //    METODOS DA CLASSE ARTISTA
@@ -178,15 +179,23 @@ void Sistema::listar_albuns(std::vector <Album> listar_albuns) const {
 
 // METODOS DA CLASSE DISCOGRAFIA
 
-void Sistema::exibir_discografia(std::vector <Artista> listar_artistas, std::vector <Album> listar_albuns) const {
+void Sistema::exibir_discografia(std::vector<Artista> listar_artistas, std::vector<Album> listar_albuns) const {
 
     while (true) {
         std::cout << "Digite o id do artista que deseja visualizar a discografia: ";
         int id_artista;
         std::cin >> id_artista;
-        Artista artista;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Entrada inválida. Digite um número válido.\n";
+            continue;
+        }
+
         try {
-            artista = identificar_artista_por_id(id_artista, listar_artistas);
+            Artista artista = identificar_artista_por_id(id_artista, listar_artistas);
 
             Discografia discografia(artista);
 
@@ -195,12 +204,13 @@ void Sistema::exibir_discografia(std::vector <Artista> listar_artistas, std::vec
                     discografia.inserir_item(album);
                 }
             }
-            
+
             discografia.listar_itens();
 
-        } catch (id_artista_nao_existe &e) {
-            std::cout << "Id do artista eh inexistente." << std::endl;
-        }   
+        } catch (id_artista_nao_existe& e) {
+            std::cout << "Id do artista inexistente.\n";
+        }
+
         break;
     }
 }
@@ -290,18 +300,23 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
 
 // METODOS DA CLASSE RECOMENDACAO
 
-void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro) {
+void Sistema::recomendar_musicas(std::vector<Musica> lista_musicas, std::string parametro) {
 
     while (true) {
         std::cout << "Digite o id da musica que deseja uma recomendacao: ";
         int id_musica;
         std::cin >> id_musica;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        
-        Musica musica;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Entrada inválida. Digite um número válido.\n";
+            continue;
+        }
 
         try {
-            musica = identificar_musica_por_id(id_musica, lista_musicas);
+            Musica musica = identificar_musica_por_id(id_musica, lista_musicas);
 
             std::cout << "Digite o numero de recomendacoes que deseja: ";
             int numero_recomendacoes;
@@ -309,31 +324,32 @@ void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas, std::string
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
             if (musica.get_id() == 101) {
-                std::cout << "Nao e possivel recomendar algo melhor que" << musica.get_titulo() << std::endl;
+                std::cout << "Nao e possivel recomendar algo melhor que " << musica.get_titulo() << std::endl;
                 break;
             }
 
             try {
                 Recomendacao recomendacao(lista_musicas);
                 auto recomendacoes = recomendacao.recomendar_n_musicas(numero_recomendacoes, musica, parametro);
-                
+
                 std::cout << "Recomendacao para a musica: " << musica.get_titulo() << std::endl;
                 for (const auto& musica_recomendada : recomendacoes) {
                     std::cout << "\n" << std::endl;
                     musica_recomendada.imprimir_detalhes();
                 }
 
-            } catch (numero_de_musicas_superior_ao_existente &e) {
-                std::cout << "Numero de musicas desejado para recomendacao eh superior ao numero existente no sistema." << std::endl;     
+            } catch (numero_de_musicas_superior_ao_existente& e) {
+                std::cout << "Numero de musicas desejado para recomendacao eh superior ao numero existente no sistema." << std::endl;
             }
 
-        } catch (id_musica_nao_existe &e) {
-            std::cout << "Id da musica eh inexistente." << std::endl;
+        } catch (id_musica_nao_existe& e) {
+            std::cout << "Id da musica inexistente." << std::endl;
         }
 
         break;
     }
 }
+
 
 void Sistema::recomendar_musica_aleatoria(std::vector <Musica> lista_musicas) {
     Recomendacao recomendacao(lista_musicas);

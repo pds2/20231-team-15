@@ -4,27 +4,46 @@
  
 //    METODOS DO SISTEMA
 
+#include <iostream>
+#include <string>
+
 void Sistema::iniciar_sistema() {
-    std::cout << "BEM VINDO AO SISTEMA DE MUSICAS!" << std::endl;
-    std::cout << "Listagem dos comandos: " << std::endl;
-    std::cout << "- Listar as musicas disponiveis no programa: ls_m" << std::endl;
-    std::cout << "- Listar os artistas disponiveis no programa: ls_at" << std::endl;
-    std::cout << "- Listar os albuns disponiveis no programa: ls_al" << std::endl;
-    std::cout << "- Listar informacoes de uma musica especifica: ls_im" << std::endl;
-    std::cout << "- Listar a discografia do artista desejado: ls_disc" << std::endl;
-    std::cout << "- Receber n recomendacoes de uma musica: r_m" << std::endl;
-    std::cout << "- Receber n recomendacoes de uma musica baseado em sua dancabilidade: r_m_d" << std::endl;
-    std::cout << "- Receber n recomendacoes de uma musica baseado em seu barulho: r_m_b" << std::endl;
-    std::cout << "- Receber n recomendacoes de uma musica baseado no seu ano de lancamento: r_m_a" << std::endl;
-    std::cout << "- Receber uma recomendacao de musica aleatoria: r_m_al" << std::endl;
-    std::cout << "- Criar uma Playlist: cp" << std::endl;
-    std::cout << "- Listar Playlists: lp" << std::endl;
-    std::cout << "- Ver as musicas da playlist: vp" << std::endl;
-    std::cout << "- Editar uma das suas Playlists: edit" << std::endl;
-    std::cout << "- Limpar o terminal: clear" << std::endl;
-    std::cout << "- Finalizar programa: end\n" << std::endl;
-    std::cout << "Digite agora o comando desejado: " << std::endl;
+    std::string titulo = "BEM VINDO AO SISTEMA DE MÚSICAS!";
+    std::string linha = std::string(titulo.length(), '-');
+
+    // Imprime borda superior
+    std::cout << "\033[38;5;98m+" << linha << "+\033[0m" << std::endl;
+
+    // Imprime título centralizado
+    std::cout << "\033[38;5;98m|" << std::string((linha.length() - titulo.length()) / 2, ' ') << "\033[38;5;92m" << titulo << "\033[38;5;98m" << std::string((linha.length() - titulo.length()) / 2, ' ') << "|\033[0m" << std::endl;
+
+    // Imprime borda inferior
+    std::cout << "\033[38;5;98m+" << linha << "+\033[0m" << std::endl;
+
+    std::cout << "\033[38;5;98mListagem dos comandos:\033[0m" << std::endl;
+    std::cout << "\033[38;5;98m---------------------------------\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mListar as músicas disponíveis no programa:\033[0m \033[38;5;92mls_m\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mListar os artistas disponíveis no programa:\033[0m \033[38;5;92mls_at\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mListar os álbuns disponíveis no programa:\033[0m \033[38;5;92mls_al\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mListar informações de uma música específica:\033[0m \033[38;5;92mls_im\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mListar a discografia do artista desejado:\033[0m \033[38;5;92mls_disc\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mReceber n recomendações de uma música:\033[0m \033[38;5;92mr_m\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mReceber n recomendações de uma música baseado em sua dançabilidade:\033[0m \033[38;5;92mr_m_d\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mReceber n recomendações de uma música baseado em seu barulho:\033[0m \033[38;5;92mr_m_b\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mReceber n recomendações de uma música baseado no seu ano de lançamento:\033[0m \033[38;5;92mr_m_a\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mReceber uma recomendação de música aleatória:\033[0m \033[38;5;92mr_m_al\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mCriar uma Playlist:\033[0m \033[38;5;92mcp\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mListar Playlists:\033[0m \033[38;5;92mlp\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mVer as músicas da playlist:\033[0m \033[38;5;92mvp\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mEditar uma das suas Playlists:\033[0m \033[38;5;92medit\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mLimpar o terminal:\033[0m \033[38;5;92mclear\033[0m" << std::endl;
+    std::cout << "- \033[38;5;98mFinalizar programa:\033[0m \033[38;5;92mend\033[0m" << std::endl;
+    std::cout << "\033[38;5;98m---------------------------------\033[0m" << std::endl;
+
+    std::cout << "\033[38;5;98mDigite agora o comando desejado:\033[0m" << std::endl;
 }
+
+
 
 void Sistema::limpar_terminal() {
     #ifdef _WIN32

@@ -59,6 +59,7 @@ O sistema ao inicializar irá listar os comandos para o uso do sistema. Divirta-
 
 
 # Interface
+  ![](https://github.com/pds2/20231-team-15/blob/main/gif-interface.gif)
 
   Além do programa interativo no terminal, também há uma interface feita na biblioteca `GTK3`, onde é possível testar algumas funcionalidades.
   Os tutoriais abaixo são baseados no ambiente Debian/Ubuntu.

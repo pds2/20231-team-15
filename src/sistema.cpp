@@ -223,11 +223,11 @@ Playlist Sistema::criar_playlist(std::string user){
 
 void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     p.mostrar_playlist();
-    std::cout <<"EDIÇÃO DE PLAYLIST ------ COMANDOS:" <<std::endl;
-    std::cout <<"Adicionar Música: a" <<std::endl;
-    std::cout <<"Remover Música: r" << std::endl;
-    std::cout <<"Trocar duas Músicas: t" << std::endl;
-    std::cout <<"Salvar alterações e sair: sair" << std::endl;
+    std::cout << "\033[1;35mEDIÇÃO DE PLAYLIST ------ COMANDOS:\033[0m" << std::endl;
+    std::cout << "\033[1;34mAdicionar Música: \033[1;35ma\033[0m" << std::endl;
+    std::cout << "\033[1;34mRemover Música: \033[1;35mr\033[0m" << std::endl;
+    std::cout << "\033[1;34mTrocar duas Músicas: \033[1;35mt\033[0m" << std::endl;
+    std::cout << "\033[1;34mSalvar alterações e sair: \033[1;35msair\033[0m" << std::endl;
     std::string edit;
     while (std::cin >> edit) {
         if (edit == "t") {
@@ -280,7 +280,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                 }
             } else if (edit == "sair"){
                 this->limpar_terminal();
-                
+
                 break;
             }
     }

@@ -1,18 +1,18 @@
 #include <iostream>
 #include <vector>
 
-#include "../src/playlist.cpp"
-#include "../src/usuario.cpp"
-#include "../src/musica.cpp"
-#include "../src/album.cpp"
-#include "../src/banco_usuarios.cpp"
-#include "../src/lista_musica.cpp"
-#include "../src/artista.cpp"
-#include "../src/discografia.cpp"
-#include "../src/biblioteca.cpp"
-#include "../src/conjunto_listas.cpp"
-#include "../src/sistema.cpp"
-#include "../src/recomendacao.cpp"
+#include "../include/playlist.h"
+#include "../include/usuario.h"
+#include "../include/musica.h"
+#include "../include/album.h"
+#include "../include/banco_usuarios.h"
+#include "../include/lista_musica.h"
+#include "../include/artista.h"
+#include "../include/discografia.h"
+#include "../include/biblioteca.h"
+#include "../include/conjunto_listas.h"
+#include "../include/sistema.h"
+#include "../include/recomendacao.h"
 
 int main() {
 
@@ -20,7 +20,7 @@ int main() {
     Sistema sistema;
 
     // Caminho do arquivo csv contendo as músicas
-    std::string musicas_path = "../musicas.csv";
+    std::string musicas_path = "./musicas.csv";
 
     // Incicializando músicas, artistas e albuns
     auto lista_musicas = sistema.inicializar_musicas(musicas_path);

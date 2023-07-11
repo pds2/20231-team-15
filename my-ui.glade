@@ -83,6 +83,9 @@
                     <property name="margin-start">20</property>
                     <property name="margin-top">35</property>
                     <property name="label" translatable="yes">Explorar</property>
+                    <style>
+                      <class name="header-title"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -423,6 +426,9 @@
                     <property name="label" translatable="yes">Sua biblioteca</property>
                     <property name="width-chars">0</property>
                     <property name="max-width-chars">0</property>
+                    <style>
+                      <class name="header-title"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -450,8 +456,8 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <child>
-                                  <object class="GtkBox" id="playlist-item">
-                                    <property name="name">playlist-item</property>
+                                  <object class="GtkBox" id="playlist-liked">
+                                    <property name="name">playlist-liked</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
                                     <property name="halign">start</property>
@@ -569,9 +575,6 @@
                                         <property name="position">2</property>
                                       </packing>
                                     </child>
-                                    <style>
-                                      <class name="music-item"/>
-                                    </style>
                                   </object>
                                 </child>
                               </object>

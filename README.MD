@@ -58,16 +58,18 @@ O sistema ao inicializar irá listar os comandos para o uso do sistema. Divirta-
 
 # Interface
 
-  * Além do programa interativo no terminal, também há uma interface feita na biblioteca GTK, onde é possível testar algumas funcionalidades.
+  Além do programa interativo no terminal, também há uma interface feita na biblioteca `GTK3`, onde é possível testar algumas funcionalidades.
+  Os tutoriais abaixo são baseados no ambiente Debian/Ubuntu.
   
-  ### Requisitos para uso da interface
+  ### Execução
 
-  No ambiente Debian/Ubuntu, não é necessária nenhuma biblioteca extra para rodar o arquivo executável da interface. 
+  No ambiente Debian/Ubuntu, e em qualquer outra distribuição baseada no Gnome, não é necessário instalar nenhuma biblioteca extra para rodar o arquivo executável da interface. 
   Para executar este arquivo, entre no diretório do projeto e digite:
   ```
   ./main.out
   ```
 
+  ### Compilação
   Para compilar a interface, é necessário instalar em seu computador a biblioteca de desenvolvimento do GTK3, `libgtkmm-3.0-dev`.
   Para instala-lá no ambiente Debian/Ubuntu:
   ```

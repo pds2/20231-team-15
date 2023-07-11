@@ -10,11 +10,16 @@ void Sistema::iniciar_sistema() {
     std::cout << "- Listar as musicas disponiveis no programa: ls_m" << std::endl;
     std::cout << "- Listar os artistas disponiveis no programa: ls_at" << std::endl;
     std::cout << "- Listar os albuns disponiveis no programa: ls_al" << std::endl;
+    std::cout << "- Listar informacoes de uma musica especifica: ls_im" << std::endl;
     std::cout << "- Listar a discografia do artista desejado: ls_disc" << std::endl;
     std::cout << "- Receber n recomendacoes de uma musica: r_m" << std::endl;
+    std::cout << "- Receber n recomendacoes de uma musica baseado em sua dancabilidade: r_m_d" << std::endl;
+    std::cout << "- Receber n recomendacoes de uma musica baseado em seu barulho: r_m_b" << std::endl;
+    std::cout << "- Receber n recomendacoes de uma musica baseado no seu ano de lancamento: r_m_a" << std::endl;
+    std::cout << "- Receber uma recomendacao de musica aleatoria: r_m_al" << std::endl;
     std::cout << "- Criar uma Playlist: cp" << std::endl;
     std::cout << "- Listar Playlists: lp" << std::endl;
-    std::cout << "- Ver as músicas das suas playlists: vp" << std::endl;
+    std::cout << "- Ver as musicas da playlist: vp" << std::endl;
     std::cout << "- Editar uma das suas Playlists: edit" << std::endl;
     std::cout << "- Limpar o terminal: clear" << std::endl;
     std::cout << "- Finalizar programa: end\n" << std::endl;
@@ -59,6 +64,25 @@ Musica Sistema::identificar_musica_por_id(int id, std::vector <Musica> lista_mus
     throw id_musica_nao_existe();
 }
 
+void Sistema::informacoes_da_musica(std::vector <Musica> lista_musicas) {
+    while (true) {
+        std::cout << "Digite o id da musica que deseja visualizar os detalhes: ";
+        int id_musica;
+        std::cin >> id_musica;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        Musica musica;
+
+        try {
+            musica = identificar_musica_por_id(id_musica, lista_musicas);
+
+            musica.imprimir_detalhes();
+
+        } catch (id_artista_nao_existe &e) {
+            std::cout << "Id do artista eh inexistente." << std::endl;
+        }   
+        break;
+    }
+}
 
 //    METODOS DA CLASSE ARTISTA
 
@@ -285,13 +309,20 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
 
 // METODOS DA CLASSE RECOMENDACAO
 
-void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas) {
+void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro) {
 
     while (true) {
+
+        // std::cout << "Digite o parametro que deseja para a recomendacao: ";
+        //     if () {
+
+        //     }
+
         std::cout << "Digite o id da musica que deseja uma recomendacao: ";
         int id_musica;
         std::cin >> id_musica;
-
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        
         Musica musica;
 
         try {
@@ -300,10 +331,16 @@ void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas) {
             std::cout << "Digite o numero de recomendacoes que deseja: ";
             int numero_recomendacoes;
             std::cin >> numero_recomendacoes;
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+            if (musica.get_id() == 101) {
+                std::cout << "Nao e possivel recomendar algo melhor que" << musica.get_titulo() << std::endl;
+                break;
+            }
 
             try {
                 Recomendacao recomendacao(lista_musicas);
-                auto recomendacoes = recomendacao.recomendar_n_musicas(numero_recomendacoes, musica);
+                auto recomendacoes = recomendacao.recomendar_n_musicas(numero_recomendacoes, musica, parametro);
                 
                 std::cout << "Recomendacao para a musica: " << musica.get_titulo() << std::endl;
                 for (const auto& musica_recomendada : recomendacoes) {
@@ -321,4 +358,12 @@ void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas) {
 
         break;
     }
+}
+
+void Sistema::recomendar_musica_aleatoria(std::vector <Musica> lista_musicas) {
+    Recomendacao recomendacao(lista_musicas);
+    Musica musica = recomendacao.recomendar_aleatoria();
+
+    std::cout << "Musica Recomendada: " << std::endl;
+    musica.imprimir_detalhes();
 }

@@ -46,10 +46,20 @@ int main() {
             sistema.listar_artistas(lista_artistas);
         } else if (comando == "ls_al") {
             sistema.listar_albuns(lista_albuns);
+        } else if (comando == "ls_im") {
+            sistema.informacoes_da_musica(lista_musicas);
         } else if (comando == "ls_disc") {
             sistema.exibir_discografia(lista_artistas, lista_albuns);
         } else if (comando == "r_m") {
-            sistema.recomendar_musicas(lista_musicas);
+            sistema.recomendar_musicas(lista_musicas, "media");
+        } else if (comando == "r_m_d") {
+            sistema.recomendar_musicas(lista_musicas, "dancabilidade");
+        } else if (comando == "r_m_b") {
+            sistema.recomendar_musicas(lista_musicas, "barulho");
+        } else if (comando == "r_m_a") {
+            sistema.recomendar_musicas(lista_musicas, "ano");
+        } else if (comando == "r_m_al") {
+            sistema.recomendar_musica_aleatoria(lista_musicas);
         } else if (comando == "clear") {
             sistema.limpar_terminal();
         } else if (comando == "end") {

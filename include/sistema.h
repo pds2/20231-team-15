@@ -13,7 +13,16 @@
 #include "discografia.h"
 #include "recomendacao.h"
 
+/**
+    @class id_musica_nao_existe
+    @brief Exceção para o caso do id da música informado não existir no programa.
+*/
 class id_musica_nao_existe {};
+
+/**
+    @class id_artista_nao_existe
+    @brief Exceção para o caso do id do artista informado não existir no programa.
+*/
 class id_artista_nao_existe {};
 
 class Sistema {
@@ -129,6 +138,7 @@ class Sistema {
 
 
         // METODOS DA CLASSE PLAYLIST
+
         /**
          * @brief Função para criar uma playlist.
          * @param b Recebe a string correspondente ao username do usuário logado.
@@ -144,10 +154,19 @@ class Sistema {
 
 
         // METODOS DA CLASSE RECOMENDACAO
-        void recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro);
-        void recomendar_musica_aleatoria(std::vector <Musica> lista_musicas);
-    private:
 
+        /**
+         * @brief Função para recomendar músicas dado algum parâmetro
+         * @param lista_musicas vetor de todas as músicas presentes no sistema
+         * @param parametro é o parâmetro de recomendação que será considerado 
+         */
+        void recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro);
+
+        /**
+         * @brief Função para recomendar músicas dado algum parâmetro
+         * @param lista_musicas vetor de todas as músicas presentes no sistema 
+         */
+        void recomendar_musica_aleatoria(std::vector <Musica> lista_musicas);
 };     
 
 #endif

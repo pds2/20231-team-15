@@ -279,8 +279,8 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                         std::cout << "ID inválido." << std::endl;
                 }
             } else if (edit == "sair"){
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpar o fluxo de entrada
                 this->limpar_terminal();
-
                 break;
             }
     }

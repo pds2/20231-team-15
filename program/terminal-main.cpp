@@ -75,16 +75,27 @@ int main() {
                 }
         } else if (comando == "edit") {
             b.listar_itens();
-            int id;
+            std::string input;
             std::cout << "Qual o ID da playlist que deseja editar?" << std::endl;
-            std::cin >> id;
-            for (Playlist &x : b) {
-                if (x.get_id() == id) {
-                    sistema.editar_playlist(x, lista_musicas);
+            std::getline(std::cin, input);
+            try {
+                int id = std::stoi(input);
+                bool found = false;
+                for (Playlist& x : b) {
+                    if (x.get_id() == id) {
+                        sistema.editar_playlist(x, lista_musicas);
+                        found = true;
+                        break;
+                    }
                 }
+                if (!found) {
+                    std::cout << "Playlist não encontrada." << std::endl;
+                }
+            } catch (std::invalid_argument const& e) {
+                std::cout << "ID inválido. Insira um número inteiro." << std::endl;
+            } catch (std::out_of_range const& e) {
+                std::cout << "ID fora do intervalo válido." << std::endl;
             }
-        } else {
-            std::cout << "Comando inválido." << std::endl;
         }
     }
 

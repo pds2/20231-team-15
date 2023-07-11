@@ -58,7 +58,27 @@ O sistema ao inicializar irá listar os comandos para o uso do sistema. Divirta-
 
 # Interface
 
-   * Feita por meio da biblioteca GTK
+  * Além do programa interativo no terminal, também há uma interface feita na biblioteca GTK, onde é possível testar algumas funcionalidades.
+  
+  ### Requisitos para uso da interface
+
+  No ambiente Debian/Ubuntu, não é necessária nenhuma biblioteca extra para rodar o arquivo executável da interface. 
+  Para executar este arquivo, entre no diretório do projeto e digite:
+  ```
+  ./main.out
+  ```
+
+  Para compilar a interface, é necessário instalar em seu computador a biblioteca de desenvolvimento do GTK3, `libgtkmm-3.0-dev`.
+  Para instala-lá no ambiente Debian/Ubuntu:
+  ```
+  sudo apt install libgtkmm-3.0-dev
+  ```
+
+  Após isso, entre no diretório do projeto e execute o comando `make gui`. A interface será compilada e executada automaticamente.
+  ```
+  make gui
+  ```
+    
 
 #### Telas
    * Home (Sistema): tela central cujo usuário poderá visualizar as músicas disponíveis no sistema e receber algumas recomendações

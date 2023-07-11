@@ -4,6 +4,7 @@
 #include <vector>
 #include <cmath>
 #include <utility>
+#include <random>
 
 #include "musica.h"
 
@@ -45,17 +46,24 @@ class Recomendacao {
  * @return Um vetor de músicas recomendadas.
  * @throw numero_de_musicas_superior_ao_existente se o número de músicas solicitado for superior ao número de músicas existentes.
  */
-        std::vector<Musica> recomendar_n_musicas(int numero_de_musicas, const Musica &musica);
 
+        Recomendacao(std::vector <Musica> lista_musicas);
+        std::vector<std::pair<double, Musica>> ordenar_musicas_media(const Musica &musica);
+        std::vector<std::pair<double, Musica>> ordenar_musicas_dancabilidade(const Musica &musica);
+        std::vector<std::pair<double, Musica>> ordenar_musicas_barulho(const Musica &musica);
+        std::vector<std::pair<double, Musica>> ordenar_musicas_ano(const Musica &musica);
+        std::vector <Musica> recomendar_n_musicas(int numero_de_musicas, const Musica &musica, std::string parametro);
+        Musica recomendar_aleatoria();
 };
 
-/**
+void ordenar_diferencas(std::vector<std::pair<double, Musica>>& diferencas);
+    /*
+     * @brief Função de comparação utilizada para ordenar as músicas com base na diferença média.
+     * @param distancia_musica_atual A diferença média da música atual.
+     * @param distancia_musica_seguinte A diferença média da música seguinte.
+     * @return true se a diferença média da música atual for menor que a diferença média da música seguinte, caso contrário, false.
+     */
+bool comparar_diferenca_medias(const double & distancia_musica_atual, const double & distancia_musica_seguinte);
 
-    @brief Função de comparação utilizada para ordenar as músicas com base na diferença média.
-    @param distancia_musica_atual A diferença média da música atual.
-    @param distancia_musica_seguinte A diferença média da música seguinte.
-    @return true se a diferença média da música atual for menor que a diferença média da música seguinte, caso contrário, false.
-    */
-        bool comparar_diferenca_medias(const double & distancia_musica_atual, const double & distancia_musica_seguinte);
 
 #endif // RECOMENDACAO_H

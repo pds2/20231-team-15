@@ -2,18 +2,15 @@
 
 int Artista::contador_id_artista = 0;
 
-// Construtor
 Artista::Artista(const std::string& nome) {
     _id_artista = ++contador_id_artista;
     _nome = nome;
 }
 
-// Construtor default
 Artista::Artista() {
     _id_artista = ++contador_id_artista;
 }
 
-// Retorna nome do artista
 std::string Artista::get_nome() const {
     return _nome;
 }
@@ -22,12 +19,10 @@ int Artista::get_id() const {
     return _id_artista;
 }
 
-// Função para retornar as músicas do artista
 std::vector<Musica> Artista::get_artistas_musicas() const { 
     return artistas_musicas;
 }
 
-// Função para armazenar as músicas do artista
 void Artista::armazenar_musicas(const std::vector<Musica>& musicas) {
     for (const auto& musica : musicas) {
         if (musica.get_artista() == _nome) {
@@ -36,7 +31,6 @@ void Artista::armazenar_musicas(const std::vector<Musica>& musicas) {
     }
 }
 
-//
 void Artista::imprimir_artista() const {
     std::cout << "Id: " << _id_artista;
     std::cout << "  Nome: " << _nome << std::endl;
@@ -49,7 +43,6 @@ void Artista::imprimir_discografia() const {
             << musica.get_ano() << ")" << std::endl;
     }
 }
-
 
 void Artista::imprimir_musicas(const std::vector<Musica>& musicas) const {
     std::cout << "Músicas de " << _nome << ":" << std::endl;

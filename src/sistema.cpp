@@ -48,10 +48,8 @@ void Sistema::listar_comandos() {
 
 void Sistema::limpar_terminal() {
     #ifdef _WIN32
-        // Limpar o terminal no Windows
         system("cls");
     #else
-        // Limpar o terminal em sistemas UNIX (Linux, macOS, etc.)
         system("clear");
     #endif
     iniciar_sistema();
@@ -63,8 +61,6 @@ void Sistema::limpar_terminal() {
 std::vector <Musica> Sistema::inicializar_musicas(const std::string& musicas_path) {
     Musica musicas;
     std::vector<Musica> lista_musicas = musicas.ler_musicas_do_csv(musicas_path);
-
-    //Função para ver se tem músicas repetidas
     musicas.musica_repetida(lista_musicas);
     return lista_musicas;
 }
@@ -280,8 +276,8 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                         std::cout << "ID inválido." << std::endl;
                 }
             } else if (edit == "sair"){
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpar o fluxo de entrada
                 this->limpar_terminal();
-
                 break;
             }
     }
@@ -293,12 +289,6 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
 void Sistema::recomendar_musicas(std::vector <Musica> lista_musicas, std::string parametro) {
 
     while (true) {
-
-        // std::cout << "Digite o parametro que deseja para a recomendacao: ";
-        //     if () {
-
-        //     }
-
         std::cout << "Digite o id da musica que deseja uma recomendacao: ";
         int id_musica;
         std::cin >> id_musica;

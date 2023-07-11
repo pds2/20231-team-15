@@ -34,7 +34,3 @@ std::vector<Playlist>::iterator Biblioteca::end(){
 bool Biblioteca::ta_vazia(){
     return m_biblioteca.empty();
 }
-
-//void Biblioteca::editar_item(const Playlist &item) {
-//
-//};

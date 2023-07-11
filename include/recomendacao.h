@@ -5,6 +5,9 @@
 #include <cmath>
 #include <utility>
 #include <random>
+#include <algorithm>
+#include <cstdlib> // Para utilizar a função rand e srand
+#include <ctime>   // Para inicializar a semente randômica
 
 #include "musica.h"
 

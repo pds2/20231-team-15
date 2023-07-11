@@ -21,8 +21,9 @@
     border-radius: 50px 0 0 50px;
 }
 
-#box-center #title {
+#box-center .header-title {
     font-size: 25px;
+    font-weight: bold;
     color: white;
 }
 
@@ -38,8 +39,9 @@
     border-radius: 50px 0 0 50px;
 }
 
-#sidebar-right #title {
+#sidebar-right .header-title {
     font-size: 25px;
+    font-weight: bold;
 }
 
 /* Music list box */
@@ -49,7 +51,8 @@
 
 /* Music item */
 #music-item #title {
-    font-size: 20px;
+    font-size: 18px;
+    color: #fff;
 }
 
 #music-item #artist {
@@ -79,9 +82,10 @@
     color: #fff;
 }
 
-.playlist #cover-wrapper {
+.playlist #playlist-liked #cover-wrapper {
     background-color: #727AC5;
     background-size: auto;
+    background-image: url("./images/icons/playlist-icon.png");
 }
 
 .playlist #type-text {

@@ -13,12 +13,18 @@ Musica::Musica(int id, const std::string& artista, const std::string& titulo, co
     _sentimento = sentimento;
     _barulho = barulho;
     _media = media;
+    is_liked = false;
 }
 
 Musica::Musica() {
     _id == 0;
 }
 
+void Musica::set_is_liked(bool is_liked) {
+    this->is_liked = is_liked;
+}
+
+// Função para retornar o id da música
 int Musica::get_id() const {
     return _id;
 }
@@ -59,6 +65,11 @@ double Musica::get_media() const {
     return _media;
 }
 
+bool Musica::get_is_liked() const {
+    return is_liked;
+}
+
+// Função get musica
 Musica Musica::get_musica() const {
     return *this;
 }

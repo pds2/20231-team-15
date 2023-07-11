@@ -9,10 +9,12 @@ MusicItem::MusicItem(
     bool is_playlist
 ) : 
     Gtk::Box(cobject), builder{builder},
+    data{nullptr},
     cover_wrapper{nullptr},
     type_icon{nullptr},
     type_text{nullptr},
     like_wrapper{nullptr},
+    like_icon{nullptr},
     title{nullptr},
     artist{nullptr},
     artist_icon{nullptr},
@@ -23,6 +25,7 @@ MusicItem::MusicItem(
     builder->get_widget("type-icon", type_icon);
     builder->get_widget("type-text", type_text);
     builder->get_widget("like-wrapper", like_wrapper);
+    builder->get_widget("like-icon", like_icon);
     builder->get_widget("title", title);
     builder->get_widget("artist", artist);
     builder->get_widget("artist-icon", artist_icon);
@@ -47,6 +50,14 @@ MusicItem::MusicItem(
 }
 
 MusicItem::~MusicItem() {};
+
+void MusicItem::setData(Musica* data)  {
+    this->data = data;
+}
+
+Musica* MusicItem::getData() {
+    return data;
+}
 
 void MusicItem::setCover(const std::string& file_path) {
     // Cover size
@@ -78,9 +89,35 @@ void MusicItem::setDuration(const std::string& str) {
 }
 
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
-    std::cout << "Like clicado!" << std::endl;
+    bool is_liked = data->get_is_liked();
+    data->set_is_liked(!is_liked);
+
+    std::string heart_path = "./images/icons/heart-icon.png";
+    std::string heart_filled_path = "./images/icons/heart-solid-icon.png";
+
+    // MusicItem was unliked
+    if (is_liked) {
+        like_icon->set(heart_path);
+
+        // Emit signal unliked
+        signal_unliked_.emit(this);
+    } 
+    // Was liked
+    else {
+        like_icon->set(heart_filled_path);
+
+        // Emit signal_liked
+        signal_liked_.emit(this);
+    }
 
     return true;
 }
 
+// Signals
+sigc::signal<void, MusicItem*> MusicItem::signal_liked() {
+    return signal_liked_;
+}
 
+sigc::signal<void, MusicItem*> MusicItem::signal_unliked() {
+    return signal_unliked_;
+}

@@ -3,6 +3,8 @@
 
 Este projeto foi efetuado para a disciplina de Programação e Desenvolvimento de Software II. Ele consiste em um sistema de gerenciamento de músicas que permite aos usuários criar e editar suas playlists, interagir com músicas, álbuns e artistas presentes no sistema, além de receber recomendações personalizadas.
 
+link do git: https://github.com/pds2/20231-team-15
+
 ### Alunos
 
 * Igor Rocha Santos                         2022037574

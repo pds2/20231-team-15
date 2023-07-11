@@ -33,6 +33,12 @@ class Sistema {
         void iniciar_sistema();
 
         /**
+         * @brief Função para listar comandos
+         */
+
+        void listar_comandos();
+
+        /**
          * @brief Função para limpar o terminal.
          */
         void limpar_terminal();
@@ -116,15 +122,6 @@ class Sistema {
 
         // METODOS DA CLASSE DISCOGRAFIA
         void exibir_discografia(std::vector <Artista> listar_artistas, std::vector <Album> listar_albuns) const;
-
-
-
-        //METODOS DA CLASSE BIBLIOTECA
-
-        /**
-        * @brief Função para exibir as playlists da biblioteca;
-        */
-        Playlist& buscar_playlist(Biblioteca &b, int id);
 
 
         // METODOS DA CLASSE PLAYLIST

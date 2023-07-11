@@ -82,7 +82,7 @@
     color: #fff;
 }
 
-.playlist #cover-wrapper {
+.playlist #playlist-liked #cover-wrapper {
     background-color: #727AC5;
     background-size: auto;
     background-image: url("./images/icons/playlist-icon.png");

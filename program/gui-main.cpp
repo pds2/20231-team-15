@@ -8,6 +8,7 @@
 #include <gtkmm/box.h>
 #include <gtkmm/label.h>
 #include <gtkmm/image.h>
+#include <gtkmm/dialog.h>
 #include "../include/music_item_widget.h"
 #include "../include/musica.h"
 
@@ -121,6 +122,13 @@ int main(int argc, char* argv[])
     LibraryList* library_list = nullptr;
     builder->get_widget_derived("library-list", library_list);
 
+    // Dialog
+    Gtk::Dialog* dialog = nullptr;
+    Gtk::ListBox* song_list_liked = nullptr;
+
+    builder->get_widget("dialog", dialog);
+    builder->get_widget("song-list-liked", song_list_liked);
+
     // Playlist liked
     Gtk::Box* playlist_liked = nullptr;
     Gtk::Label* song_count_label = nullptr;
@@ -128,6 +136,18 @@ int main(int argc, char* argv[])
     builder->get_widget("playlist-liked", playlist_liked);
     builder->get_widget("song-count", song_count_label);
     song_count_label->set_label(std::to_string(like_count) + " músicas");
+
+    // Show dialog
+    playlist_liked->signal_button_press_event().connect([dialog](GdkEventButton* event) -> bool {
+        
+        std::cout << "CLICKED" << std::endl;
+
+        dialog->set_default_size(700, 700);
+        dialog->show_all();
+        int response = dialog->run();
+
+        return true;
+    });
 
     // ### EXIBE TODAS AS MÚSICAS ###
     builder = Gtk::Builder::create();
@@ -146,13 +166,22 @@ int main(int argc, char* argv[])
 
 
         // Liked signal
-        music_item->signal_liked().connect([&like_count, library_list, song_count_label](MusicItem* music_item) {
+        music_item->signal_liked().connect([
+            &like_count, 
+            library_list, 
+            song_count_label,
+            song_list_liked,
+            builder](MusicItem* music_item) {
             
             like_count++;
             library_list->appendMusic(music_item);
 
             song_count_label->set_label(std::to_string(like_count) + " músicas");
             std::cout << "LIKE: " <<  like_count << std::endl;
+
+            // Adiciona música em song-list-liked
+            MusicItem* new_music_item = createMusicItem(builder, music_item->getData());
+            song_list_liked->append(*new_music_item);
         });
 
         // Unliked signal

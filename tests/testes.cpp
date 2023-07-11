@@ -2,7 +2,6 @@
 
 #include "../include/album.h"
 #include "../include/artista.h"
-#include "../include/banco_usuarios.h"
 #include "../include/biblioteca.h"
 #include "../include/conjunto_listas.h"
 #include "../include/discografia.h"
@@ -11,7 +10,6 @@
 #include "../include/playlist.h"
 #include "../include/recomendacao.h"
 #include "../include/sistema.h"
-#include "../include/usuario.h"
 
 #include <fstream>
 #include <iostream>
@@ -224,7 +222,7 @@ TEST_CASE("11 - Teste Recomendacao") {
         // Crie uma música de referência para testar a ordenação
         Musica musica_referencia(4, "Artista 4", "Título 4", "Álbum 4", "Gênero 4", 2024, 6, 8, 4, 5.5);
 
-        auto ordenadas = recomendacao.ordenar_musicas(musica_referencia);
+        auto ordenadas = recomendacao.ordenar_musicas_media(musica_referencia);
 
         // Verifique se as músicas estão ordenadas corretamente
         for (size_t i = 1; i < ordenadas.size(); i++) {
@@ -239,7 +237,7 @@ TEST_CASE("11 - Teste Recomendacao") {
         Musica musica_referencia(5, "Artista 5", "Título 5", "Álbum 5", "Gênero 5", 2025, 7, 9, 5, 6.5);
 
         int numero_de_musicas = 2;
-        std::vector<Musica> recomendadas = recomendacao.recomendar_n_musicas(numero_de_musicas, musica_referencia);
+        std::vector<Musica> recomendadas = recomendacao.recomendar_n_musicas(numero_de_musicas, musica_referencia, "media");
 
         // Verifique se o número de músicas recomendadas é igual ao esperado
         CHECK(recomendadas.size() == numero_de_musicas);

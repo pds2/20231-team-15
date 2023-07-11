@@ -21,7 +21,7 @@ Este projeto foi efetuado para a disciplina de Programação e Desenvolvimento d
 
 4. **Como** usuário, **quero** navegar em minha biblioteca **para** visualizar e criar minhas playlists personalizadas.
 
-5. **Como** usuário, **gostaria** que o sistema recomendasse as próximas músicas da playlist **para** descobrir novas músicas.
+5. **Como** usuário, **gostaria** que o sistema recomendasse uma música aleatória **para** descobrir algo novo.
 
 6. **Como** usuário, **quero**  enviar uma música como input **para** receber uma recomendação de músicas semelhantes.
 

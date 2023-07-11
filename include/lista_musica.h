@@ -44,7 +44,7 @@
         @brief Função puramente virtual para adicionar uma música à lista.
         @param musica A música a ser adicionada.
         */
-        virtual void adicionar_musica(Musica musica) = 0;
+        virtual void adicionar_musica(Musica &musica) = 0;
 
     /**
         @brief Retorna o ID da lista de músicas.

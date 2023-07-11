@@ -67,7 +67,7 @@ public:
      * @param m A música a ser adicionada.
      * @throws musica_repetida_album_e se a música já existe no álbum.
      */
-    void adicionar_musica(Musica m);
+    void adicionar_musica(Musica &m);
 
     /**
      * @brief Exibe as músicas do álbum.

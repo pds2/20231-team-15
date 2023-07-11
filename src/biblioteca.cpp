@@ -5,11 +5,12 @@ Biblioteca::Biblioteca() {}
 void Biblioteca::listar_itens() {
     int i = 0;
     for (auto it = m_biblioteca.begin(); it != m_biblioteca.end(); ++it) {
-        std::cout << ++i << ". " << it->get_nome() << " ID:" << it->get_id() << std:: endl;
+        std::cout << ++i << ". " << it->get_nome() << " ID:" << it->get_id() << "- "
+        << it->get_tamanho() << " músicas" << std::endl;
     }
 };
 
-void Biblioteca::inserir_item(const Playlist &item) {
+void Biblioteca::inserir_item(Playlist &item) {
     m_biblioteca.push_back(std::move(item));
 };
 

@@ -12,8 +12,8 @@ std::string Playlist::get_usuario(){
     return _username;
 }
 
-void Playlist::adicionar_musica(Musica m) {
-    _lista_musica.push_back(m);
+void Playlist::adicionar_musica(Musica &m) {
+    _lista_musica.push_back(std::move(m));
 }
 
  void Playlist::remover_musica(Musica m) {

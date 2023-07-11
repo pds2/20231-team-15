@@ -122,7 +122,7 @@ std::vector <Album> Sistema::inicializar_albuns(const std::vector <Musica>& list
 
 std::vector <Album> Sistema::inserir_musicas_album(std::vector <Album> lista_albuns, std::vector <Musica> lista_musicas) {
     for (auto& album : lista_albuns) {
-        for (const auto& musica : lista_musicas) {
+        for (auto& musica : lista_musicas) {
             if (album.get_nome() == musica.get_album()) {
                 album.adicionar_musica(musica);
             }
@@ -224,7 +224,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
     std::cout <<"Trocar duas Músicas: t" << std::endl;
     std::cout <<"Salvar alterações e sair: sair" << std::endl;
     std::string edit;
-    while (std::cin >> edit && edit != "sair") {
+    while (std::cin >> edit) {
         if (edit == "t") {
             int m1, m2;
             std::cin >> m1 >> m2;
@@ -245,6 +245,7 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                 std::cout << "ID inválido." << std::endl;
             }
         } else if (edit == "a") {
+                int sizeantes = p.get_tamanho();
                 int id;
                 std::cout << "Digite o ID da música a ser adicionada." << std::endl;
                 std::cin >> id;
@@ -253,12 +254,17 @@ void Sistema::editar_playlist(Playlist &p, std::vector<Musica> lista_musicas) {
                     if (m.get_id() == id){
                         p.adicionar_musica(m);
                         idEncontrado = true;
-                        std::cout << "Música " << id << " adicionada com sucesso!" << std::endl;
+                        if (sizeantes < p.get_tamanho()){
+                            std::cout << "Música " << m.get_id() << " adicionada." << std::endl;
+                        }
                     }
                 }
                     if (!idEncontrado) {
                         std::cout << "ID inválido." << std::endl;
                 }
+            } else if (edit == "sair"){
+                this->limpar_terminal();
+                break;
             }
     }
 }

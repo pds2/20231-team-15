@@ -29,7 +29,7 @@ public:
      * @brief Insere um item (playlist) na biblioteca.
      * @param item A playlist a ser inserida.
      */
-    void inserir_item(const Playlist &item);
+    void inserir_item(Playlist &item);
 
     /**
      * @brief Exclui um item (playlist) da biblioteca com base em seu ID.

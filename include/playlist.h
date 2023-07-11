@@ -56,7 +56,7 @@ class Playlist : public Lista_musica {
  * @param m A música a ser adicionada.
  * @throw musica_repetida_playlist_e se a música já estiver presente na playlist.
  */
-                void adicionar_musica(Musica m);
+                void adicionar_musica(Musica &m);
 
 /**
  * @brief Remove uma música da playlist.

@@ -68,7 +68,10 @@ public:
         MusicItem* new_music_item = createMusicItem(music_builder, data);
 
         // Add signal_unliked handler to new_music_item
-        new_music_item->signal_unliked().connect(*music_item->signal_unliked().slots().begin());
+        new_music_item->signal_unliked().connect([music_item](MusicItem* new_music_item) -> void {
+            // Emit unlike event from initial music_item.
+            music_item->signal_unliked().emit(music_item);
+        });
 
         // Append new MusicItem to song_list_liked
         this->append(*new_music_item);
@@ -186,9 +189,10 @@ int main(int argc, char* argv[])
             builder](MusicItem* music_item) {
             
             like_count++;
+            music_item->setLike(true);
             song_list_liked->appendMusic(music_item);
-
             song_count_label->set_label(std::to_string(like_count) + " músicas");
+
             std::cout << "LIKE: " <<  like_count << std::endl;
         });
 
@@ -197,11 +201,11 @@ int main(int argc, char* argv[])
         //     .connect(sigc::mem_fun(song_list_liked, &SongList::removeMusic));
 
         music_item->signal_unliked().connect([&like_count, song_list_liked, song_count_label](MusicItem* music_item) {
-            
             like_count--;
+            music_item->setLike(false);
             song_list_liked->removeMusic(music_item);
-
             song_count_label->set_label(std::to_string(like_count) + " músicas");
+
             std::cout << "UNLIKE: " <<  like_count << std::endl;
         });
 

@@ -104,7 +104,6 @@ void MusicItem::setLike(bool is_liked) {
 
 bool MusicItem::onLikeClicked(GdkEventButton* event) {
     bool is_liked = !(data->get_is_liked());
-    this->setLike(is_liked);
 
     // MusicItem was liked
     if (is_liked) 

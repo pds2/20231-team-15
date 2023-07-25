@@ -128,23 +128,22 @@ int main(int argc, char* argv[])
 
     builder->get_widget("dialog", dialog);
     builder->get_widget("song-list-liked", song_list_liked);
+    dialog->set_default_size(700, 700);
 
     // Playlist liked
-    Gtk::Box* playlist_liked = nullptr;
+    Gtk::EventBox* playlist_liked_wrapper = nullptr;
     Gtk::Label* song_count_label = nullptr;
 
-    builder->get_widget("playlist-liked", playlist_liked);
+    builder->get_widget("playlist-liked-wrapper", playlist_liked_wrapper);
     builder->get_widget("song-count", song_count_label);
     song_count_label->set_label(std::to_string(like_count) + " músicas");
 
     // Show dialog
-    playlist_liked->signal_button_press_event().connect([dialog](GdkEventButton* event) -> bool {
-        
+    playlist_liked_wrapper->signal_button_press_event().connect([dialog](GdkEventButton* event) -> bool {
         std::cout << "CLICKED" << std::endl;
 
-        dialog->set_default_size(700, 700);
         dialog->show_all();
-        int response = dialog->run();
+        dialog->run();
 
         return true;
     });

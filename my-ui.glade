@@ -725,62 +725,113 @@
                                 <property name="visible">True</property>
                                 <property name="can-focus">True</property>
                                 <child>
-                                  <object class="GtkBox" id="playlist-liked">
-                                    <property name="name">playlist-liked</property>
+                                  <object class="GtkEventBox" id="playlist-liked-wrapper">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
-                                    <property name="halign">start</property>
-                                    <property name="spacing">10</property>
                                     <child>
-                                      <object class="GtkBox" id="cover-wrapper1">
-                                        <property name="name">cover-wrapper</property>
-                                        <property name="width-request">80</property>
-                                        <property name="height-request">80</property>
+                                      <object class="GtkBox" id="playlist-liked">
+                                        <property name="name">playlist-liked</property>
                                         <property name="visible">True</property>
                                         <property name="can-focus">False</property>
-                                        <property name="orientation">vertical</property>
+                                        <property name="halign">start</property>
+                                        <property name="spacing">10</property>
                                         <child>
-                                          <placeholder/>
+                                          <object class="GtkBox" id="cover-wrapper1">
+                                            <property name="name">cover-wrapper</property>
+                                            <property name="width-request">80</property>
+                                            <property name="height-request">80</property>
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="orientation">vertical</property>
+                                            <child>
+                                              <placeholder/>
+                                            </child>
+                                            <style>
+                                              <class name="playlist"/>
+                                            </style>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">False</property>
+                                            <property name="position">0</property>
+                                          </packing>
                                         </child>
-                                        <style>
-                                          <class name="playlist"/>
-                                        </style>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">False</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkBox">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">False</property>
-                                        <property name="spacing">15</property>
                                         <child>
                                           <object class="GtkBox">
                                             <property name="visible">True</property>
                                             <property name="can-focus">False</property>
-                                            <property name="valign">center</property>
-                                            <property name="orientation">vertical</property>
-                                            <property name="spacing">8</property>
+                                            <property name="spacing">15</property>
                                             <child>
                                               <object class="GtkBox">
                                                 <property name="visible">True</property>
                                                 <property name="can-focus">False</property>
+                                                <property name="valign">center</property>
                                                 <property name="orientation">vertical</property>
+                                                <property name="spacing">8</property>
                                                 <child>
-                                                  <object class="GtkLabel" id="type-text1">
-                                                    <property name="name">type-text</property>
+                                                  <object class="GtkBox">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">False</property>
+                                                    <property name="orientation">vertical</property>
+                                                    <child>
+                                                      <object class="GtkLabel" id="type-text1">
+                                                        <property name="name">type-text</property>
+                                                        <property name="visible">True</property>
+                                                        <property name="can-focus">False</property>
+                                                        <property name="halign">start</property>
+                                                        <property name="label" translatable="yes">Playlist</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">False</property>
+                                                        <property name="position">1</property>
+                                                      </packing>
+                                                    </child>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">False</property>
+                                                    <property name="position">0</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkLabel" id="title1">
+                                                    <property name="name">title</property>
                                                     <property name="visible">True</property>
                                                     <property name="can-focus">False</property>
                                                     <property name="halign">start</property>
-                                                    <property name="label" translatable="yes">Playlist</property>
+                                                    <property name="label" translatable="yes">Curtidas</property>
                                                   </object>
                                                   <packing>
                                                     <property name="expand">False</property>
                                                     <property name="fill">False</property>
                                                     <property name="position">1</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <object class="GtkBox">
+                                                    <property name="visible">True</property>
+                                                    <property name="can-focus">False</property>
+                                                    <property name="spacing">5</property>
+                                                    <property name="baseline-position">bottom</property>
+                                                    <child>
+                                                      <object class="GtkLabel" id="song-count">
+                                                        <property name="name">song-count</property>
+                                                        <property name="visible">True</property>
+                                                        <property name="can-focus">False</property>
+                                                        <property name="label" translatable="yes">15 músicas</property>
+                                                      </object>
+                                                      <packing>
+                                                        <property name="expand">False</property>
+                                                        <property name="fill">True</property>
+                                                        <property name="position">1</property>
+                                                      </packing>
+                                                    </child>
+                                                  </object>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">False</property>
+                                                    <property name="position">2</property>
                                                   </packing>
                                                 </child>
                                               </object>
@@ -790,59 +841,14 @@
                                                 <property name="position">0</property>
                                               </packing>
                                             </child>
-                                            <child>
-                                              <object class="GtkLabel" id="title1">
-                                                <property name="name">title</property>
-                                                <property name="visible">True</property>
-                                                <property name="can-focus">False</property>
-                                                <property name="halign">start</property>
-                                                <property name="label" translatable="yes">Curtidas</property>
-                                              </object>
-                                              <packing>
-                                                <property name="expand">False</property>
-                                                <property name="fill">False</property>
-                                                <property name="position">1</property>
-                                              </packing>
-                                            </child>
-                                            <child>
-                                              <object class="GtkBox">
-                                                <property name="visible">True</property>
-                                                <property name="can-focus">False</property>
-                                                <property name="spacing">5</property>
-                                                <property name="baseline-position">bottom</property>
-                                                <child>
-                                                  <object class="GtkLabel" id="song-count">
-                                                    <property name="name">song-count</property>
-                                                    <property name="visible">True</property>
-                                                    <property name="can-focus">False</property>
-                                                    <property name="label" translatable="yes">15 músicas</property>
-                                                  </object>
-                                                  <packing>
-                                                    <property name="expand">False</property>
-                                                    <property name="fill">True</property>
-                                                    <property name="position">1</property>
-                                                  </packing>
-                                                </child>
-                                              </object>
-                                              <packing>
-                                                <property name="expand">False</property>
-                                                <property name="fill">False</property>
-                                                <property name="position">2</property>
-                                              </packing>
-                                            </child>
                                           </object>
                                           <packing>
                                             <property name="expand">False</property>
-                                            <property name="fill">False</property>
-                                            <property name="position">0</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">2</property>
                                           </packing>
                                         </child>
                                       </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">2</property>
-                                      </packing>
                                     </child>
                                   </object>
                                 </child>

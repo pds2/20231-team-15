@@ -23,13 +23,15 @@ MusicItem* createMusicItem(
     builder->add_from_file("music-item.xml");
     builder->get_widget_derived("music-item", music_item);
 
-    // Define campos do widget music_item.
-    music_item->setData(data);
     std::string cover_path = "./images/covers/"+std::to_string(data->get_id())+".png";
+
+    // Set music_item fields.
+    music_item->setData(data);
     music_item->setTitle(data->get_titulo());
     music_item->setArtist(data->get_artista());
     music_item->setCover(cover_path);
     music_item->setDuration(std::to_string(data->get_ano()));
+    music_item->setLike(data->get_is_liked());
 
     return music_item;
 }

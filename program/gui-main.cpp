@@ -34,16 +34,16 @@ MusicItem* createMusicItem(
     return music_item;
 }
 
-class LibraryList : public Gtk::ListBox {
+class SongList : public Gtk::ListBox {
 public:
-    LibraryList(
+    SongList(
         BaseObjectType* cobject, 
         const Glib::RefPtr<Gtk::Builder>& builder
     ) : 
         Gtk::ListBox(cobject), builder{builder} 
     {}
 
-    virtual ~LibraryList() {};
+    virtual ~SongList() {};
 
     void appendMusic(MusicItem* music_item) {
         Musica* data = music_item->getData();
@@ -52,7 +52,7 @@ public:
         auto music_builder = Gtk::Builder::create_from_file("music-item.xml");
         MusicItem* new_music_item = createMusicItem(music_builder, data);
 
-        // Append new MusicItem to library_list
+        // Append new MusicItem to song_list_liked
         this->append(*new_music_item);
     }
 
@@ -118,17 +118,14 @@ int main(int argc, char* argv[])
     Gtk::ListBox* music_list_box = nullptr;
     builder->get_widget("music-list-box", music_list_box);
 
-    // Library list
-    LibraryList* library_list = nullptr;
-    builder->get_widget_derived("library-list", library_list);
-
     // Dialog
     Gtk::Dialog* dialog = nullptr;
-    Gtk::ListBox* song_list_liked = nullptr;
-
     builder->get_widget("dialog", dialog);
-    builder->get_widget("song-list-liked", song_list_liked);
     dialog->set_default_size(700, 700);
+
+    // Library list
+    SongList* song_list_liked = nullptr;
+    builder->get_widget_derived("song-list-liked", song_list_liked);
 
     // Playlist liked
     Gtk::EventBox* playlist_liked_wrapper = nullptr;
@@ -163,34 +160,28 @@ int main(int argc, char* argv[])
             musica
         );
 
-
         // Liked signal
         music_item->signal_liked().connect([
             &like_count, 
-            library_list, 
+            song_list_liked, 
             song_count_label,
-            song_list_liked,
             builder](MusicItem* music_item) {
             
             like_count++;
-            library_list->appendMusic(music_item);
+            song_list_liked->appendMusic(music_item);
 
             song_count_label->set_label(std::to_string(like_count) + " músicas");
             std::cout << "LIKE: " <<  like_count << std::endl;
-
-            // Adiciona música em song-list-liked
-            MusicItem* new_music_item = createMusicItem(builder, music_item->getData());
-            song_list_liked->append(*new_music_item);
         });
 
         // Unliked signal
-        music_item->signal_unliked()
-            .connect(sigc::mem_fun(library_list, &LibraryList::removeMusic));
+        // music_item->signal_unliked()
+        //     .connect(sigc::mem_fun(song_list_liked, &SongList::removeMusic));
 
-        music_item->signal_unliked().connect([&like_count, library_list, song_count_label](MusicItem* music_item) {
+        music_item->signal_unliked().connect([&like_count, song_list_liked, song_count_label](MusicItem* music_item) {
             
             like_count--;
-            library_list->removeMusic(music_item);
+            song_list_liked->removeMusic(music_item);
 
             song_count_label->set_label(std::to_string(like_count) + " músicas");
             std::cout << "UNLIKE: " <<  like_count << std::endl;

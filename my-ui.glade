@@ -56,7 +56,6 @@
                     <property name="can-focus">False</property>
                     <child>
                       <object class="GtkListBox" id="song-list-liked">
-                        <property name="name">song-list-liked</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>

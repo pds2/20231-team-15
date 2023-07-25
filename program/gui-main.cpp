@@ -36,6 +36,19 @@ MusicItem* createMusicItem(
     return music_item;
 }
 
+// void handleUnlike(
+//     MusicItem* music_item,
+//     int &like_count, 
+//     SongList* song_list_liked, 
+//     Gtk::Label* song_count_label) 
+// {
+//     like_count--;
+//     song_list_liked->removeMusic(music_item);
+
+//     song_count_label->set_label(std::to_string(like_count) + " músicas");
+//     std::cout << "UNLIKE: " <<  like_count << std::endl;
+// }
+
 class SongList : public Gtk::ListBox {
 public:
     SongList(
@@ -53,6 +66,9 @@ public:
         // Create new MusicItem widget from "data"
         auto music_builder = Gtk::Builder::create_from_file("music-item.xml");
         MusicItem* new_music_item = createMusicItem(music_builder, data);
+
+        // Add signal_unliked handler to new_music_item
+        new_music_item->signal_unliked().connect(*music_item->signal_unliked().slots().begin());
 
         // Append new MusicItem to song_list_liked
         this->append(*new_music_item);
@@ -188,6 +204,8 @@ int main(int argc, char* argv[])
             song_count_label->set_label(std::to_string(like_count) + " músicas");
             std::cout << "UNLIKE: " <<  like_count << std::endl;
         });
+
+        // music_item->signal_unliked().connect();
 
         // Adiciona music_item ao ListBox
         music_list_box->append(*music_item);

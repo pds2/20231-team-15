@@ -88,27 +88,29 @@ void MusicItem::setDuration(const std::string& str) {
     duration->set_label(str);
 }
 
-bool MusicItem::onLikeClicked(GdkEventButton* event) {
-    bool is_liked = data->get_is_liked();
-    data->set_is_liked(!is_liked);
-
+void MusicItem::setLike(bool is_liked) {
     std::string heart_path = "./images/icons/heart-icon.png";
     std::string heart_filled_path = "./images/icons/heart-solid-icon.png";
 
-    // MusicItem was unliked
-    if (is_liked) {
-        like_icon->set(heart_path);
+    // Update data
+    data->set_is_liked(is_liked);
 
-        // Emit signal unliked
-        signal_unliked_.emit(this);
-    } 
-    // Was liked
-    else {
+    // Update icon
+    if (is_liked) 
         like_icon->set(heart_filled_path);
+    else 
+        like_icon->set(heart_path);
+}
 
-        // Emit signal_liked
-        signal_liked_.emit(this);
-    }
+bool MusicItem::onLikeClicked(GdkEventButton* event) {
+    bool is_liked = !(data->get_is_liked());
+    this->setLike(is_liked);
+
+    // MusicItem was liked
+    if (is_liked) 
+        signal_liked_.emit(this); // Emit liked signal.
+    else
+        signal_unliked_.emit(this); // Emit unliked sigal.
 
     return true;
 }

@@ -29,6 +29,7 @@ public:
     void setCover(const std::string& file_path);
     void setArtist(const std::string& str);
     void setDuration(const std::string& str);
+    void setLike(bool is_liked);
 
     // Method to handle the like click event
     bool onLikeClicked(GdkEventButton* event);
